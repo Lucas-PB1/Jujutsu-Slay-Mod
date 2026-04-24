@@ -19,7 +19,7 @@
   },
   "${modID}:DivergentFist": {
     "NAME": "Divergent Fist",
-    "DESCRIPTION": "Deal !D! damage. At the start of its next turn, the enemy takes !D! damage again."
+    "DESCRIPTION": "Deal !D! damage. Apply !D! *divergent_fist*."
   },
   "${modID}:SlaughterDemon": {
     "NAME": "Slaughter Demon",
@@ -35,7 +35,7 @@
   },
   "${modID}:BlackFlash": {
     "NAME": "Black Flash",
-    "DESCRIPTION": "Deal !D! damage. NL Gain [E] for each Attack played this turn."
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E] for each Attack played this turn. NL *black_flash* synergy."
   },
   "${modID}:CursedEnergyInfusion": {
     "NAME": "Cursed Energy Infusion",

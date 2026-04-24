@@ -184,7 +184,6 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.BlackFlash());
         BaseMod.addCard(new jujutsumod.cards.CursedEnergyInfusion());
         BaseMod.addCard(new jujutsumod.cards.SlaughterDemon());
-        BaseMod.addCard(new jujutsumod.cards.CursedFlow());
         BaseMod.addCard(new jujutsumod.cards.MartialArtsMastery());
     }
 

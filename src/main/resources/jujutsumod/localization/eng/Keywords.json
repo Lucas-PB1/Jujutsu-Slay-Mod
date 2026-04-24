@@ -21,11 +21,19 @@
     "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
   },
   {
-    "PROPER_NAME": "Pink",
+    "PROPER_NAME": "Divergent Fist",
     "NAMES": [
-      "pink"
+      "divergent fist",
+      "divergent_fist"
     ],
-    "DESCRIPTION": "Using the COLOR field, this keyword is colored pink instead of the normal keyword color.",
-    "COLOR": "fc83da"
+    "DESCRIPTION": "Cursed energy lags behind a physical strike, creating a second impact at the start of the enemy's next turn."
+  },
+  {
+    "PROPER_NAME": "Black Flash",
+    "NAMES": [
+      "black flash",
+      "black_flash"
+    ],
+    "DESCRIPTION": "A spatial distortion that occurs when cursed energy is applied within 0.000001 seconds of a physical hit. Massive damage increase."
   }
 ]
