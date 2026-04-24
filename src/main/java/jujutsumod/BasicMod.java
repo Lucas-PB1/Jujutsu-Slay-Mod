@@ -2,11 +2,11 @@ package jujutsumod;
 
 import basemod.BaseMod;
 import basemod.interfaces.*;
-import basicmod.character.Itadori;
-import basicmod.util.GeneralUtils;
-import basicmod.util.KeywordInfo;
-import basicmod.util.Sounds;
-import basicmod.util.TextureLoader;
+import jujutsumod.character.Itadori;
+import jujutsumod.util.GeneralUtils;
+import jujutsumod.util.KeywordInfo;
+import jujutsumod.util.Sounds;
+import jujutsumod.util.TextureLoader;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
@@ -146,7 +146,7 @@ public class BasicMod implements
             }
             catch (Exception e)
             {
-                logger.warn(modID + " does not support " + getLangString() + " keywords.");
+                logger.warn("{} does not support {} keywords.", modID, getLangString());
             }
         }
     }
@@ -166,13 +166,13 @@ public class BasicMod implements
 
     @Override
     public void receiveAddAudio() {
-        loadAudio(Sounds.class);
+        loadAudio();
     }
 
     private static final String[] AUDIO_EXTENSIONS = { ".ogg", ".wav", ".mp3" }; //There are more valid types, but not really worth checking them all here
-    private void loadAudio(Class<?> cls) {
+    private void loadAudio() {
         try {
-            Field[] fields = cls.getDeclaredFields();
+            Field[] fields = Sounds.class.getDeclaredFields();
             outer:
             for (Field f : fields) {
                 int modifiers = f.getModifiers();
@@ -235,8 +235,7 @@ public class BasicMod implements
     private static String checkResourcesPath() {
         String name = BasicMod.class.getName(); //getPackage can be iffy with patching, so class name is used instead.
         int separator = name.indexOf('.');
-        if (separator > 0)
-            name = name.substring(0, separator);
+        name = name.substring(0, separator);
 
         FileHandle resources = new LwjglFileHandle(name, Files.FileType.Internal);
 
@@ -278,3 +277,4 @@ public class BasicMod implements
         }
     }
 }
+

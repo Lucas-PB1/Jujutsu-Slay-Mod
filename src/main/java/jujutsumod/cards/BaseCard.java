@@ -1,11 +1,11 @@
-package basicmod.cards;
+package jujutsumod.cards;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
-import basicmod.BasicMod;
-import basicmod.util.CardStats;
-import basicmod.util.TriFunction;
+import jujutsumod.BasicMod;
+import jujutsumod.util.CardStats;
+import jujutsumod.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,14 +18,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static basicmod.util.GeneralUtils.removePrefix;
-import static basicmod.util.TextureLoader.getCardTextureString;
+import static jujutsumod.util.GeneralUtils.removePrefix;
+import static jujutsumod.util.TextureLoader.getCardTextureString;
 
 
 public abstract class BaseCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
 
-    protected static String makeID(String name) { return BasicMod.makeID(name); }
+    public static String makeID(String name) { return BasicMod.makeID(name); }
     protected CardStrings cardStrings;
 
     protected boolean upgradesDescription;

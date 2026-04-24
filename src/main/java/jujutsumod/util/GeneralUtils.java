@@ -1,4 +1,4 @@
-package basicmod.util;
+package jujutsumod.util;
 
 public class GeneralUtils {
     public static String arrToString(java.lang.String[] arr) {
@@ -19,3 +19,4 @@ public class GeneralUtils {
         return ID.substring(ID.indexOf(":") + 1);
     }
 }
+

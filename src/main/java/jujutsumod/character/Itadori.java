@@ -1,4 +1,4 @@
-package basicmod.character;
+package jujutsumod.character;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
@@ -25,8 +25,8 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
 
-import static basicmod.BasicMod.characterPath;
-import static basicmod.BasicMod.makeID;
+import static jujutsumod.BasicMod.characterPath;
+import static jujutsumod.BasicMod.makeID;
 
 public class Itadori extends CustomPlayer {
     //Stats
@@ -259,3 +259,4 @@ public class Itadori extends CustomPlayer {
         return new Itadori();
     }
 }
+
