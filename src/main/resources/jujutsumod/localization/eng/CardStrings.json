@@ -40,5 +40,9 @@
   "${modID}:CursedEnergyInfusion": {
     "NAME": "Cursed Energy Infusion",
     "DESCRIPTION": "Upgrade a card in your hand. NL If Black Flash was played this turn, reduce its cost by 1 for the rest of combat."
+  },
+  "${modID}:CursedEnergyReinforcement": {
+    "NAME": "Cursed Energy Reinforcement",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! *Reinforcement*."
   }
 }

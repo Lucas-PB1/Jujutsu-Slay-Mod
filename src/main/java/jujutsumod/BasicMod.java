@@ -185,6 +185,7 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.CursedEnergyInfusion());
         BaseMod.addCard(new jujutsumod.cards.SlaughterDemon());
         BaseMod.addCard(new jujutsumod.cards.MartialArtsMastery());
+        BaseMod.addCard(new jujutsumod.cards.CursedEnergyReinforcement());
     }
 
     @Override

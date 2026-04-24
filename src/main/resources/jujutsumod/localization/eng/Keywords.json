@@ -35,5 +35,12 @@
       "black_flash"
     ],
     "DESCRIPTION": "A spatial distortion that occurs when cursed energy is applied within 0.000001 seconds of a physical hit. Massive damage increase."
+  },
+  {
+    "PROPER_NAME": "Reinforcement",
+    "NAMES": [
+      "reinforcement"
+    ],
+    "DESCRIPTION": "Increases the damage of your next Attack."
   }
 ]

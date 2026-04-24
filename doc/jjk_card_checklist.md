@@ -10,8 +10,7 @@
 - [x] **Cursed Energy Infusion** (Uncommon)
 - [x] **Slaughter Demon** (Common)
 - [x] **Martial Arts Mastery** (Common)
-- [ ] **Cursed Energy Reinforcement** (Common)
-- [ ] **Spark of Black** (Uncommon)
+- [x] **Cursed Energy Reinforcement** (Common)
 - [ ] **Infinite RCT** (Rare)
 - [ ] **Soul Rewrite** (Rare)
 
