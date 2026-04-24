@@ -88,6 +88,7 @@ public class Itadori extends CustomPlayer {
     private static final String SHOULDER_1 = characterPath("shoulder.png"); //Shoulder 1 and 2 are used at rest sites.
     private static final String SHOULDER_2 = characterPath("shoulder2.png");
     private static final String CORPSE = characterPath("corpse.png"); //Corpse is when you die.
+    private static final String MAIN_SPRITE = characterPath("main.png");
 
     //Textures used for the energy orb
     private static final String[] orbTextures = {
@@ -119,9 +120,14 @@ public class Itadori extends CustomPlayer {
     public Itadori() {
         super(getNames()[0], Meta.YOUR_CHARACTER,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
-                new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
+                new basemod.animations.AbstractAnimation() { //Usa imagem estática
+                    @Override
+                    public Type type() {
+                        return Type.NONE;
+                    }
+                });
 
-        initializeClass(null,
+        initializeClass(MAIN_SPRITE,
                 SHOULDER_2,
                 SHOULDER_1,
                 CORPSE,
