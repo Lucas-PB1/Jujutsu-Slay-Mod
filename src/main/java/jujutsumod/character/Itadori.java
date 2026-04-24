@@ -143,7 +143,7 @@ public class Itadori extends CustomPlayer {
         retVal.add(jujutsumod.cards.Strike.ID);
         retVal.add(jujutsumod.cards.Defend.ID);
         retVal.add(jujutsumod.cards.Defend.ID);
-        retVal.add(Neutralize.ID);
+        retVal.add(jujutsumod.cards.DivergentFist.ID);
 
         return retVal;
     }

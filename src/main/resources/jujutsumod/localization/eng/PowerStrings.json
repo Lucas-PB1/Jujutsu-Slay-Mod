@@ -4,5 +4,12 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+  "${modID}:DivergentFistPower": {
+    "NAME": "Divergent Impact",
+    "DESCRIPTIONS": [
+      "At the start of its next turn, this creature will take ",
+      " damage from a delayed cursed energy impact."
+    ]
   }
 }

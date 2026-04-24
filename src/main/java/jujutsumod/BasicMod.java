@@ -179,6 +179,7 @@ public class BasicMod implements
     public void receiveEditCards() {
         BaseMod.addCard(new jujutsumod.cards.Strike());
         BaseMod.addCard(new jujutsumod.cards.Defend());
+        BaseMod.addCard(new jujutsumod.cards.DivergentFist());
     }
 
     @Override

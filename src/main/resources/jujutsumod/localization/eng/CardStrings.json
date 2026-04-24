@@ -16,5 +16,9 @@
   "${modID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:DivergentFist": {
+    "NAME": "Divergent Fist",
+    "DESCRIPTION": "Deal !D! damage. At the start of its next turn, the enemy takes !D! damage again."
   }
 }
