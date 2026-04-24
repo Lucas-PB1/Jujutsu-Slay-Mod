@@ -80,6 +80,9 @@ def process_single_image(file_path, img_type, keep_bg=False):
         print(f"Error: File {file_path} not found.")
         return
 
+    if img_type == "card":
+        keep_bg = True
+
     print(f"Processing {img_type}: {path.name} (Keep BG: {keep_bg})...")
     
     if not keep_bg:

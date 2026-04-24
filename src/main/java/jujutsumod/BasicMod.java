@@ -181,6 +181,9 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.Strike());
         BaseMod.addCard(new jujutsumod.cards.Defend());
         BaseMod.addCard(new jujutsumod.cards.DivergentFist());
+        BaseMod.addCard(new jujutsumod.cards.BlackFlash());
+        BaseMod.addCard(new jujutsumod.cards.CursedEnergyInfusion());
+        BaseMod.addCard(new jujutsumod.cards.CursedPunch());
     }
 
     @Override
