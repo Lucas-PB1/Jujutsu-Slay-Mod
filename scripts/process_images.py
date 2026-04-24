@@ -2,7 +2,7 @@ import os
 import sys
 import argparse
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFilter
 
 try:
     from rembg import remove, new_session
@@ -13,16 +13,35 @@ except ImportError:
 # Configuration for sizes
 CONFIG = {
     "card": {"portrait": (500, 380), "standard": (250, 190)},
+    "cardback": {"large": (1024, 1024), "standard": (512, 512)},
     "relic": {"large": (256, 256), "standard": (128, 128)},
     "power": {"large": (84, 84), "standard": (32, 32)},
     "select": {"portrait": (1920, 1200), "button": (200, 200)},
-    "character": {"shoulder": (1920, 1136), "corpse": (512, 512)}
+    "character": {"shoulder": (1920, 1136), "corpse": (512, 512)},
+    "orb": {"large": (512, 512), "preview": (164, 164), "small": (22, 22)}
 }
 
-def resize_and_center(img, size, scale=1.0):
-    # Apply padding if scale < 1.0
+def clean_alpha(img, threshold=50):
+    """Purge semi-transparent pixels that cause halos after downscaling"""
+    if img.mode != 'RGBA':
+        return img
+    datas = img.getdata()
+    newData = []
+    for item in datas:
+        if item[3] < threshold:
+            newData.append((255, 255, 255, 0))
+        else:
+            newData.append(item)
+    img.putdata(newData)
+    return img
+
+def resize_and_center(img, size, scale=1.0, anchor="center"):
+    # Autocrop transparency
+    bbox = img.getbbox()
+    if bbox:
+        img = img.crop(bbox)
+        
     work_size = (int(size[0] * scale), int(size[1] * scale))
-    
     img_aspect = img.width / img.height
     target_aspect = work_size[0] / work_size[1]
 
@@ -34,11 +53,14 @@ def resize_and_center(img, size, scale=1.0):
         new_width = int(work_size[1] * img_aspect)
 
     img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
-    
-    # Create final image with full size
     new_img = Image.new("RGBA", size, (255, 255, 255, 0))
-    paste_x = (size[0] - new_width) // 2
-    paste_y = (size[1] - new_height) // 2
+    
+    if anchor == "top-left":
+        paste_x, paste_y = 36, 8
+    else: # center
+        paste_x = (size[0] - new_width) // 2
+        paste_y = (size[1] - new_height) // 2
+        
     new_img.paste(img, (paste_x, paste_y), img)
     return new_img
 
@@ -60,24 +82,57 @@ def process_single_image(file_path, img_type, keep_bg=False):
         with open(temp_path, 'wb') as o:
             o.write(result_data)
         img = Image.open(temp_path).convert("RGBA")
+        if img_type != "orb":
+            img = clean_alpha(img, threshold=50) 
     else:
         print("  -> Keeping original background...")
         img = Image.open(path).convert("RGBA")
         temp_path = None
 
-    # 3. Resize and Save
-    # Define scale based on type (relics, powers and select buttons need padding)
-    scale = 1.0
-    if img_type in ["relic", "power"]: scale = 0.7
-    
-    if img_type == "card":
+    # Resize and Save
+    if img_type == "orb":
+        # Cardback orbs
+        l_img = resize_and_center(img, CONFIG["orb"]["large"], scale=0.2, anchor="top-left")
+        p_img = resize_and_center(img, CONFIG["orb"]["preview"], scale=0.9, anchor="center")
+        s_img = resize_and_center(img, CONFIG["orb"]["small"], scale=1.1, anchor="center")
+        
+        # CREATE STRONGER RADIAL GRADIENT MASK
+        mask = Image.new('L', (22, 22), 0)
+        draw = ImageDraw.Draw(mask)
+        # Inner core: Solid white (alpha 255) for the center 10px
+        draw.ellipse((6, 6, 16, 16), fill=255)
+        # Outer fade: From center to edges
+        for i in range(1, 7):
+            alpha = int(255 * (1 - (i / 6)))
+            # Draw concentric circles with decreasing alpha
+            draw.ellipse((6-i, 6-i, 16+i, 16+i), outline=alpha, width=1)
+        
+        # Blur only slightly
+        mask = mask.filter(ImageFilter.GaussianBlur(radius=0.3))
+        
+        # Apply mask to the small orb
+        final_small = Image.new("RGBA", (22, 22), (255, 255, 255, 0))
+        final_small.paste(s_img, (0, 0), mask=mask)
+        
+        l_img.save(path.parent / "energy_orb.png")
+        p_img.save(path.parent / "energy_orb_p.png")
+        final_small.save(path.parent / "small_orb.png")
+        print(f"  -> Saved energy_orb.png, energy_orb_p.png and small_orb.png (Core Preserved)")
+
+    elif img_type == "cardback":
+        l_img = resize_and_center(img, CONFIG["cardback"]["large"])
+        s_img = resize_and_center(img, CONFIG["cardback"]["standard"])
+        l_img.save(path.parent / f"{path.stem}_p.png")
+        s_img.save(path.parent / f"{path.stem}.png")
+
+    elif img_type == "card":
         p_img = resize_and_center(img, CONFIG["card"]["portrait"])
         s_img = resize_and_center(p_img, CONFIG["card"]["standard"])
         p_img.save(path.parent / f"{path.stem}_p.png")
         s_img.save(path.parent / f"{path.stem}.png")
-        print(f"  -> Saved {path.stem}.png and {path.stem}_p.png")
 
     elif img_type in ["relic", "power"]:
+        scale = 0.7
         l_img = resize_and_center(img, CONFIG[img_type]["large"], scale)
         s_img = resize_and_center(img, CONFIG[img_type]["standard"], scale)
         l_img.save(path.parent / f"{path.stem}_large.png")
@@ -87,10 +142,7 @@ def process_single_image(file_path, img_type, keep_bg=False):
         size_key = "portrait" if "portrait" in path.stem.lower() else "button" if "button" in path.stem.lower() else "shoulder" if "shoulder" in path.stem.lower() else "corpse"
         cat = "select" if img_type == "select" else "character"
         size = CONFIG[cat].get(size_key, (512, 512))
-        
-        # Apply 70% scale ONLY for the select button
         current_scale = 0.7 if size_key == "button" else 1.0
-        
         img_resized = resize_and_center(img, size, current_scale)
         img_resized.save(path.parent / f"{path.stem}_processed.png")
 
@@ -101,7 +153,7 @@ def process_single_image(file_path, img_type, keep_bg=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process a single image for Slay the Spire")
     parser.add_argument("file", help="Path to the image file")
-    parser.add_argument("type", choices=["card", "relic", "power", "select", "character"], help="Type of image")
+    parser.add_argument("type", choices=["card", "cardback", "relic", "power", "select", "character", "orb"], help="Type of image")
     parser.add_argument("--keep-bg", action="store_true", help="Keep the original background")
     
     if len(sys.argv) < 3:
