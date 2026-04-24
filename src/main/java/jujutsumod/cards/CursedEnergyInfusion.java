@@ -1,9 +1,10 @@
 package jujutsumod.cards;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import jujutsumod.actions.InfusionAction;
 import jujutsumod.character.Itadori;
 import jujutsumod.util.CardStats;
 
@@ -14,17 +15,23 @@ public class CursedEnergyInfusion extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            2
     );
 
     public CursedEnergyInfusion() {
         super(ID, info);
-        setBlock(8, 3);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
-        addToBot(new GainEnergyAction(1));
+        boolean blackFlashPlayed = false;
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
+            if (c.cardID.equals(BlackFlash.ID)) {
+                blackFlashPlayed = true;
+                break;
+            }
+        }
+        
+        addToBot(new InfusionAction(blackFlashPlayed));
     }
 }

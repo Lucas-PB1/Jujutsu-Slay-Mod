@@ -21,16 +21,24 @@
     "NAME": "Divergent Fist",
     "DESCRIPTION": "Deal !D! damage. At the start of its next turn, the enemy takes !D! damage again."
   },
+  "${modID}:SlaughterDemon": {
+    "NAME": "Slaughter Demon",
+    "DESCRIPTION": "Deal !D! damage. NL If this is the first Attack played in combat, deal !D! more damage."
+  },
+  "${modID}:CursedFlow": {
+    "NAME": "Cursed Flow",
+    "DESCRIPTION": "Gain !B! Block. NL If the last card played was an Attack, gain 4 additional Block."
+  },
+  "${modID}:MartialArtsMastery": {
+    "NAME": "Martial Arts Mastery",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. If it is an Attack, gain [E]."
+  },
   "${modID}:BlackFlash": {
     "NAME": "Black Flash",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E] for each Attack played this turn."
   },
   "${modID}:CursedEnergyInfusion": {
     "NAME": "Cursed Energy Infusion",
-    "DESCRIPTION": "Gain !B! Block. NL Gain [E]."
-  },
-  "${modID}:CursedPunch": {
-    "NAME": "Cursed Punch",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+    "DESCRIPTION": "Upgrade a card in your hand. NL If Black Flash was played this turn, reduce its cost by 1 for the rest of combat."
   }
 }
