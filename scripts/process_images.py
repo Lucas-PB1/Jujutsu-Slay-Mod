@@ -58,9 +58,15 @@ def resize_and_center(img, size, scale=1.0, anchor="center"):
     if anchor == "top-left":
         paste_x, paste_y = 36, 8
     elif anchor == "bottom-left":
-        # Posiciona o personagem no canto inferior esquerdo para não cobrir a UI da fogueira
-        paste_x = int(size[0] * 0.15) # 15% de recuo da borda esquerda
-        paste_y = size[1] - new_height # Alinhado na base
+        paste_x = 0
+        paste_y = size[1] - new_height
+    elif anchor == "bottom-left-offset":
+        # Recuo específico para Corpse (profundidade)
+        paste_x = int(size[0] * 0.1) 
+        paste_y = size[1] - new_height - 50 
+    elif anchor == "bottom-center":
+        paste_x = (size[0] - new_width) // 2
+        paste_y = size[1] - new_height
     else: # center
         paste_x = (size[0] - new_width) // 2
         paste_y = (size[1] - new_height) // 2
@@ -147,9 +153,20 @@ def process_single_image(file_path, img_type, keep_bg=False):
         cat = "select" if img_type == "select" else "character"
         size = CONFIG[cat].get(size_key, (512, 512))
         
-        # Usa bottom-left para o shoulder para não cobrir a UI
-        anchor_type = "bottom-left" if size_key == "shoulder" else "center"
-        current_scale = 0.7 if size_key == "button" else 1.0
+        # Shoulder: bottom-left para não cobrir a UI da fogueira
+        # Corpse: bottom-left, maior e com sensação de profundidade
+        if size_key == "shoulder":
+            anchor_type = "bottom-left"
+            current_scale = 1.0
+        elif size_key == "corpse":
+            anchor_type = "bottom-left-offset"
+            current_scale = 0.6
+        elif size_key == "button":
+            anchor_type = "center"
+            current_scale = 0.7
+        else:
+            anchor_type = "center"
+            current_scale = 1.0
         
         img_resized = resize_and_center(img, size, current_scale, anchor=anchor_type)
         img_resized.save(path.parent / f"{path.stem}_processed.png")
