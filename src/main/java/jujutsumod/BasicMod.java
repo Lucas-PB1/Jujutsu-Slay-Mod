@@ -19,6 +19,9 @@ import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.localization.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,7 +38,8 @@ public class BasicMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        EditCardsSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -70,6 +74,13 @@ public class BasicMod implements
         //If you want to set up a config panel, that will be done here.
         //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+
+        // Revelar todas as cartas do personagem no compêndio
+        for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.color == Itadori.Meta.CARD_COLOR) {
+                UnlockTracker.unlockCard(card.cardID);
+            }
+        }
     }
 
     /*----------Localization----------*/
@@ -162,6 +173,12 @@ public class BasicMod implements
     @Override
     public void receiveEditCharacters() {
         Itadori.Meta.registerCharacter();
+    }
+
+    @Override
+    public void receiveEditCards() {
+        BaseMod.addCard(new jujutsumod.cards.Strike());
+        BaseMod.addCard(new jujutsumod.cards.Defend());
     }
 
     @Override

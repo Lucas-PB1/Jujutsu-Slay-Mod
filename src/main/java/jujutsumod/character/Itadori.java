@@ -139,10 +139,10 @@ public class Itadori extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Strike_Red.ID);
-        retVal.add(Strike_Red.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Defend_Blue.ID);
+        retVal.add(jujutsumod.cards.Strike.ID);
+        retVal.add(jujutsumod.cards.Strike.ID);
+        retVal.add(jujutsumod.cards.Defend.ID);
+        retVal.add(jujutsumod.cards.Defend.ID);
         retVal.add(Neutralize.ID);
 
         return retVal;
