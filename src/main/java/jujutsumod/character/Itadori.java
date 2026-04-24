@@ -152,7 +152,7 @@ public class Itadori extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(jujutsumod.relics.SukunaFinger.ID);
 
         return retVal;
     }

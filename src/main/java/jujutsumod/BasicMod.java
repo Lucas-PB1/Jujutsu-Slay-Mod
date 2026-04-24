@@ -38,8 +38,8 @@ public class BasicMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
-        PostInitializeSubscriber,
-        EditCardsSubscriber {
+        EditCardsSubscriber,
+        EditRelicsSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -180,6 +180,11 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.Strike());
         BaseMod.addCard(new jujutsumod.cards.Defend());
         BaseMod.addCard(new jujutsumod.cards.DivergentFist());
+    }
+
+    @Override
+    public void receiveEditRelics() {
+        BaseMod.addRelicToCustomPool(new jujutsumod.relics.SukunaFinger(), Itadori.Meta.CARD_COLOR);
     }
 
     @Override
