@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import static jujutsumod.BasicMod.makeID;
 
 public class DivergentFistPower extends BasePower {
     public static final String POWER_ID = makeID("DivergentFistPower");

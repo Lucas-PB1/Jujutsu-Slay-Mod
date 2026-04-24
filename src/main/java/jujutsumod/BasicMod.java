@@ -38,6 +38,7 @@ public class BasicMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
+        PostInitializeSubscriber,
         EditCardsSubscriber,
         EditRelicsSubscriber {
     public static ModInfo info;

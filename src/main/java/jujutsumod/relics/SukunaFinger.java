@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import static jujutsumod.BasicMod.makeID;
 
 public class SukunaFinger extends BaseRelic {
     public static final String ID = makeID("SukunaFinger");
@@ -23,11 +24,12 @@ public class SukunaFinger extends BaseRelic {
     }
 
     @Override
-    public void onPlayCard(AbstractCard c, com.megacrit.cardcrawl.monsters.AbstractMonster m) {
-        if (c.costForTurn == 0 || (c.freeToPlayOnce && c.cost != -1)) {
+    public void onUseCard(AbstractCard c, com.megacrit.cardcrawl.actions.utility.UseCardAction action) {
+        if (c.type == AbstractCard.CardType.ATTACK && AbstractDungeon.cardRandomRng.random(99) < 10) {
             flash();
-            addToBot(new GainEnergyAction(1));
-            addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 1));
+            AbstractCard copy = c.makeStatEquivalentCopy();
+            copy.setCostForTurn(0);
+            addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(copy));
         }
     }
 

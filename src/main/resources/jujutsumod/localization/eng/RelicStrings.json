@@ -10,7 +10,7 @@
     "NAME": "Sukuna's Finger",
     "FLAVOR": "A mummified finger belonging to the King of Curses. It pulses with a malevolent energy.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain #b1 #yStrength. Whenever you play a card that costs 0, gain [E] and lose #b1 HP."
+      "At the start of each combat, gain #b1 #yStrength. Whenever you play an #yAttack, there is a #b10% chance to add a copy of it to your hand. It costs #b0 this turn."
     ]
   }
 }
