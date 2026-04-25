@@ -35,7 +35,7 @@
   },
   "${modID}:BlackFlash": {
     "NAME": "Black Flash",
-    "DESCRIPTION": "Deal !D! damage. NL Gain [E] for each Attack played this turn. NL *black_flash* synergy."
+    "DESCRIPTION": "Deal !D! damage. NL *Spark_of_Black* synergy."
   },
   "${modID}:CursedEnergyInfusion": {
     "NAME": "Cursed Energy Infusion",
@@ -81,5 +81,40 @@
   "${modID}:Mahoraga": {
     "NAME": "Mahoraga",
     "DESCRIPTION": "Deal !D! damage. NL Gain 2 Artifact and *Adaptation*. NL (Adapts whenever you take damage)."
+  },
+  "${modID}:GreatSerpent": {
+    "NAME": "Great Serpent",
+    "DESCRIPTION": "Deal !D! damage. NL *Shikigami*: If a *Ten Shadows* card was played this turn, gain [E]."
+  },
+  "${modID}:MaxElephant": {
+    "NAME": "Max Elephant",
+    "DESCRIPTION": "Deal !D! damage. NL Costs [E] less for each *Shikigami* in your hand."
+  },
+  "${modID}:RabbitEscape": {
+    "NAME": "Rabbit Escape",
+    "DESCRIPTION": "Gain !B! Block X times. NL Add X 0-cost *Rabbit Escape* to your hand."
+  },
+  "${modID}:RoundDeer": {
+    "NAME": "Round Deer",
+    "DESCRIPTION": "Gain !B! Block. NL Remove all Debuffs. NL *Shikigami*: If a *Ten Shadows* card was played this turn, heal !M! HP. NL Exhaust."
+  },
+  "${modID}:PiercingOx": {
+    "NAME": "Piercing Ox",
+    "DESCRIPTION": "Deal damage equal to the total cards played this combat. NL *Shikigami*: If a *Ten Shadows* card was played this turn, deal double damage. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " (Total: !D!)"
+    ]
+  },
+  "${modID}:TigerFuneral": {
+    "NAME": "Tiger Funeral",
+    "DESCRIPTION": "Discard 1 card. NL Deal !D! damage. NL Gain !M! Strength. NL *Shikigami*: If a *Ten Shadows* card was played this turn, gain double Strength."
+  },
+  "${modID}:Agito": {
+    "NAME": "Merged Beast Agito",
+    "DESCRIPTION": "At the end of your turn, deal 10 damage to a random enemy, gain 6 Block, 1 Strength, and heal 2 HP."
+  },
+  "${modID}:TenShadowsTechnique": {
+    "NAME": "Ten Shadows Technique",
+    "DESCRIPTION": "Whenever you play a *Ten Shadows* card, increase its damage and block by !M! for this combat. NL *Shikigami* effects always trigger."
   }
 }

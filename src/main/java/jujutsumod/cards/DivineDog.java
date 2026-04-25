@@ -33,12 +33,22 @@ public class DivineDog extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         
-        // Fortalecer outras Dez Sombras na mão
+        // Fortalecer TODAS as Dez Sombras no combate
         for (AbstractCard c : p.hand.group) {
             if (c.hasTag(CustomTags.TEN_SHADOWS) && c != this) {
                 c.baseDamage += magicNumber;
                 c.applyPowers();
                 c.flash();
+            }
+        }
+        for (AbstractCard c : p.drawPile.group) {
+            if (c.hasTag(CustomTags.TEN_SHADOWS)) {
+                c.baseDamage += magicNumber;
+            }
+        }
+        for (AbstractCard c : p.discardPile.group) {
+            if (c.hasTag(CustomTags.TEN_SHADOWS)) {
+                c.baseDamage += magicNumber;
             }
         }
     }

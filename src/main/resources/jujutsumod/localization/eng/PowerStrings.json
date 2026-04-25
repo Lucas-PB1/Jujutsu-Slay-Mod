@@ -25,5 +25,18 @@
       "Whenever you take damage from an enemy attack, all #yMahoraga cards increase their damage by ",
       " for the rest of combat."
     ]
+  },
+  "${modID}:AgitoPower": {
+    "NAME": "Merged Beast Agito",
+    "DESCRIPTIONS": [
+      "At the end of your turn, deal 10 damage to a random enemy, gain 6 Block, 1 Strength, and heal 2 HP."
+    ]
+  },
+  "${modID}:TenShadowsTechniquePower": {
+    "NAME": "Ten Shadows Mastery",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yTen #yShadows card, increase its damage and block by ",
+      " for this combat. NL #yShikigami effects always trigger."
+    ]
   }
 }

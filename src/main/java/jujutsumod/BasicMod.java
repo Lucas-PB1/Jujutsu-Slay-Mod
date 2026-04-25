@@ -214,6 +214,14 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.Nue());
         BaseMod.addCard(new jujutsumod.cards.Toad());
         BaseMod.addCard(new jujutsumod.cards.Mahoraga());
+        BaseMod.addCard(new jujutsumod.cards.GreatSerpent());
+        BaseMod.addCard(new jujutsumod.cards.MaxElephant());
+        BaseMod.addCard(new jujutsumod.cards.RabbitEscape());
+        BaseMod.addCard(new jujutsumod.cards.RoundDeer());
+        BaseMod.addCard(new jujutsumod.cards.PiercingOx());
+        BaseMod.addCard(new jujutsumod.cards.TigerFuneral());
+        BaseMod.addCard(new jujutsumod.cards.Agito());
+        BaseMod.addCard(new jujutsumod.cards.TenShadowsTechnique());
     }
 
     @Override

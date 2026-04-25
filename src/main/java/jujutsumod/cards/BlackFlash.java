@@ -39,9 +39,10 @@ public class BlackFlash extends BaseCard {
             }
         }
         
-        // Gerar energia igual à quantidade de ataques
-        if (attackCount > 0) {
-            addToBot(new GainEnergyAction(attackCount));
+        // Gerar energia: 1 para cada 2 ataques (Nerf)
+        int energyGain = attackCount / 2;
+        if (energyGain > 0) {
+            addToBot(new GainEnergyAction(energyGain));
         }
     }
 }

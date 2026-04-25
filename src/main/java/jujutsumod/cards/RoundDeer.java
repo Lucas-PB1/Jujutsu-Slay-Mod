@@ -2,29 +2,31 @@ package jujutsumod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import jujutsumod.character.Itadori;
 import jujutsumod.patches.CustomTags;
 import jujutsumod.util.CardStats;
 
-public class Toad extends BaseCard {
-    public static final String ID = makeID("Toad");
+public class RoundDeer extends BaseCard {
+    public static final String ID = makeID("RoundDeer");
     private static final CardStats info = new CardStats(
             Itadori.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.COMMON,
-            CardTarget.SELF_AND_ENEMY,
+            CardRarity.UNCOMMON,
+            CardTarget.SELF,
             1
     );
 
-    public Toad() {
+    public RoundDeer() {
         super(ID, info);
-        setBlock(7, 3);
-        setMagic(3, 1); // Strength down
+        setBlock(4, 2);
+        setMagic(6, 2); // Heal amount
+        setExhaust(true);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);
     }
@@ -32,6 +34,7 @@ public class Toad extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
+        addToBot(new RemoveDebuffsAction(p));
         
         boolean active = p.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
         if (!active) {
@@ -43,8 +46,8 @@ public class Toad extends BaseCard {
             }
         }
 
-        if (active && m != null) {
-            addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber));
+        if (active) {
+            addToBot(new HealAction(p, p, magicNumber));
         }
     }
 

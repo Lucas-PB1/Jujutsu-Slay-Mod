@@ -64,5 +64,13 @@
       "shikigami"
     ],
     "DESCRIPTION": "Divine creatures summoned from shadows. Playing a Shikigami card often triggers additional effects if another Ten Shadows card was played this turn."
+  },
+  {
+    "PROPER_NAME": "Spark of Black",
+    "NAMES": [
+      "spark of black",
+      "spark_of_black"
+    ],
+    "DESCRIPTION": "The flash of cursed energy. Gain [E] for every 2 Attacks played this turn."
   }
 ]
