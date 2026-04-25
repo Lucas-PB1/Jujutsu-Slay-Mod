@@ -26,10 +26,16 @@ public class Cleave extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int finalDamage = damage;
+        this.calculateCardDamage(m);
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        super.calculateCardDamage(m);
         if (m != null && m.currentBlock > 0) {
-            finalDamage = (int)(finalDamage * 1.5f);
+            this.damage = (int)(this.damage * 1.5f);
+            this.isDamageModified = true;
         }
-        addToBot(new DamageAction(m, new DamageInfo(p, finalDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 }

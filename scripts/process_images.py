@@ -65,11 +65,11 @@ def resize_and_center(img, size, scale=1.0, anchor="center"):
         paste_x = int(size[0] * 0.1) 
         paste_y = size[1] - new_height - 50 
     elif anchor == "bottom-center":
-        paste_x = (size[0] - new_width) // 2
+        paste_x = (size[0] - new_width)
         paste_y = size[1] - new_height
     else: # center
-        paste_x = (size[0] - new_width) // 2
-        paste_y = (size[1] - new_height) // 2
+        paste_x = (size[0] - new_width)
+        paste_y = (size[1] - new_height)
         
     new_img.paste(img, (paste_x, paste_y), img)
     return new_img

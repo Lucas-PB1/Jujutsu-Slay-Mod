@@ -21,7 +21,7 @@ public class CursedEnergyReinforcement extends BaseCard {
     public CursedEnergyReinforcement() {
         super(ID, info);
         setBlock(7, 3);
-        setMagic(4, 2); // Quantidade de Vigor
+        setMagic(4, 2); 
     }
 
     @Override

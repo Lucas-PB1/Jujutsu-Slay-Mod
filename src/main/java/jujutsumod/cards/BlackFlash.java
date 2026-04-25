@@ -28,13 +28,10 @@ public class BlackFlash extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Deal massive damage
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         
-        // Count attacks played this turn (including this one)
         int attackCount = jujutsumod.util.CombatUtils.countAttacksPlayedThisTurn();
         
-        // Generate energy: 1 for every 2 attacks (Nerf)
         int energyGain = attackCount / 2;
         if (energyGain > 0) {
             addToBot(new GainEnergyAction(energyGain));

@@ -18,7 +18,7 @@ public class Defend extends BaseCard {
 
     public Defend() {
         super(ID, info);
-        setBlock(5, 3); // Bloqueio base 5, Upgrade +3 (total 8)
+        setBlock(5, 3);
         tags.add(CardTags.STARTER_DEFEND);
     }
 

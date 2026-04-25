@@ -36,14 +36,10 @@ public class MaxElephant extends BaseCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        int count = 0;
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hand != null) {
-            for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c.hasTag(CustomTags.SHIKIGAMI) && c != this) {
-                    count++;
-                }
-            }
-        }
+        int count = (int) AbstractDungeon.player.hand.group.stream()
+                .filter(c -> c.hasTag(CustomTags.SHIKIGAMI) && c != this)
+                .count();
+        
         this.setCostForTurn(Math.max(0, this.cost - count));
     }
 

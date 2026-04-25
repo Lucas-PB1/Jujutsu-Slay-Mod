@@ -21,7 +21,7 @@ public class Dismantle extends BaseCard {
     public Dismantle() {
         super(ID, info);
         setDamage(4, 3);
-        tags.add(CardTags.STRIKE); // Lore synergy
+        tags.add(CardTags.STRIKE);
         tags.add(jujutsumod.patches.CustomTags.SHRINE);
     }
 

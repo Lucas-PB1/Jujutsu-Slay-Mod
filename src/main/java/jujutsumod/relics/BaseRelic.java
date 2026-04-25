@@ -16,7 +16,6 @@ public abstract class BaseRelic extends CustomRelic {
     public RelicType relicType = RelicType.SHARED;
     protected String imageName;
 
-    //for character specific relics
     public BaseRelic(String id, String imageName, AbstractCard.CardColor pool, RelicTier tier, LandingSound sfx) {
         this(id, imageName, tier, sfx);
 
@@ -27,8 +26,6 @@ public abstract class BaseRelic extends CustomRelic {
         this(id, GeneralUtils.removePrefix(id), tier, sfx);
     }
 
-    //To use a basegame relic image, just pass in the imagename used by a basegame relic instead of the ID.
-    //eg. "calendar.png"
     public BaseRelic(String id, String imageName, RelicTier tier, LandingSound sfx) {
         super(testStrings(id), notPng(imageName) ? "" : imageName, tier, sfx);
 
@@ -65,7 +62,7 @@ public abstract class BaseRelic extends CustomRelic {
     }
 
     private void setPool(AbstractCard.CardColor pool) {
-        switch (pool) { //Basegame pools are handled differently
+        switch (pool) {
             case RED:
                 relicType = RelicType.RED;
                 break;

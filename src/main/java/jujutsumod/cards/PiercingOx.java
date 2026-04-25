@@ -30,47 +30,30 @@ public class PiercingOx extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int totalCards = AbstractDungeon.actionManager.cardsPlayedThisCombat.size();
-        
-        boolean active = p.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS) && c != this) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-
-        int finalDamage = totalCards;
-        if (active) {
-            finalDamage *= 2;
-        }
-
-        addToBot(new DamageAction(m, new DamageInfo(p, finalDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+        this.applyPowers();
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
     }
 
     @Override
     public void applyPowers() {
         int totalCards = AbstractDungeon.actionManager.cardsPlayedThisCombat.size();
-        int originalBase = this.baseDamage;
-        this.baseDamage = totalCards + originalBase; // Mantém o bônus acumulado da Técnica
+        this.baseDamage = totalCards;
         super.applyPowers();
-        this.baseDamage = originalBase; // Restaura para não acumular infinitamente por frame
         
-        boolean active = AbstractDungeon.player.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS) && c != this) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-        if (active) {
-            this.damage *= 2;
-        }
-        this.isDamageModified = this.damage != totalCards;
+        applyConditionalDamage(isTenShadowsActive(), this.damage);
+        
+        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        int totalCards = AbstractDungeon.actionManager.cardsPlayedThisCombat.size();
+        this.baseDamage = totalCards;
+        super.calculateCardDamage(m);
+        
+        applyConditionalDamage(isTenShadowsActive(), this.damage);
+        
         this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
@@ -83,15 +66,6 @@ public class PiercingOx extends BaseCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        boolean active = AbstractDungeon.player.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS)) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-        this.glowColor = active ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        this.glowColor = isTenShadowsActive() ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

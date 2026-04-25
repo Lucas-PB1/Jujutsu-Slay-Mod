@@ -24,7 +24,7 @@ public class DivineDog extends BaseCard {
     public DivineDog() {
         super(ID, info);
         setDamage(6, 3);
-        setMagic(2, 1); // Dano extra permanente por uso
+        setMagic(2, 1);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);
     }
@@ -33,7 +33,6 @@ public class DivineDog extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         
-        // Fortalecer TODAS as Dez Sombras no combate
         for (AbstractCard c : p.hand.group) {
             if (c.hasTag(CustomTags.TEN_SHADOWS) && c != this) {
                 c.baseDamage += magicNumber;

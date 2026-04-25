@@ -23,7 +23,7 @@ public class Spiderweb extends BaseCard {
     public Spiderweb() {
         super(ID, info);
         setDamage(10, 4);
-        setMagic(2, 1); // Vulnerable amount
+        setMagic(2, 1);
         isMultiDamage = true;
         tags.add(jujutsumod.patches.CustomTags.SHRINE);
     }

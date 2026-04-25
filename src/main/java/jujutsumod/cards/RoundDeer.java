@@ -25,7 +25,7 @@ public class RoundDeer extends BaseCard {
     public RoundDeer() {
         super(ID, info);
         setBlock(4, 2);
-        setMagic(6, 2); // Heal amount
+        setMagic(6, 2);
         setExhaust(true);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);

@@ -30,7 +30,6 @@ public class MartialArtsMastery extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         
-        // Compra 1 carta e se for ataque, ganha energia
         addToBot(new DrawCardAction(1, new AbstractGameAction() {
             @Override
             public void update() {

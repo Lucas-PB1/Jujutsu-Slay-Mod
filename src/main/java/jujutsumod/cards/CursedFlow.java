@@ -25,6 +25,7 @@ public class CursedFlow extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyPowers();
         addToBot(new GainBlockAction(p, p, block));
     }
 

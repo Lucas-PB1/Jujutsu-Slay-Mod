@@ -23,11 +23,12 @@ public class DivineFlame extends BaseCard {
     public DivineFlame() {
         super(ID, info);
         setDamage(10, 4);
-        setMagic(8, 3); // Dano adicional por Shrine
+        setMagic(8, 3);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyPowers();
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
     }
 

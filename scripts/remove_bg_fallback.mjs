@@ -26,7 +26,6 @@ if (!existsSync(inputPath)) {
   process.exit(1);
 }
 
-// Parse optional flags
 let threshold = 240;
 let edgeSmooth = 20;
 
@@ -45,19 +44,16 @@ async function removeWhiteBackground() {
   const image = sharp(inputPath);
   const { width, height } = await image.metadata();
 
-  // Get raw pixel data with alpha channel
   const rawBuffer = await image.ensureAlpha().raw().toBuffer();
 
   let pixelsChanged = 0;
 
-  // Process each pixel (RGBA = 4 bytes per pixel)
   for (let i = 0; i < rawBuffer.length; i += 4) {
     const r = rawBuffer[i];
     const g = rawBuffer[i + 1];
     const b = rawBuffer[i + 2];
 
     if (r >= threshold && g >= threshold && b >= threshold) {
-      // Fully white -> fully transparent
       rawBuffer[i + 3] = 0;
       pixelsChanged++;
     } else if (
@@ -65,7 +61,6 @@ async function removeWhiteBackground() {
       g >= threshold - edgeSmooth &&
       b >= threshold - edgeSmooth
     ) {
-      // Near-white -> partially transparent for smooth edges
       const avg = (r + g + b) / 3;
       const alpha = Math.round(255 * (1 - (avg - (threshold - edgeSmooth)) / edgeSmooth));
       rawBuffer[i + 3] = Math.min(rawBuffer[i + 3], alpha);

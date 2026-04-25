@@ -22,15 +22,12 @@ public class DivergentFist extends BaseCard {
 
     public DivergentFist() {
         super(ID, info);
-        setDamage(7, 3); // Dano imediato: 7 (Upgrade +3)
+        setDamage(7, 3);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Primeiro impacto
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        
-        // Segundo impacto (Power)
         addToBot(new ApplyPowerAction(m, p, new DivergentFistPower(m, p, damage), damage));
     }
 }

@@ -37,25 +37,23 @@ public class CombatUtils {
     }
 
     public static boolean lastCardWasAttack(AbstractCard self) {
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
-            return false;
-        }
-
-        AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
-
-        if (lastCard == self) {
-            if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() < 2) {
-                return false;
+        int size = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        for (int i = size - 1; i >= 0; i--) {
+            AbstractCard c = AbstractDungeon.actionManager.cardsPlayedThisTurn.get(i);
+            if (c != self) {
+                return c.type == AbstractCard.CardType.ATTACK;
             }
-            lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 2);
         }
-
-        return lastCard.type == AbstractCard.CardType.ATTACK;
+        return false;
     }
 
     public static boolean isFirstAttack(AbstractCard self) {
-        return AbstractDungeon.actionManager.cardsPlayedThisCombat.stream()
-                .noneMatch(c -> c.type == AbstractCard.CardType.ATTACK && c != self);
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+            if (c.type == AbstractCard.CardType.ATTACK && c != self) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static boolean hasCardBeenPlayedThisTurn(String cardID) {

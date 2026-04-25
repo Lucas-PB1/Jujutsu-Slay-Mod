@@ -24,7 +24,7 @@ public class Toad extends BaseCard {
     public Toad() {
         super(ID, info);
         setBlock(7, 3);
-        setMagic(3, 1); // Strength down
+        setMagic(3, 1);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);
     }

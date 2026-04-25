@@ -26,7 +26,7 @@ public class TigerFuneral extends BaseCard {
     public TigerFuneral() {
         super(ID, info);
         setDamage(10, 4);
-        setMagic(1, 1); // Strength gain
+        setMagic(1, 1);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);
     }

@@ -41,7 +41,6 @@ public class RabbitEscapeAction extends AbstractGameAction {
             for (int i = 0; i < effect; i++) {
                 addToBot(new GainBlockAction(p, p, block));
                 
-                // Adicionar 1 coelho temporário por energia gasta
                 AbstractCard rabbit = new RabbitEscape();
                 if (upgraded) rabbit.upgrade();
                 rabbit.setCostForTurn(0);

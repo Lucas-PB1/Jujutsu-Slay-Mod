@@ -90,44 +90,37 @@ public abstract class BaseCard extends CustomCard {
         return CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
     }
 
-    //Methods meant for constructor use
-    protected final void setDamage(int damage)
-    {
+    protected final void setDamage(int damage) {
         this.setDamage(damage, 0);
     }
-    protected final void setDamage(int damage, int damageUpgrade)
-    {
+
+    protected final void setDamage(int damage, int damageUpgrade) {
         this.baseDamage = this.damage = damage;
-        if (damageUpgrade != 0)
-        {
+        if (damageUpgrade != 0) {
             this.upgradeDamage = true;
             this.damageUpgrade = damageUpgrade;
         }
     }
 
-    protected final void setBlock(int block)
-    {
+    protected final void setBlock(int block) {
         this.setBlock(block, 0);
     }
-    protected final void setBlock(int block, int blockUpgrade)
-    {
+
+    protected final void setBlock(int block, int blockUpgrade) {
         this.baseBlock = this.block = block;
-        if (blockUpgrade != 0)
-        {
+        if (blockUpgrade != 0) {
             this.upgradeBlock = true;
             this.blockUpgrade = blockUpgrade;
         }
     }
 
-    protected final void setMagic(int magic)
-    {
+    protected final void setMagic(int magic) {
         this.setMagic(magic, 0);
     }
-    protected final void setMagic(int magic, int magicUpgrade)
-    {
+
+    protected final void setMagic(int magic, int magicUpgrade) {
         this.baseMagicNumber = this.magicNumber = magic;
-        if (magicUpgrade != 0)
-        {
+        if (magicUpgrade != 0) {
             this.upgradeMagic = true;
             this.magicUpgrade = magicUpgrade;
         }
@@ -338,7 +331,7 @@ public abstract class BaseCard extends CustomCard {
         return var.base;
     }
     public int customVar(String key) {
-        LocalVarInfo var = cardVariables == null ? null : cardVariables.get(key); //Prevents crashing when used with dynamic text
+        LocalVarInfo var = cardVariables == null ? null : cardVariables.get(key);
         if (var == null)
             return -1;
         return var.value;
@@ -468,7 +461,7 @@ public abstract class BaseCard extends CustomCard {
             if (upgradeCost)
             {
                 if (isCostModified && this.cost < this.baseCost && this.cost >= 0) {
-                    int diff = this.costUpgrade - this.baseCost; //how the upgrade alters cost
+                    int diff = this.costUpgrade - this.baseCost;
                     this.upgradeBaseCost(this.cost + diff);
                     if (this.cost < 0)
                         this.cost = 0;
@@ -508,7 +501,6 @@ public abstract class BaseCard extends CustomCard {
         }
     }
 
-    // --- Combat Helpers ---
     protected boolean lastCardWasAttack() { return jujutsumod.util.CombatUtils.lastCardWasAttack(this); }
     protected boolean isFirstAttack() { return jujutsumod.util.CombatUtils.isFirstAttack(this); }
     protected boolean isTenShadowsActive() { return jujutsumod.util.CombatUtils.isTenShadowsActive(this); }

@@ -19,7 +19,7 @@ public class Strike extends BaseCard {
 
     public Strike() {
         super(ID, info);
-        setDamage(6, 3); // Dano base 6, Upgrade +3
+        setDamage(6, 3);
         tags.add(CardTags.STRIKE);
         tags.add(CardTags.STARTER_STRIKE);
     }

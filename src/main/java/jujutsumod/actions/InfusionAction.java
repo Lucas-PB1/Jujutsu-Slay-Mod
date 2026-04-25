@@ -36,7 +36,6 @@ public class InfusionAction extends AbstractGameAction {
             return;
         }
 
-        // Usa ReflectionHacks para ler e escrever o campo problematico
         boolean wereCardsSelected = ReflectionHacks.getPrivate(AbstractDungeon.handCardSelectScreen, HandCardSelectScreen.class, "wereCardsSelected");
 
         if (!wereCardsSelected) {

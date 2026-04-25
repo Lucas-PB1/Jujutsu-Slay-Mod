@@ -26,14 +26,9 @@ public class AgitoPower extends BasePower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             flash();
-            // Efeito Nue/Serpent: Dano
             addToBot(new DamageRandomEnemyAction(new DamageInfo(owner, 10, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-            
-            // Efeito Round Deer: Bloco e Heal
             addToBot(new GainBlockAction(owner, owner, 6));
             addToBot(new HealAction(owner, owner, 2));
-            
-            // Efeito Tiger Funeral: Força
             addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, 1), 1));
         }
     }

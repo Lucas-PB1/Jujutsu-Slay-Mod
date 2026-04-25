@@ -27,7 +27,7 @@ public class Nue extends BaseCard {
     public Nue() {
         super(ID, info);
         setDamage(8, 3);
-        setMagic(1, 1); // Weak amount
+        setMagic(1, 1);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);
     }
@@ -35,13 +35,11 @@ public class Nue extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (isTenShadowsActive()) {
-            // Area effect
             addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.LIGHTNING));
             for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false), magicNumber));
             }
         } else {
-            // Single effect
             addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
             addToBot(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
         }

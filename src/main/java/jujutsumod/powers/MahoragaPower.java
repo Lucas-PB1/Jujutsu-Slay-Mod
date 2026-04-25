@@ -30,7 +30,6 @@ public class MahoragaPower extends BasePower {
                     c.flash();
                 }
             }
-            // Também aumenta nas outras pilhas para ser consistente com a "adaptação"
             for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
                 if (c instanceof Mahoraga) { c.baseDamage += amount; }
             }

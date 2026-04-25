@@ -25,20 +25,15 @@ public class Mahoraga extends BaseCard {
     public Mahoraga() {
         super(ID, info);
         setDamage(20, 10);
-        setMagic(5, 2); // Quantidade de adaptação por hit sofrido
+        setMagic(5, 2);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Dano massivo
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        
-        // Ganhar Artifact (Imunidade)
         addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, 2), 2));
-        
-        // Iniciar Adaptação
         addToBot(new ApplyPowerAction(p, p, new MahoragaPower(p, magicNumber), magicNumber));
     }
 }

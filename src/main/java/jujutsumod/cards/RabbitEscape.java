@@ -14,7 +14,7 @@ public class RabbitEscape extends BaseCard {
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
-            -1 // Custo X
+            -1
     );
 
     public RabbitEscape() {

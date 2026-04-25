@@ -42,18 +42,16 @@ public class BasicMod implements
         EditCardsSubscriber,
         EditRelicsSubscriber {
     public static ModInfo info;
-    public static String modID; //Edit your pom.xml to change this
+    public static String modID;
     static { loadModInfo(); }
     private static final String resourcesFolder = checkResourcesPath();
-    public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
+    public static final Logger logger = LogManager.getLogger(modID);
+    public static boolean DEBUG_MODE = true;
 
-    //This is used to prefix the IDs of various objects like cards and relics,
-    //to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
         return modID + ":" + id;
     }
 
-    //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
         new BasicMod();
 
@@ -61,7 +59,7 @@ public class BasicMod implements
     }
 
     public BasicMod() {
-        BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
+        BaseMod.subscribe(this);
         logger.info("{} subscribed to BaseMod.", modID);
     }
 
@@ -69,7 +67,6 @@ public class BasicMod implements
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new jujutsumod.relics.SukunaFinger(), Itadori.Meta.CARD_COLOR);
         
-        // Relíquias do Ironclad (Rígido) para poupar tempo
         BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.RedSkull(), Itadori.Meta.CARD_COLOR);
         BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.PaperFrog(), Itadori.Meta.CARD_COLOR);
         BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.SelfFormingClay(), Itadori.Meta.CARD_COLOR);
@@ -80,21 +77,13 @@ public class BasicMod implements
 
     @Override
     public void receivePostInitialize() {
-        // Poções do Ironclad
         BaseMod.addPotion(com.megacrit.cardcrawl.potions.BloodPotion.class, com.badlogic.gdx.graphics.Color.RED.cpy(), com.badlogic.gdx.graphics.Color.FIREBRICK.cpy(), null, com.megacrit.cardcrawl.potions.BloodPotion.POTION_ID, Itadori.Meta.YOUR_CHARACTER);
         BaseMod.addPotion(com.megacrit.cardcrawl.potions.Elixir.class, com.badlogic.gdx.graphics.Color.GRAY.cpy(), com.badlogic.gdx.graphics.Color.WHITE.cpy(), null, com.megacrit.cardcrawl.potions.Elixir.POTION_ID, Itadori.Meta.YOUR_CHARACTER);
         BaseMod.addPotion(com.megacrit.cardcrawl.potions.HeartOfIron.class, com.badlogic.gdx.graphics.Color.GOLD.cpy(), com.badlogic.gdx.graphics.Color.ORANGE.cpy(), null, com.megacrit.cardcrawl.potions.HeartOfIron.POTION_ID, Itadori.Meta.YOUR_CHARACTER);
 
-        // This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
-        //Set up the mod information displayed in the in-game mods menu.
-        //The information used is taken from your pom.xml file.
-
-        //If you want to set up a config panel, that will be done here.
-        //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
 
-        // Revelar todas as cartas do personagem no compêndio
         for (AbstractCard card : CardLibrary.getAllCards()) {
             if (card.color == Itadori.Meta.CARD_COLOR) {
                 UnlockTracker.unlockCard(card.cardID);
@@ -102,9 +91,6 @@ public class BasicMod implements
         }
     }
 
-    /*----------Localization----------*/
-
-    //This is used to load the appropriate localization files based on language.
     private static String getLangString()
     {
         return Settings.language.name().toLowerCase();
@@ -115,13 +101,7 @@ public class BasicMod implements
 
     @Override
     public void receiveEditStrings() {
-        /*
-            First, load the default localization.
-            Then, if the current language is different, attempt to load localization for that language.
-            This results in the default localization being used for anything that might be missing.
-            The same process is used to load keywords slightly below.
-        */
-        loadLocalization(defaultLanguage); //no exception catching for default localization; you better have at least one that works.
+        loadLocalization(defaultLanguage);
         if (!defaultLanguage.equals(getLangString())) {
             try {
                 loadLocalization(getLangString());
@@ -133,8 +113,6 @@ public class BasicMod implements
     }
 
     private void loadLocalization(String lang) {
-        //While this does load every type of localization, most of these files are just outlines so that you can see how they're formatted.
-        //Feel free to comment out/delete any that you don't end up using.
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 localizationPath(lang, "CardStrings.json"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
@@ -229,7 +207,7 @@ public class BasicMod implements
         loadAudio();
     }
 
-    private static final String[] AUDIO_EXTENSIONS = { ".ogg", ".wav", ".mp3" }; //There are more valid types, but not really worth checking them all here
+    private static final String[] AUDIO_EXTENSIONS = { ".ogg", ".wav", ".mp3" };
     private void loadAudio() {
         try {
             Field[] fields = Sounds.class.getDeclaredFields();
@@ -238,7 +216,7 @@ public class BasicMod implements
                 int modifiers = f.getModifiers();
                 if (Modifier.isStatic(modifiers) && Modifier.isPublic(modifiers) && f.getType().equals(String.class)) {
                     String s = (String) f.get(null);
-                    if (s == null) { //If no defined value, determine path using field name
+                    if (s == null) {
                         s = audioPath(f.getName());
 
                         for (String ext : AUDIO_EXTENSIONS) {
@@ -252,7 +230,7 @@ public class BasicMod implements
                         }
                         throw new Exception("Failed to find an audio file \"" + f.getName() + "\" in " + resourcesFolder + "/audio; check to ensure the capitalization and filename are correct.");
                     }
-                    else { //Otherwise, load defined path
+                    else {
                         if (Gdx.files.internal(s).exists()) {
                             BaseMod.addAudio(s, s);
                         }
@@ -268,7 +246,6 @@ public class BasicMod implements
         }
     }
 
-    //These methods are used to generate the correct filepaths to various parts of the resources folder.
     public static String localizationPath(String lang, String file) {
         return resourcesFolder + "/localization/" + lang + "/" + file;
     }
@@ -289,21 +266,15 @@ public class BasicMod implements
         return resourcesFolder + "/images/relics/" + file;
     }
 
-    /**
-     * Checks the expected resources path based on the package name.
-     */
     private static String checkResourcesPath() {
-        String name = BasicMod.class.getName(); //getPackage can be iffy with patching, so class name is used instead.
+        String name = BasicMod.class.getName();
         int separator = name.indexOf('.');
         name = name.substring(0, separator);
 
         FileHandle resources = new LwjglFileHandle(name, Files.FileType.Internal);
 
         if (!resources.exists()) {
-            throw new RuntimeException("\n\tFailed to find resources folder; expected it to be at  \"resources/" + name + "\"." +
-                    " Either make sure the folder under resources has the same name as your mod's package, or change the line\n" +
-                    "\t\"private static final String resourcesFolder = checkResourcesPath();\"\n" +
-                    "\tat the top of the " + BasicMod.class.getSimpleName() + " java file.");
+            throw new RuntimeException("\n\tFailed to find resources folder; expected it to be at  \"resources/" + name + "\".");
         }
         if (!resources.child("images").exists()) {
             throw new RuntimeException("\n\tFailed to find the 'images' folder in the mod's 'resources/" + name + "' folder; Make sure the " +
@@ -317,9 +288,6 @@ public class BasicMod implements
         return name;
     }
 
-    /**
-     * This determines the mod's ID based on information stored by ModTheSpire.
-     */
     private static void loadModInfo() {
         Optional<ModInfo> infos = Arrays.stream(Loader.MODINFOS).filter((modInfo)->{
             AnnotationDB annotationDB = Patcher.annotationDBMap.get(modInfo.jarURL);
@@ -337,4 +305,3 @@ public class BasicMod implements
         }
     }
 }
-
