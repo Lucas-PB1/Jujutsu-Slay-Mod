@@ -32,33 +32,13 @@ public class Toad extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        
-        boolean active = p.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS) && c != this) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-
-        if (active && m != null) {
+        if (isTenShadowsActive() && m != null) {
             addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber));
         }
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        boolean active = AbstractDungeon.player.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS)) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-        this.glowColor = active ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        this.glowColor = isTenShadowsActive() ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

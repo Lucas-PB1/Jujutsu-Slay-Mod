@@ -34,24 +34,14 @@ public class Nue extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean active = p.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS) && c != this) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-
-        if (active) {
-            // Efeito em área
+        if (isTenShadowsActive()) {
+            // Area effect
             addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.LIGHTNING));
             for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false), magicNumber));
             }
         } else {
-            // Efeito único
+            // Single effect
             addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
             addToBot(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
         }
@@ -59,15 +49,6 @@ public class Nue extends BaseCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        boolean active = AbstractDungeon.player.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS)) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-        this.glowColor = active ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        this.glowColor = isTenShadowsActive() ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

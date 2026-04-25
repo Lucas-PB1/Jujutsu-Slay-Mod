@@ -32,33 +32,13 @@ public class GreatSerpent extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        
-        boolean active = p.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS) && c != this) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-
-        if (active) {
+        if (isTenShadowsActive()) {
             addToBot(new GainEnergyAction(1));
         }
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        boolean active = AbstractDungeon.player.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS)) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-        this.glowColor = active ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        this.glowColor = isTenShadowsActive() ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

@@ -35,32 +35,20 @@ public class TigerFuneral extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new com.megacrit.cardcrawl.actions.common.DiscardAction(p, p, 1, false));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        
-        boolean active = p.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS) && c != this) {
-                    active = true;
-                    break;
-                }
-            }
-        }
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+    }
 
-        int strAmount = active ? magicNumber * 2 : magicNumber;
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, strAmount), strAmount));
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (isTenShadowsActive()) {
+            this.magicNumber *= 2;
+            this.isMagicNumberModified = true;
+        }
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        boolean active = AbstractDungeon.player.hasPower(jujutsumod.powers.TenShadowsTechniquePower.POWER_ID);
-        if (!active) {
-            for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                if (c.hasTag(CustomTags.TEN_SHADOWS)) {
-                    active = true;
-                    break;
-                }
-            }
-        }
-        this.glowColor = active ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        this.glowColor = isTenShadowsActive() ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

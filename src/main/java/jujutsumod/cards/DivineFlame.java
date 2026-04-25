@@ -28,33 +28,31 @@ public class DivineFlame extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int count = 0;
-        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c.hasTag(jujutsumod.patches.CustomTags.SHRINE)) {
-                count++;
-            }
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int count = countTagsThisTurn(jujutsumod.patches.CustomTags.SHRINE);
+        if (count > 0) {
+            this.damage += (count * magicNumber);
+            this.isDamageModified = true;
         }
-        
-        // O contador já inclui o uso de outras cartas antes desta.
-        // Se quisermos que o dano base seja X + (count * Y)
-        int finalDamage = damage + (count * magicNumber);
-        
-        addToBot(new DamageAction(m, new DamageInfo(p, finalDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        super.calculateCardDamage(m);
+        int count = countTagsThisTurn(jujutsumod.patches.CustomTags.SHRINE);
+        if (count > 0) {
+            this.damage += (count * magicNumber);
+            this.isDamageModified = true;
+        }
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        boolean hasShrine = false;
-        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c.hasTag(jujutsumod.patches.CustomTags.SHRINE)) {
-                hasShrine = true;
-                break;
-            }
-        }
-        if (hasShrine) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
+        this.glowColor = isShrineActive() ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

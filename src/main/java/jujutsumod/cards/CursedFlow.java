@@ -25,16 +25,17 @@ public class CursedFlow extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int finalBlock = block;
-        
-        // Verifica se a última carta jogada foi um ataque
-        if (!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
-            AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
-            if (lastCard.type == CardType.ATTACK) {
-                finalBlock += 4;
-            }
-        }
-        
-        addToBot(new GainBlockAction(p, p, finalBlock));
+        addToBot(new GainBlockAction(p, p, block));
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        applyConditionalBlock(lastCardWasAttack(), 4);
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        this.glowColor = lastCardWasAttack() ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

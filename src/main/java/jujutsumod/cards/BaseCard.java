@@ -508,6 +508,27 @@ public abstract class BaseCard extends CustomCard {
         }
     }
 
+    // --- Combat Helpers ---
+    protected boolean lastCardWasAttack() { return jujutsumod.util.CombatUtils.lastCardWasAttack(this); }
+    protected boolean isFirstAttack() { return jujutsumod.util.CombatUtils.isFirstAttack(this); }
+    protected boolean isTenShadowsActive() { return jujutsumod.util.CombatUtils.isTenShadowsActive(this); }
+    protected boolean isShrineActive() { return jujutsumod.util.CombatUtils.isShrineActive(this); }
+    protected int countTagsThisTurn(CardTags tag) { return jujutsumod.util.CombatUtils.countTagsPlayedThisTurn(tag); }
+
+    protected void applyConditionalDamage(boolean condition, int bonus) {
+        if (condition) {
+            this.damage += bonus;
+            this.isDamageModified = true;
+        }
+    }
+
+    protected void applyConditionalBlock(boolean condition, int bonus) {
+        if (condition) {
+            this.block += bonus;
+            this.isBlockModified = true;
+        }
+    }
+
     protected void upgradeCustomVar(String key) {
         LocalVarInfo var = cardVariables.get(key);
         if (var == null) {

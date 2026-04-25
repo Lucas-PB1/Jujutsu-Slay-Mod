@@ -26,12 +26,23 @@ public class SlaughterDemon extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int finalDamage = damage;
-        // Se for o primeiro ataque do combate (simplificado: se não jogou ataques ainda)
-        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().noneMatch(c -> c.type == CardType.ATTACK)) {
-            finalDamage += 4;
-        }
-        
-        addToBot(new DamageAction(m, new DamageInfo(p, finalDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        applyConditionalDamage(isFirstAttack(), 4);
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        super.calculateCardDamage(m);
+        applyConditionalDamage(isFirstAttack(), 4);
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        this.glowColor = isFirstAttack() ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 }

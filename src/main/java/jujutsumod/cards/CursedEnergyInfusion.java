@@ -25,14 +25,7 @@ public class CursedEnergyInfusion extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean blackFlashPlayed = false;
-        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c.cardID.equals(BlackFlash.ID)) {
-                blackFlashPlayed = true;
-                break;
-            }
-        }
-        
+        boolean blackFlashPlayed = jujutsumod.util.CombatUtils.hasCardBeenPlayedThisTurn(BlackFlash.ID);
         addToBot(new InfusionAction(blackFlashPlayed));
     }
 }
