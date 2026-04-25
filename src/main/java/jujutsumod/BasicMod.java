@@ -66,8 +66,26 @@ public class BasicMod implements
     }
 
     @Override
+    public void receiveEditRelics() {
+        BaseMod.addRelicToCustomPool(new jujutsumod.relics.SukunaFinger(), Itadori.Meta.CARD_COLOR);
+        
+        // Relíquias do Ironclad (Rígido) para poupar tempo
+        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.RedSkull(), Itadori.Meta.CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.PaperFrog(), Itadori.Meta.CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.SelfFormingClay(), Itadori.Meta.CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.CharonsAshes(), Itadori.Meta.CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.ChampionsBelt(), Itadori.Meta.CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.MagicFlower(), Itadori.Meta.CARD_COLOR);
+    }
+
+    @Override
     public void receivePostInitialize() {
-        //This loads the image used as an icon in the in-game mods menu.
+        // Poções do Ironclad
+        BaseMod.addPotion(com.megacrit.cardcrawl.potions.BloodPotion.class, com.badlogic.gdx.graphics.Color.RED.cpy(), com.badlogic.gdx.graphics.Color.FIREBRICK.cpy(), null, com.megacrit.cardcrawl.potions.BloodPotion.POTION_ID, Itadori.Meta.YOUR_CHARACTER);
+        BaseMod.addPotion(com.megacrit.cardcrawl.potions.Elixir.class, com.badlogic.gdx.graphics.Color.GRAY.cpy(), com.badlogic.gdx.graphics.Color.WHITE.cpy(), null, com.megacrit.cardcrawl.potions.Elixir.POTION_ID, Itadori.Meta.YOUR_CHARACTER);
+        BaseMod.addPotion(com.megacrit.cardcrawl.potions.HeartOfIron.class, com.badlogic.gdx.graphics.Color.GOLD.cpy(), com.badlogic.gdx.graphics.Color.ORANGE.cpy(), null, com.megacrit.cardcrawl.potions.HeartOfIron.POTION_ID, Itadori.Meta.YOUR_CHARACTER);
+
+        // This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
@@ -184,13 +202,14 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.BlackFlash());
         BaseMod.addCard(new jujutsumod.cards.CursedEnergyInfusion());
         BaseMod.addCard(new jujutsumod.cards.SlaughterDemon());
+        BaseMod.addCard(new jujutsumod.cards.CursedFlow());
         BaseMod.addCard(new jujutsumod.cards.MartialArtsMastery());
         BaseMod.addCard(new jujutsumod.cards.CursedEnergyReinforcement());
-    }
-
-    @Override
-    public void receiveEditRelics() {
-        BaseMod.addRelicToCustomPool(new jujutsumod.relics.SukunaFinger(), Itadori.Meta.CARD_COLOR);
+        BaseMod.addCard(new jujutsumod.cards.Dismantle());
+        BaseMod.addCard(new jujutsumod.cards.Cleave());
+        BaseMod.addCard(new jujutsumod.cards.Spiderweb());
+        BaseMod.addCard(new jujutsumod.cards.DivineFlame());
+        BaseMod.addCard(new jujutsumod.cards.MalevolentShrine());
     }
 
     @Override

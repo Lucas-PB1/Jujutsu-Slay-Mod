@@ -11,5 +11,12 @@
       "At the start of its next turn, this creature will take ",
       " damage from a delayed cursed energy impact."
     ]
+  },
+  "${modID}:MalevolentShrinePower": {
+    "NAME": "Malevolent Shrine",
+    "DESCRIPTIONS": [
+      "At the end of your turn, deal ",
+      " damage to ALL enemies for every card played this turn."
+    ]
   }
 }

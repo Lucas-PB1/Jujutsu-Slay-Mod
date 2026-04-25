@@ -9,6 +9,7 @@
 - [x] **Black Flash** (Rare)
 - [x] **Cursed Energy Infusion** (Uncommon)
 - [x] **Slaughter Demon** (Common)
+- [x] **Cursed Flow** (Common)
 - [x] **Martial Arts Mastery** (Common)
 - [x] **Cursed Energy Reinforcement** (Common)
 - [ ] **Infinite RCT** (Rare)

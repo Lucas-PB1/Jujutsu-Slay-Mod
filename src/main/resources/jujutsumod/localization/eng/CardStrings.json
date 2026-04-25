@@ -44,5 +44,25 @@
   "${modID}:CursedEnergyReinforcement": {
     "NAME": "Cursed Energy Reinforcement",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! *Reinforcement*."
+  },
+  "${modID}:Dismantle": {
+    "NAME": "Dismantle",
+    "DESCRIPTION": "Deal !D! damage. *Shrine*."
+  },
+  "${modID}:Cleave": {
+    "NAME": "Cleave",
+    "DESCRIPTION": "Deal !D! damage. NL Deals 50% additional damage if the enemy has Block. *Shrine*."
+  },
+  "${modID}:Spiderweb": {
+    "NAME": "Spiderweb",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Apply !M! Vulnerable to ALL enemies. *Shrine*."
+  },
+  "${modID}:DivineFlame": {
+    "NAME": "Divine Flame (Fuuga)",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for every *Shrine* card played this turn."
+  },
+  "${modID}:MalevolentShrine": {
+    "NAME": "Malevolent Shrine",
+    "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies for every card played this turn."
   }
 }

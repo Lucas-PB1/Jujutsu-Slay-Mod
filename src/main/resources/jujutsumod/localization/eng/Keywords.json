@@ -42,5 +42,12 @@
       "reinforcement"
     ],
     "DESCRIPTION": "Increases the damage of your next Attack."
+  },
+  {
+    "PROPER_NAME": "Shrine",
+    "NAMES": [
+      "shrine"
+    ],
+    "DESCRIPTION": "Sukuna's innate technique. Slashes like Dismantle, Cleave, and Spiderweb prepare the target for the Divine Flame."
   }
 ]
