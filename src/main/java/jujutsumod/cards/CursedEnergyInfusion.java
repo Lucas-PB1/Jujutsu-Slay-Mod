@@ -20,6 +20,7 @@ public class CursedEnergyInfusion extends BaseCard {
 
     public CursedEnergyInfusion() {
         super(ID, info);
+        setCostUpgrade(1);
     }
 
     @Override

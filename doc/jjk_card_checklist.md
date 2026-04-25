@@ -46,11 +46,11 @@
 - [ ] **Six Eyes Perception** (Power - Rare)
 
 ### Ryomen Sukuna: Shrine
-- [ ] **Dismantle** (Attack - Common)
-- [ ] **Cleave** (Attack - Uncommon)
-- [ ] **Spiderweb** (Attack - Rare)
-- [ ] **Divine Flame (Fuuga)** (Attack - Rare)
-- [ ] **Malevolent Shrine** (Power - Rare)
+- [x] **Dismantle** (Attack - Common)
+- [x] **Cleave** (Attack - Uncommon)
+- [x] **Spiderweb** (Attack - Rare)
+- [x] **Divine Flame (Fuuga)** (Attack - Rare)
+- [x] **Malevolent Shrine** (Power - Rare)
 
 ### Kento Nanami: Ratio
 - [ ] **7:3 Ratio Strike** (Attack - Uncommon)

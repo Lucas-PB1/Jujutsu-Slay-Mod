@@ -49,5 +49,20 @@
       "shrine"
     ],
     "DESCRIPTION": "Sukuna's innate technique. Slashes like Dismantle, Cleave, and Spiderweb prepare the target for the Divine Flame."
+  },
+  {
+    "PROPER_NAME": "Ten Shadows",
+    "NAMES": [
+      "ten shadows",
+      "ten_shadows"
+    ],
+    "DESCRIPTION": "Megumi Fushiguro's innate technique. Cards of this type often scale with each other throughout combat."
+  },
+  {
+    "PROPER_NAME": "Shikigami",
+    "NAMES": [
+      "shikigami"
+    ],
+    "DESCRIPTION": "Divine creatures summoned from shadows. Playing a Shikigami card often triggers additional effects if another Ten Shadows card was played this turn."
   }
 ]

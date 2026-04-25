@@ -8,7 +8,7 @@
   "${modID}:DivergentFistPower": {
     "NAME": "Divergent Impact",
     "DESCRIPTIONS": [
-      "At the start of its next turn, this creature will take ",
+      "At the end of its next turn, this creature will take ",
       " damage from a delayed cursed energy impact."
     ]
   },
@@ -17,6 +17,13 @@
     "DESCRIPTIONS": [
       "At the end of your turn, deal ",
       " damage to ALL enemies for every card played this turn."
+    ]
+  },
+  "${modID}:MahoragaPower": {
+    "NAME": "Adaptation",
+    "DESCRIPTIONS": [
+      "Whenever you take damage from an enemy attack, all #yMahoraga cards increase their damage by ",
+      " for the rest of combat."
     ]
   }
 }

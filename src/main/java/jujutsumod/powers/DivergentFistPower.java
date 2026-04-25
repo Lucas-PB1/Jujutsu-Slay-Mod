@@ -23,10 +23,12 @@ public class DivergentFistPower extends BasePower {
     }
 
     @Override
-    public void atStartOfTurn() {
-        flash();
-        addToBot(new DamageAction(owner, new DamageInfo(source, damageAmount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new RemoveSpecificPowerAction(owner, source, this));
+    public void atEndOfTurn(boolean isPlayer) {
+        if (!isPlayer) {
+            flash();
+            addToBot(new DamageAction(owner, new DamageInfo(source, damageAmount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new RemoveSpecificPowerAction(owner, source, this));
+        }
     }
 
     @Override

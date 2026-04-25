@@ -19,7 +19,7 @@ public class MalevolentShrine extends BaseCard {
 
     public MalevolentShrine() {
         super(ID, info);
-        setMagic(4, 2); // Damage per card played
+        setMagic(2, 1);
     }
 
     @Override

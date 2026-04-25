@@ -39,7 +39,8 @@
   },
   "${modID}:CursedEnergyInfusion": {
     "NAME": "Cursed Energy Infusion",
-    "DESCRIPTION": "Upgrade a card in your hand. NL If Black Flash was played this turn, reduce its cost by 1 for the rest of combat."
+    "DESCRIPTION": "Upgrade a card in your hand. NL If Black Flash was played this turn, reduce its cost by 1 for the rest of combat.",
+    "UPGRADE_DESCRIPTION": "Upgrade a card in your hand. NL If Black Flash was played this turn, reduce its cost by 1 for the rest of combat."
   },
   "${modID}:CursedEnergyReinforcement": {
     "NAME": "Cursed Energy Reinforcement",
@@ -64,5 +65,21 @@
   "${modID}:MalevolentShrine": {
     "NAME": "Malevolent Shrine",
     "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies for every card played this turn."
+  },
+  "${modID}:DivineDog": {
+    "NAME": "Divine Dog: Black/White",
+    "DESCRIPTION": "Deal !D! damage. NL *Ten Shadows*: Increase damage of all *Ten Shadows* cards in your hand by !M! for this combat."
+  },
+  "${modID}:Nue": {
+    "NAME": "Nue",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak. NL *Shikigami*: If a *Ten Shadows* card was played this turn, target ALL enemies instead."
+  },
+  "${modID}:Toad": {
+    "NAME": "Toad",
+    "DESCRIPTION": "Gain !B! Block. NL *Shikigami*: If a *Ten Shadows* card was played this turn, apply !M! Strength down to the enemy."
+  },
+  "${modID}:Mahoraga": {
+    "NAME": "Mahoraga",
+    "DESCRIPTION": "Deal !D! damage. NL Gain 2 Artifact and *Adaptation*. NL (Adapts whenever you take damage)."
   }
 }
