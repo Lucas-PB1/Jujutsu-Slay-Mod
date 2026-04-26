@@ -20,16 +20,32 @@ public class Agito extends BaseCard {
 
     public Agito() {
         super(ID, info);
-        setMagic(8, 1); // 8 base, 9 upgraded
+        setMagic(8, 1);
+        setCustomVar("BLOCK", 6, 1);
+        setCustomVar("STR", 1, 1);
+        setCustomVar("HEAL", 2, 1);
         tags.add(CustomTags.TEN_SHADOWS);
+        tags.add(CustomTags.SHIKIGAMI);
+    }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(1);
+            upgradeCustomVar("BLOCK", 1);
+            upgradeCustomVar("STR", 1);
+            upgradeCustomVar("HEAL", 1);
+            initializeDescription();
+        }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int dmg = magicNumber;
-        int blk = upgraded ? 7 : 6;
-        int str = upgraded ? 2 : 1;
-        int hl = upgraded ? 3 : 2;
+        int blk = customVar("BLOCK");
+        int str = customVar("STR");
+        int hl = customVar("HEAL");
         
         addToBot(new ApplyPowerAction(p, p, new AgitoPower(p, dmg, blk, str, hl), dmg));
     }

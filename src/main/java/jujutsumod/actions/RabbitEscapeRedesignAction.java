@@ -12,11 +12,13 @@ import jujutsumod.cards.Rabbit;
 
 public class RabbitEscapeRedesignAction extends AbstractGameAction {
     private AbstractPlayer p;
+    private boolean upgraded;
 
-    public RabbitEscapeRedesignAction() {
+    public RabbitEscapeRedesignAction(boolean upgraded) {
         this.p = AbstractDungeon.player;
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.EXHAUST;
+        this.upgraded = upgraded;
     }
 
     @Override
@@ -40,7 +42,9 @@ public class RabbitEscapeRedesignAction extends AbstractGameAction {
                 }
                 
                 for (int i = 0; i < count; i++) {
-                    addToBot(new MakeTempCardInHandAction(new Rabbit(), 1));
+                    AbstractCard rabbit = new Rabbit();
+                    if (upgraded) rabbit.upgrade();
+                    addToBot(new MakeTempCardInHandAction(rabbit, 1));
                 }
                 
                 AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();

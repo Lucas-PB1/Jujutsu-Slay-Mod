@@ -24,7 +24,16 @@ public class RabbitEscape extends BaseCard {
     }
 
     @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.cardsToPreview.upgrade();
+            initializeDescription();
+        }
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new jujutsumod.actions.RabbitEscapeRedesignAction());
+        addToBot(new jujutsumod.actions.RabbitEscapeRedesignAction(this.upgraded));
     }
 }

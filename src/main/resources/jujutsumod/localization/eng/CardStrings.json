@@ -112,7 +112,7 @@
   },
   "${modID}:Agito": {
     "NAME": "Merged Beast Agito",
-    "DESCRIPTION": "At the end of your turn, deal 8 damage to a random enemy, gain 6 Block, 1 Strength, and heal 2 HP. NL (Everything increases by 1 when Upgraded)."
+    "DESCRIPTION": "At the end of your turn, deal !M! damage to a random enemy, gain !jujutsumod:BLOCK! Block, !jujutsumod:STR! Strength and heal !jujutsumod:HEAL! HP."
   },
   "${modID}:TenShadowsTechnique": {
     "NAME": "Ten Shadows Technique",

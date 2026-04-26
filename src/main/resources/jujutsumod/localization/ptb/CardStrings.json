@@ -112,7 +112,7 @@
   },
   "${modID}:Agito": {
     "NAME": "Besta Mesclada: Agito",
-    "DESCRIPTION": "No final do seu turno, causa 8 de dano a um inimigo aleatório, ganha 6 de Bloqueio, 1 de Força e cura 2 de PV. NL (Tudo aumenta em 1 quando Melhorada)."
+    "DESCRIPTION": "No final do seu turno, causa !M! de dano a um inimigo aleatório, ganha !jujutsumod:BLOCK! de Bloqueio, !jujutsumod:STR! de Força e cura !jujutsumod:HEAL! de PV."
   },
   "${modID}:TenShadowsTechnique": {
     "NAME": "Técnica das Dez Sombras",

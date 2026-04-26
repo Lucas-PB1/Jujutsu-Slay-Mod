@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import jujutsumod.character.Itadori;
+import jujutsumod.patches.CustomTags;
 import jujutsumod.powers.TenShadowsTechniquePower;
 import jujutsumod.util.CardStats;
 
@@ -21,6 +22,7 @@ public class TenShadowsTechnique extends BaseCard {
         super(ID, info);
         setMagic(1, 1);
         setCostUpgrade(1);
+        tags.add(CustomTags.TEN_SHADOWS);
     }
 
     @Override
