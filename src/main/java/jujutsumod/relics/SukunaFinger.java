@@ -33,6 +33,8 @@ public class SukunaFinger extends BaseRelic {
             copy.isCostModified = true;
             if (copy instanceof jujutsumod.cards.BaseCard) {
                 ((jujutsumod.cards.BaseCard) copy).baseCost = 0;
+                ReflectionHacks.setMethodAccessible(jujutsumod.cards.BaseCard.class, "setExhaust", boolean.class);
+                ReflectionHacks.privateMethod(jujutsumod.cards.BaseCard.class, "setExhaust", boolean.class).invoke((jujutsumod.cards.BaseCard)copy, true);
             }
             copy.exhaust = true;
             addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(copy));

@@ -81,6 +81,11 @@ public abstract class BaseCard extends CustomCard {
         this.damageUpgrade = 0;
         this.blockUpgrade = 0;
         this.magicUpgrade = 0;
+
+        this.exhaust = this.baseExhaust;
+        this.isEthereal = this.baseEthereal;
+        this.isInnate = this.baseInnate;
+        this.selfRetain = this.baseRetain;
     }
 
     private static String getName(String ID) {
@@ -423,6 +428,15 @@ public abstract class BaseCard extends CustomCard {
             card.upgInnate = this.upgInnate;
             card.baseRetain = this.baseRetain;
             card.upgRetain = this.upgRetain;
+
+            card.exhaust = this.exhaust;
+            card.isEthereal = this.isEthereal;
+            card.isInnate = this.isInnate;
+            card.selfRetain = this.selfRetain;
+            card.isCostModified = this.isCostModified;
+            card.isCostModifiedForTurn = this.isCostModifiedForTurn;
+            card.retain = this.retain;
+            card.purgeOnUse = this.purgeOnUse;
 
             for (Map.Entry<String, LocalVarInfo> varEntry : cardVariables.entrySet()) {
                 LocalVarInfo target = card.getCustomVar(varEntry.getKey()),
