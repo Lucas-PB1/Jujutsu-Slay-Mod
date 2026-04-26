@@ -1,0 +1,121 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Nome",
+    "DESCRIPTION": "Descrição. NL Segunda linha.",
+    "UPGRADE_DESCRIPTION": "Isso será usado automaticamente se a carta for melhorada. Remova se não for necessário.",
+    "EXTENDED_DESCRIPTION": [
+      "Você pode colocar mais texto aqui.",
+      "Se precisar usar para outras coisas.",
+      "Blizzard é um bom exemplo para isso."
+    ]
+  },
+  "${modID}:Strike": {
+    "NAME": "Golpear",
+    "DESCRIPTION": "Causa !D! de dano."
+  },
+  "${modID}:Defend": {
+    "NAME": "Defender",
+    "DESCRIPTION": "Ganha !B! de Bloqueio."
+  },
+  "${modID}:DivergentFist": {
+    "NAME": "Punho Divergente",
+    "DESCRIPTION": "Causa !D! de dano. Aplica !D! de *Impacto* *Divergente*.",
+    "UPGRADE_DESCRIPTION": "Torna-se *Brilho* *Negro*."
+  },
+  "${modID}:SlaughterDemon": {
+    "NAME": "Faca de Caça (Slaughter Demon)",
+    "DESCRIPTION": "Causa !D! de dano. NL Se este for o primeiro Ataque jogado no combate, causa !D! de dano adicional."
+  },
+  "${modID}:CursedFlow": {
+    "NAME": "Fluxo de Energia Amaldiçoada",
+    "DESCRIPTION": "Ganha !B! de Bloqueio. NL Se a última carta jogada foi um Ataque, ganha 4 de Bloqueio adicional."
+  },
+  "${modID}:MartialArtsMastery": {
+    "NAME": "Maestria em Artes Marciais",
+    "DESCRIPTION": "Causa !D! de dano. NL Compre 1 carta. Se for um Ataque, ganha [E]."
+  },
+  "${modID}:BlackFlash": {
+    "NAME": "Brilho Negro (Black Flash)",
+    "DESCRIPTION": "Causa !D! de dano. NL Ganha [E] para cada Ataque jogado este turno."
+  },
+  "${modID}:CursedEnergyInfusion": {
+    "NAME": "Infusão de Energia Amaldiçoada",
+    "DESCRIPTION": "Exaura um Ataque em sua mão. Adicione um *Brilho* *Negro* à sua mão. NL Exaurir."
+  },
+  "${modID}:CursedEnergyReinforcement": {
+    "NAME": "Reforço de Energia Amaldiçoada",
+    "DESCRIPTION": "Ganha !B! de Bloqueio. NL Ganha !M! de *Reforço*."
+  },
+  "${modID}:Dismantle": {
+    "NAME": "Desmantelar (Dismantle)",
+    "DESCRIPTION": "Causa !D! de dano. *Santuário*."
+  },
+  "${modID}:Cleave": {
+    "NAME": "Clivar (Cleave)",
+    "DESCRIPTION": "Causa !D! de dano. Se o inimigo tiver Bloqueio, causa !M! de dano extra."
+  },
+  "${modID}:Spiderweb": {
+    "NAME": "Teia de Aranha (Spiderweb)",
+    "DESCRIPTION": "Custa 1 a menos para cada *Clivar* jogado este combate. NL Causa !D! de dano a TODOS os inimigos. Aplica !M! de Vulnerável a TODOS os inimigos."
+  },
+  "${modID}:DivineFlame": {
+    "NAME": "Flecha de Fogo (Fuuga)",
+    "DESCRIPTION": "Causa !D! de dano. NL Causa !M! de dano adicional para cada carta de *Santuário* jogada este turno."
+  },
+  "${modID}:MalevolentShrine": {
+    "NAME": "Santuário Malévolo",
+    "DESCRIPTION": "No final do seu turno, causa !M! de dano a TODOS os inimigos para cada carta jogada este turno."
+  },
+  "${modID}:DivineDog": {
+    "NAME": "Cães Divinos: Preto/Branco",
+    "DESCRIPTION": "Causa !D! de dano duas vezes. NL Vidência !M!."
+  },
+  "${modID}:Nue": {
+    "NAME": "Nue",
+    "DESCRIPTION": "Causa !D! de dano. Se o alvo não tiver Bloqueio, ganha 2 de Destreza até o final do turno. NL *Shikigami*: Se uma carta de *Dez* *Sombras* foi jogada este turno, ganha [E]."
+  },
+  "${modID}:Gama": {
+    "NAME": "Gama",
+    "DESCRIPTION": "Aplica !M! de *Gama* a um inimigo. NL (No final do turno dele, ele sofre dano e você ganha Bloqueio)."
+  },
+  "${modID}:Mahoraga": {
+    "NAME": "Mahoraga",
+    "DESCRIPTION": "Causa !D! de dano. NL Ganha 2 de Artefato e *Adaptação*. NL (Se adapta sempre que você sofre dano)."
+  },
+  "${modID}:GreatSerpent": {
+    "NAME": "Grande Serpente",
+    "DESCRIPTION": "Causa !D! de dano. NL Seu próximo Ataque de *Dez* *Sombras* aplica *Veneno* igual ao dano causado."
+  },
+  "${modID}:MaxElephant": {
+    "NAME": "Elefante Máximo",
+    "DESCRIPTION": "Causa !D! de dano. NL Custa [E] a menos para cada *Shikigami* em sua mão."
+  },
+  "${modID}:RabbitEscape": {
+    "NAME": "Evasão de Coelhos",
+    "DESCRIPTION": "Exaura qualquer número de cartas em sua mão. Para cada carta exaurida, adicione um *Coelho* à sua mão."
+  },
+  "${modID}:Rabbit": {
+    "NAME": "Coelho",
+    "DESCRIPTION": "Ganha !B! de Bloqueio. NL Ganha 1 de Destreza até o final do turno. NL Exaurir."
+  },
+  "${modID}:RoundDeer": {
+    "NAME": "Cervo Redondo",
+    "DESCRIPTION": "Ganha !B! de Bloqueio. NL Remove todos os Debuffs. NL *Shikigami*: Se uma carta de *Dez* *Sombras* foi jogada este turno, cura !M! de PV. NL Exaurir."
+  },
+  "${modID}:PiercingOx": {
+    "NAME": "Touro de Perfuração",
+    "DESCRIPTION": "Causa !D! de dano para cada carta de *Dez* *Sombras* ou *Shikigami* jogada este combate. NL Exaurir."
+  },
+  "${modID}:TigerFuneral": {
+    "NAME": "Funeral do Tigre",
+    "DESCRIPTION": "Sempre que você jogar uma carta de *Dez* *Sombras*, ganha !M! de Força até o final do turno."
+  },
+  "${modID}:Agito": {
+    "NAME": "Besta Mesclada: Agito",
+    "DESCRIPTION": "No final do seu turno, causa 8 de dano a um inimigo aleatório, ganha 6 de Bloqueio, 1 de Força e cura 2 de PV. NL (Tudo aumenta em 1 quando Melhorada)."
+  },
+  "${modID}:TenShadowsTechnique": {
+    "NAME": "Técnica das Dez Sombras",
+    "DESCRIPTION": "Ganha !M! de Força e !M! de Destreza. NL Sempre que jogar uma carta de *Dez* *Sombras* única, conte-a. NL Quando as 10 sombras únicas forem invocadas, todas as cartas de *Dez* *Sombras* são jogadas duas vezes."
+  }
+}

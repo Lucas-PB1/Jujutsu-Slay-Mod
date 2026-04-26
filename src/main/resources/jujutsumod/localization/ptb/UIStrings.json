@@ -1,0 +1,16 @@
+{
+  "${modID}:Example": {
+    "TEXT": [
+      "Isso é",
+      "uma lista de frases."
+    ],
+    "EXTRA_TEXT": [
+      "Isso é outra",
+      "lista de frases."
+    ],
+    "TEXT_DICT": {
+      "Isso": "Contém pares de frases, usadas para obter valores baseados em chaves.",
+      "Esta é uma chave": "Este é um valor."
+    }
+  }
+}

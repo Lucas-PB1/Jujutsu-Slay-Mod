@@ -1,0 +1,12 @@
+{
+  "${modID}:PotionID": {
+    "NAME": "Algum Tipo de Poção",
+    "DESCRIPTIONS": [
+      "Pequenos",
+      " pedaços ",
+      "que são colocados juntos",
+      " em uma descrição.",
+      " Exatamente como depende da poção, e você pode configurar como quiser."
+    ]
+  }
+}

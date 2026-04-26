@@ -13,7 +13,7 @@ public class Cleave extends BaseCard {
     private static final CardStats info = new CardStats(
             Itadori.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CardRarity.COMMON,
             CardTarget.ENEMY,
             1
     );

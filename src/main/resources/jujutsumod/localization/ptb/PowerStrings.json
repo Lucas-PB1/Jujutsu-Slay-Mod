@@ -1,0 +1,68 @@
+{
+  "${modID}:PowerID": {
+    "NAME": "Poder Supremo",
+    "DESCRIPTIONS": [
+      "Você é muito legal e forte."
+    ]
+  },
+  "${modID}:DivergentFistPower": {
+    "NAME": "Impacto Divergente",
+    "DESCRIPTIONS": [
+      "No final do próximo turno, esta criatura sofrerá ",
+      " de dano devido a um impacto atrasado de energia amaldiçoada."
+    ]
+  },
+  "${modID}:MalevolentShrinePower": {
+    "NAME": "Santuário Malévolo",
+    "DESCRIPTIONS": [
+      "No final do seu turno, causa ",
+      " de dano a TODOS os inimigos para cada carta jogada este turno."
+    ]
+  },
+  "${modID}:MahoragaPower": {
+    "NAME": "Adaptação",
+    "DESCRIPTIONS": [
+      "Sempre que sofrer dano de um ataque inimigo, todas as cartas de #yDez #ySombras aumentam seu dano em ",
+      " pelo resto do combate."
+    ]
+  },
+  "${modID}:AgitoPower": {
+    "NAME": "Besta Mesclada: Agito",
+    "DESCRIPTIONS": [
+      "No final do seu turno, causa #b",
+      " de dano a um inimigo aleatório, ganha #b",
+      " de Bloqueio, #b",
+      " de Força e cura #b",
+      " de PV."
+    ]
+  },
+  "${modID}:TenShadowsTechniquePower": {
+    "NAME": "Técnica das Dez Sombras",
+    "DESCRIPTIONS": [
+      "Invocações: ",
+      "/10. Assim que as 10 #yDez #ySombras únicas forem invocadas, todas elas serão jogadas duas vezes.",
+      "A Técnica foi Dominada. Todas as cartas de #yDez #ySombras são jogadas duas vezes."
+    ]
+  },
+  "${modID}:GamaPower": {
+    "NAME": "Aperto de Gama",
+    "DESCRIPTIONS": [
+      "No final do turno desta criatura, ela sofre #b",
+      " de dano e você ganha #b",
+      " de Bloqueio."
+    ]
+  },
+  "${modID}:GreatSerpentPower": {
+    "NAME": "Veneno da Serpente",
+    "DESCRIPTIONS": [
+      "Seu próximo Ataque de #yDez #ySombras aplica #yVeneno igual ao dano causado."
+    ]
+  },
+  "${modID}:TigerFuneralPower": {
+    "NAME": "Funeral do Tigre",
+    "DESCRIPTIONS": [
+      "Sempre que jogar uma carta de #yDez #ySombras, ganha ",
+      " de Força até o final do turno."
+    ]
+  }
+}

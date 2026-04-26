@@ -1,0 +1,54 @@
+[
+  {
+    "PROPER_NAME": "Punho Divergente",
+    "NAMES": [
+      "punho divergente",
+      "punho_divergente",
+      "impacto divergente",
+      "impacto_divergente"
+    ],
+    "DESCRIPTION": "A energia amaldiçoada se atrasa após um golpe físico, criando um segundo impacto no final do turno do inimigo."
+  },
+  {
+    "PROPER_NAME": "Brilho Negro",
+    "NAMES": [
+      "brilho negro",
+      "brilho_negro",
+      "black flash",
+      "black_flash"
+    ],
+    "DESCRIPTION": "Uma distorção espacial que ocorre quando a energia amaldiçoada é aplicada dentro de 0,000001 segundos de um golpe físico. Aumento massivo de dano."
+  },
+  {
+    "PROPER_NAME": "Reforço",
+    "NAMES": [
+      "reforço"
+    ],
+    "DESCRIPTION": "Aumenta o dano do seu próximo Ataque."
+  },
+  {
+    "PROPER_NAME": "Santuário",
+    "NAMES": [
+      "santuário",
+      "shrine"
+    ],
+    "DESCRIPTION": "A técnica inata de Sukuna. Cortes como Desmantelar, Clivar e Teia de Aranha preparam o alvo para a Flecha de Fogo."
+  },
+  {
+    "PROPER_NAME": "Dez Sombras",
+    "NAMES": [
+      "dez sombras",
+      "dez_sombras",
+      "ten shadows",
+      "ten_shadows"
+    ],
+    "DESCRIPTION": "A técnica inata de Megumi Fushiguro. Cartas deste tipo frequentemente escalam entre si durante o combate."
+  },
+  {
+    "PROPER_NAME": "Shikigami",
+    "NAMES": [
+      "shikigami"
+    ],
+    "DESCRIPTION": "Criaturas divinas invocadas das sombras. Jogar uma carta de Shikigami frequentemente ativa efeitos adicionais se outra carta de Dez Sombras foi jogada este turno."
+  }
+]

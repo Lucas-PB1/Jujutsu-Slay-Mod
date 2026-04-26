@@ -13,7 +13,7 @@ public class Gama extends BaseCard {
     private static final CardStats info = new CardStats(
             Itadori.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.ENEMY,
             1
     );

@@ -1,0 +1,16 @@
+{
+  "${modID}:RelicID": {
+    "NAME": "Boa Relíquia",
+    "FLAVOR": "Texto de sabor exibido na visualização detalhada da relíquia.",
+    "DESCRIPTIONS": [
+      "Ganha [E] no início do seu turno."
+    ]
+  },
+  "${modID}:SukunaFinger": {
+    "NAME": "Dedo do Sukuna",
+    "FLAVOR": "Um dedo mumificado pertencente ao Rei das Maldições. Ele pulsa com uma energia malévola.",
+    "DESCRIPTIONS": [
+      "No início de cada combate, ganha #b1 de #yForça. Sempre que você jogar um #yAtaque, há #b10% de chance de adicionar uma cópia dele à sua mão. A cópia custa #b0 e tem #yExaurir."
+    ]
+  }
+}

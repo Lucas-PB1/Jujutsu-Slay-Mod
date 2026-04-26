@@ -1,0 +1,12 @@
+{
+  "${modID}:OrbID": {
+    "NAME": "Nome do Orbe",
+    "DESCRIPTION": [
+      "#yPassivo: No início do seu turno, compre #b",
+      " carta.",
+      " cartas.",
+      " NL #yEvocar: Causa #b",
+      " de dano a todos os inimigos."
+    ]
+  }
+}

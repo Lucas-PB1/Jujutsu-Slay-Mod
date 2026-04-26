@@ -15,7 +15,7 @@ public class Spiderweb extends BaseCard {
     private static final CardStats info = new CardStats(
             Itadori.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.ALL_ENEMY,
             3
     );

@@ -12,7 +12,7 @@ public class CursedEnergyInfusion extends BaseCard {
     private static final CardStats info = new CardStats(
             Itadori.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
             2
     );
