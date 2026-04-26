@@ -100,6 +100,7 @@ public abstract class BaseCard extends CustomCard {
             this.upgradeDamage = true;
             this.damageUpgrade = damageUpgrade;
         }
+        initializeDescription();
     }
 
     protected final void setBlock(int block) {
@@ -112,6 +113,7 @@ public abstract class BaseCard extends CustomCard {
             this.upgradeBlock = true;
             this.blockUpgrade = blockUpgrade;
         }
+        initializeDescription();
     }
 
     protected final void setMagic(int magic) {
@@ -124,6 +126,7 @@ public abstract class BaseCard extends CustomCard {
             this.upgradeMagic = true;
             this.magicUpgrade = magicUpgrade;
         }
+        initializeDescription();
     }
 
 
@@ -138,8 +141,8 @@ public abstract class BaseCard extends CustomCard {
             QuickDynamicVariable var = new QuickDynamicVariable(key);
             customVars.put(key, var);
             BaseMod.addDynamicVariable(var);
-            initializeDescription();
         }
+        initializeDescription();
     }
 
     protected enum VariableType {

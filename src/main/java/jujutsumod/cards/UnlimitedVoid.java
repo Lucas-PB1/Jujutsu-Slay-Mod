@@ -21,13 +21,14 @@ public class UnlimitedVoid extends BaseCard {
     public UnlimitedVoid() {
         super(ID, info);
         setMagic(3, 2); // Base reduction 3, upgrade +2 = 5
+        setCustomVar("DAMAGE", 5, 5); // Base damage 5, upgrade +5 = 10
         tags.add(CustomTags.LIMITLESS);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int reduction = magicNumber;
-        int damage = upgraded ? 10 : 5;
+        int damage = customVar("DAMAGE");
         addToBot(new ApplyPowerAction(p, p, new UnlimitedVoidPower(p, reduction, damage), reduction));
     }
 }

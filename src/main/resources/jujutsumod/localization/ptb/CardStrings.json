@@ -120,11 +120,11 @@
   },
   "${modID}:LapseBlue": {
     "NAME": "Lapso: Azul",
-    "DESCRIPTION": "Causa !D! de dano. Compre 1 carta. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaure ambas e cria um *Vazio* *Roxo*. NL *Ilimitado*."
+    "DESCRIPTION": "Causa !D! de dano. NL Compre 1 carta. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *Ilimitado*."
   },
   "${modID}:ReversalRed": {
     "NAME": "Reversão: Vermelho",
-    "DESCRIPTION": "Causa !D! de dano. NL Se o inimigo estiver atacando, aplique !M! de Fraqueza e Vulnerável. NL Se *Lapso:* *Azul* foi jogado este turno, Exaure ambas e cria um *Vazio* *Roxo*. NL *Ilimitado*."
+    "DESCRIPTION": "Causa !D! de dano. NL Se o inimigo estiver atacando, aplique !M! de Fraqueza e Vulnerável. NL Se *Lapso:* *Azul* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *Ilimitado*."
   },
   "${modID}:InfinityBarrier": {
     "NAME": "Barreira do Infinito",
@@ -141,8 +141,8 @@
   },
   "${modID}:UnlimitedVoid": {
     "NAME": "Vazio Ilimitado",
-    "DESCRIPTION": "No início do seu turno, causa 5 de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em 3. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*.",
-    "UPGRADE_DESCRIPTION": "No início do seu turno, causa 10 de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em 5. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*."
+    "DESCRIPTION": "No início do seu turno, causa !jujutsumod:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*.",
+    "UPGRADE_DESCRIPTION": "No início do seu turno, causa !jujutsumod:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*."
   },
   "${modID}:CurtainLimitless": {
     "NAME": "Cortina: Ilimitado",

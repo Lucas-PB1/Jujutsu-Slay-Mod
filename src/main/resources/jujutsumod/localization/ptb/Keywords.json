@@ -66,5 +66,15 @@
       "infinity"
     ],
     "DESCRIPTION": "Um estado de intangibilidade. Ganha Bloqueio sempre que jogar uma carta."
+  },
+  {
+    "PROPER_NAME": "Seis Olhos",
+    "NAMES": [
+      "seis olhos",
+      "seis_olhos",
+      "six eyes",
+      "six_eyes"
+    ],
+    "DESCRIPTION": "Uma técnica ocular rara. No início do seu turno, execute Vidência e ganha Energia adicional."
   }
 ]

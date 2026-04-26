@@ -88,5 +88,15 @@
       "infinito"
     ],
     "DESCRIPTION": "A state of untouchability. Grants Block whenever a card is played."
+  },
+  {
+    "PROPER_NAME": "Six Eyes",
+    "NAMES": [
+      "six eyes",
+      "six_eyes",
+      "seis olhos",
+      "seis_olhos"
+    ],
+    "DESCRIPTION": "A rare ocular technique. At the start of your turn, Scry and gain additional Energy."
   }
 ]
