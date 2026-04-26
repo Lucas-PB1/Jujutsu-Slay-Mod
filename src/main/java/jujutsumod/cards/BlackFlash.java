@@ -16,25 +16,28 @@ public class BlackFlash extends BaseCard {
     private static final CardStats info = new CardStats(
             Itadori.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.RARE,
+            CardRarity.SPECIAL,
             CardTarget.ENEMY,
             2
     );
 
     public BlackFlash() {
         super(ID, info);
-        setDamage(20, 8);
+        setDamage(20);
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return false;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         
-        int attackCount = jujutsumod.util.CombatUtils.countAttacksPlayedThisTurn();
-        
-        int energyGain = attackCount / 2;
-        if (energyGain > 0) {
-            addToBot(new GainEnergyAction(energyGain));
+        int attackCount = jujutsumod.util.CombatUtils.countAttacksPlayedThisTurn(this);
+        if (attackCount > 0) {
+            addToBot(new GainEnergyAction(attackCount));
         }
     }
 }

@@ -23,7 +23,8 @@ public class DivineFlame extends BaseCard {
     public DivineFlame() {
         super(ID, info);
         setDamage(10, 4);
-        setMagic(8, 3);
+        setMagic(2, 2);
+        tags.add(jujutsumod.patches.CustomTags.SHRINE);
     }
 
     @Override

@@ -1,36 +1,34 @@
 package jujutsumod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import jujutsumod.character.Itadori;
 import jujutsumod.patches.CustomTags;
-import jujutsumod.powers.GreatSerpentPower;
+import jujutsumod.powers.GamaPower;
 import jujutsumod.util.CardStats;
 
-public class GreatSerpent extends BaseCard {
-    public static final String ID = makeID("GreatSerpent");
+public class Gama extends BaseCard {
+    public static final String ID = makeID("Gama");
     private static final CardStats info = new CardStats(
             Itadori.Meta.CARD_COLOR,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.ENEMY,
-            2
+            1
     );
 
-    public GreatSerpent() {
+    public Gama() {
         super(ID, info);
-        setDamage(10, 4);
+        setMagic(4, 2);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new ApplyPowerAction(p, p, new GreatSerpentPower(p), 1));
+        if (m != null) {
+            addToBot(new ApplyPowerAction(m, p, new GamaPower(m, magicNumber), magicNumber));
+        }
     }
 }

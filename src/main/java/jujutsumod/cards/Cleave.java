@@ -21,6 +21,7 @@ public class Cleave extends BaseCard {
     public Cleave() {
         super(ID, info);
         setDamage(8, 3);
+        setMagic(5, 3);
         tags.add(jujutsumod.patches.CustomTags.SHRINE);
     }
 
@@ -31,10 +32,16 @@ public class Cleave extends BaseCard {
     }
 
     @Override
+    public void applyPowers() {
+        super.applyPowers();
+        this.isDamageModified = false;
+    }
+
+    @Override
     public void calculateCardDamage(AbstractMonster m) {
         super.calculateCardDamage(m);
         if (m != null && m.currentBlock > 0) {
-            this.damage = (int)(this.damage * 1.5f);
+            this.damage += this.magicNumber;
             this.isDamageModified = true;
         }
     }

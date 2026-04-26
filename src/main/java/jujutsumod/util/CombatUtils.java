@@ -27,9 +27,13 @@ public class CombatUtils {
     }
 
     public static int countAttacksPlayedThisTurn() {
+        return countAttacksPlayedThisTurn(null);
+    }
+
+    public static int countAttacksPlayedThisTurn(AbstractCard self) {
         int count = 0;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c.type == AbstractCard.CardType.ATTACK) {
+            if (c.type == AbstractCard.CardType.ATTACK && c != self) {
                 count++;
             }
         }
@@ -74,5 +78,15 @@ public class CombatUtils {
 
     public static boolean isShrineActive(AbstractCard self) {
         return hasTagBeenPlayedThisTurn(CustomTags.SHRINE, self);
+    }
+
+    public static int countCardPlayedThisCombat(String cardID) {
+        int count = 0;
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+            if (c.cardID.equals(cardID)) {
+                count++;
+            }
+        }
+        return count;
     }
 }

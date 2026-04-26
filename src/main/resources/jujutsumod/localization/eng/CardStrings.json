@@ -19,7 +19,8 @@
   },
   "${modID}:DivergentFist": {
     "NAME": "Divergent Fist",
-    "DESCRIPTION": "Deal !D! damage. Apply !D! *divergent_fist*."
+    "DESCRIPTION": "Deal !D! damage. Apply !D! *divergent_fist*.",
+    "UPGRADE_DESCRIPTION": "Becomes *Black* *Flash*."
   },
   "${modID}:SlaughterDemon": {
     "NAME": "Slaughter Demon",
@@ -35,12 +36,11 @@
   },
   "${modID}:BlackFlash": {
     "NAME": "Black Flash",
-    "DESCRIPTION": "Deal !D! damage. NL *Spark_of_Black* synergy."
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E] for every Attack played this turn."
   },
   "${modID}:CursedEnergyInfusion": {
     "NAME": "Cursed Energy Infusion",
-    "DESCRIPTION": "Upgrade a card in your hand. NL If Black Flash was played this turn, reduce its cost by 1 for the rest of combat.",
-    "UPGRADE_DESCRIPTION": "Upgrade a card in your hand. NL If Black Flash was played this turn, reduce its cost by 1 for the rest of combat."
+    "DESCRIPTION": "Exhaust an Attack in your hand. Add a *Black* *Flash* to your hand. NL Exhaust."
   },
   "${modID}:CursedEnergyReinforcement": {
     "NAME": "Cursed Energy Reinforcement",
@@ -52,11 +52,11 @@
   },
   "${modID}:Cleave": {
     "NAME": "Cleave",
-    "DESCRIPTION": "Deal !D! damage. NL Deals 50% additional damage if the enemy has Block. *Shrine*."
+    "DESCRIPTION": "Deal !D! damage. If the enemy has Block, deal !M! extra damage."
   },
   "${modID}:Spiderweb": {
     "NAME": "Spiderweb",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. Apply !M! Vulnerable to ALL enemies. *Shrine*."
+    "DESCRIPTION": "Costs 1 less for each *Cleave* played this combat. NL Deal !D! damage to ALL enemies. Apply !M! Vulnerable to ALL enemies."
   },
   "${modID}:DivineFlame": {
     "NAME": "Divine Flame (Fuuga)",
@@ -68,15 +68,15 @@
   },
   "${modID}:DivineDog": {
     "NAME": "Divine Dog: Black/White",
-    "DESCRIPTION": "Deal !D! damage. NL *Ten Shadows*: Increase damage of all *Ten Shadows* cards in your hand by !M! for this combat."
+    "DESCRIPTION": "Deal !D! damage twice. NL Scry !M!."
   },
   "${modID}:Nue": {
     "NAME": "Nue",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak. NL *Shikigami*: If a *Ten Shadows* card was played this turn, target ALL enemies instead."
+    "DESCRIPTION": "Deal !D! damage. If the target has no Block, gain 2 Dexterity until end of turn. NL *Shikigami*: If a *Ten Shadows* card was played this turn, gain [E]."
   },
-  "${modID}:Toad": {
-    "NAME": "Toad",
-    "DESCRIPTION": "Gain !B! Block. NL *Shikigami*: If a *Ten Shadows* card was played this turn, apply !M! Strength down to the enemy."
+  "${modID}:Gama": {
+    "NAME": "Gama",
+    "DESCRIPTION": "Apply !M! *Gama* to an enemy. NL (At the end of their turn, they take damage and you gain Block)."
   },
   "${modID}:Mahoraga": {
     "NAME": "Mahoraga",
@@ -84,7 +84,7 @@
   },
   "${modID}:GreatSerpent": {
     "NAME": "Great Serpent",
-    "DESCRIPTION": "Deal !D! damage. NL *Shikigami*: If a *Ten Shadows* card was played this turn, gain [E]."
+    "DESCRIPTION": "Deal !D! damage. NL Your next *Ten* *Shadows* Attack applies *Poison* equal to the damage dealt."
   },
   "${modID}:MaxElephant": {
     "NAME": "Max Elephant",

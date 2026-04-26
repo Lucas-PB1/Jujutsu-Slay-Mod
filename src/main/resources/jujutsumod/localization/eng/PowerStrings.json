@@ -42,5 +42,19 @@
       "Whenever you play a #yTen #yShadows card, increase its damage and block by ",
       " for this combat. NL #yShikigami effects always trigger."
     ]
+  },
+  "${modID}:GamaPower": {
+    "NAME": "Gama's Grasp",
+    "DESCRIPTIONS": [
+      "At the end of its turn, this creature takes #b",
+      " damage and you gain #b",
+      " Block."
+    ]
+  },
+  "${modID}:GreatSerpentPower": {
+    "NAME": "Serpent's Venom",
+    "DESCRIPTIONS": [
+      "Your next #yTen #yShadows Attack applies #yPoison equal to the damage dealt."
+    ]
   }
 }

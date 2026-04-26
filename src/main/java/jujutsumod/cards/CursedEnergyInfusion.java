@@ -21,11 +21,11 @@ public class CursedEnergyInfusion extends BaseCard {
     public CursedEnergyInfusion() {
         super(ID, info);
         setCostUpgrade(1);
+        setExhaust(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean blackFlashPlayed = jujutsumod.util.CombatUtils.hasCardBeenPlayedThisTurn(BlackFlash.ID);
-        addToBot(new InfusionAction(blackFlashPlayed));
+        addToBot(new jujutsumod.actions.InfuseBlackFlashAction());
     }
 }

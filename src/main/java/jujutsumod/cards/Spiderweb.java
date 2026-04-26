@@ -17,13 +17,13 @@ public class Spiderweb extends BaseCard {
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ALL_ENEMY,
-            2
+            3
     );
 
     public Spiderweb() {
         super(ID, info);
         setDamage(10, 4);
-        setMagic(2, 1);
+        setMagic(1);
         isMultiDamage = true;
         tags.add(jujutsumod.patches.CustomTags.SHRINE);
     }
@@ -34,5 +34,18 @@ public class Spiderweb extends BaseCard {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), magicNumber));
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int count = jujutsumod.util.CombatUtils.countCardPlayedThisCombat(Cleave.ID);
+        this.setCostForTurn(this.cost - count);
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        this.cost = this.baseCost;
+        this.isCostModified = false;
     }
 }
