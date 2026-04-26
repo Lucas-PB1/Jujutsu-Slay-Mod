@@ -22,6 +22,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.localization.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -134,6 +136,13 @@ public class BasicMod implements
                 UnlockTracker.unlockCard(card.cardID);
             }
         }
+
+        // Register Monsters
+        BaseMod.addMonster(jujutsumod.monsters.Koguy.ID, () -> new jujutsumod.monsters.Koguy(0.0F, 0.0F));
+        
+        // Add to Exordium (Act 1) as a weak monster encounter
+        // Note: You can also use BaseMod.addEncounter if you want a multi-monster encounter
+        BaseMod.addMonsterEncounter(com.megacrit.cardcrawl.dungeons.Exordium.ID, new com.megacrit.cardcrawl.monsters.MonsterInfo(jujutsumod.monsters.Koguy.ID, 2.0F));
     }
 
     private static String getLangString()
@@ -174,6 +183,8 @@ public class BasicMod implements
                 localizationPath(lang, "RelicStrings.json"));
         BaseMod.loadCustomStringsFile(UIStrings.class,
                 localizationPath(lang, "UIStrings.json"));
+        BaseMod.loadCustomStringsFile(MonsterStrings.class,
+                localizationPath(lang, "MonsterStrings.json"));
     }
 
     @Override

@@ -1,0 +1,13 @@
+{
+  "${modID}:Koguy": {
+    "NAME": "Fly Head",
+    "MOVES": [
+      "Bite",
+      "Buzz"
+    ],
+    "DIALOG": [
+      "Bzzzzt!",
+      "Gieeeek!"
+    ]
+  }
+}

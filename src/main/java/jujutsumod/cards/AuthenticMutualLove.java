@@ -24,6 +24,10 @@ public class AuthenticMutualLove extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // Territory Dispute: Remove other domains
+        addToBot(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(p, p, jujutsumod.powers.UnlimitedVoidPower.POWER_ID));
+        addToBot(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(p, p, jujutsumod.powers.MalevolentShrinePower.POWER_ID));
+
         addToBot(new ApplyPowerAction(p, p, new AuthenticMutualLovePower(p, magicNumber), magicNumber));
     }
 

@@ -2,21 +2,21 @@
   "${modID}:PowerID": {
     "NAME": "Ultimate Power",
     "DESCRIPTIONS": [
-      "You are Very Cool and Strong."
+      "You are very cool and strong."
     ]
   },
   "${modID}:DivergentFistPower": {
-    "NAME": "Divergent Impact",
+    "NAME": "Divergent Fist",
     "DESCRIPTIONS": [
-      "At the end of its next turn, this creature will take ",
-      " damage from a delayed cursed energy impact."
+      "At the end of the next turn, this creature will take ",
+      " damage due to a delayed impact of cursed energy."
     ]
   },
   "${modID}:MalevolentShrinePower": {
     "NAME": "Malevolent Shrine",
     "DESCRIPTIONS": [
       "At the end of your turn, deal ",
-      " damage to ALL enemies for every card played this turn."
+      " damage to ALL enemies for each card played this turn."
     ]
   },
   "${modID}:MahoragaPower": {
@@ -32,7 +32,7 @@
       "At the end of your turn, deal #b",
       " damage to a random enemy, gain #b",
       " Block, #b",
-      " Strength, and heal #b",
+      " Strength and heal #b",
       " HP."
     ]
   },
@@ -40,14 +40,14 @@
     "NAME": "Ten Shadows Technique",
     "DESCRIPTIONS": [
       "Invocations: ",
-      "/10. Once all 10 unique #yTen #yShadows are invoked, they will all be played twice.",
-      "The Technique is Mastered. All #yTen #yShadows cards are played twice."
+      "/10. Once 10 unique #yTen #yShadows are invoked, all of them will be played twice.",
+      "The Technique has been Mastered. All #yTen #yShadows cards are played twice."
     ]
   },
   "${modID}:GamaPower": {
-    "NAME": "Gama's Grasp",
+    "NAME": "Gama's Grip",
     "DESCRIPTIONS": [
-      "At the end of its turn, this creature takes #b",
+      "At the end of this creature's turn, it takes #b",
       " damage and you gain #b",
       " Block."
     ]
@@ -62,7 +62,7 @@
     "NAME": "Tiger Funeral",
     "DESCRIPTIONS": [
       "Whenever you play a #yTen #yShadows card, gain ",
-      " Strength until end of turn."
+      " Strength until the end of the turn."
     ]
   },
   "${modID}:InfinityPower": {
@@ -78,7 +78,7 @@
       "At the start of your turn, Scry #b",
       " and gain #b",
       " energy.",
-      " Your *Limitless* cards cost 1 energy less."
+      " Your *limitless* cards cost 1 less energy."
     ]
   },
   "${modID}:UnlimitedVoidPower": {
@@ -87,6 +87,13 @@
       "At the start of your turn, deal #b",
       " damage to ALL enemies. Reduce all attack damage taken by #b",
       ". If damage is reduced to 0, gain [E]."
+    ]
+  },
+  "${modID}:AuthenticMutualLovePower": {
+    "NAME": "Authentic Mutual Love",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b",
+      " #yFocus and add a random card from another character's pool to your hand. It costs 0 this turn."
     ]
   },
   "${modID}:ImmeasurableCursedEnergyPower": {
@@ -100,14 +107,8 @@
     "NAME": "The Queen of Curses",
     "DESCRIPTIONS": [
       "Your #yShikigami cards deal #b",
-      "% more damage and provide #b50% more Block."
-    ]
-  },
-  "${modID}:AuthenticMutualLovePower": {
-    "NAME": "Authentic Mutual Love",
-    "DESCRIPTIONS": [
-      "At the start of your turn, gain #b",
-      " #yFocus and add a random card from another character's pool to your hand. It costs 0 this turn."
+      "% more damage and provide #b",
+      "% more Block."
     ]
   }
 }

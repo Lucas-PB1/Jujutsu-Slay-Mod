@@ -1,0 +1,13 @@
+{
+  "${modID}:Koguy": {
+    "NAME": "Cabeça de Mosca",
+    "MOVES": [
+      "Mordida",
+      "Zumbido"
+    ],
+    "DIALOG": [
+      "Bzzzzt!",
+      "Gieeeek!"
+    ]
+  }
+}

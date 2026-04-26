@@ -35,8 +35,7 @@ public class UnlimitedVoidPower extends BasePower {
 
     @Override
     public void atStartOfTurn() {
-        flash();
-        addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(turnDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(turnDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
     }
 
     @Override

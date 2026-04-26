@@ -36,6 +36,6 @@ public class QueenOfCursesPower extends BasePower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + (amount * 50) + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + (amount * 50) + DESCRIPTIONS[1] + (amount * 50) + DESCRIPTIONS[2];
     }
 }
