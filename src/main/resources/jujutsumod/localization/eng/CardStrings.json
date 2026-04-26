@@ -109,7 +109,7 @@
   },
   "${modID}:TigerFuneral": {
     "NAME": "Tiger Funeral",
-    "DESCRIPTION": "Whenever you play a *Ten* *Shadows* card, gain !M! Strength until end of turn."
+    "DESCRIPTION": "Whenever you play a *ten_shadows* card, gain !M! Strength until end of turn."
   },
   "${modID}:Agito": {
     "NAME": "Merged Beast Agito",
@@ -117,24 +117,24 @@
   },
   "${modID}:TenShadowsTechnique": {
     "NAME": "Ten Shadows Technique",
-    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. NL Whenever you play a unique *Ten* *Shadows* card, count it. NL Once 10 unique shadows are invoked, all *Ten* *Shadows* cards are played twice."
+    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. NL Whenever you play a unique *ten_shadows* card, count it. NL Once 10 unique shadows are invoked, all *ten_shadows* cards are played twice."
   },
   "${modID}:LapseBlue": {
     "NAME": "Lapse: Blue",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card. NL If *Reversal:* *Red* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *Limitless*.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL If *Reversal:* *Red* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *Limitless*."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card. NL If *Reversal:* *Red* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *limitless*.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL If *Reversal:* *Red* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *limitless*."
   },
   "${modID}:ReversalRed": {
     "NAME": "Reversal: Red",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy is attacking, apply !M! Weak and !M! Vulnerable. NL If *Lapse:* *Blue* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *Limitless*."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is attacking, apply !M! Weak and !M! Vulnerable. NL If *Lapse:* *Blue* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *limitless*."
   },
   "${modID}:InfinityBarrier": {
     "NAME": "Infinity Barrier",
-    "DESCRIPTION": "Whenever you play a card, gain !M! Block. NL *Limitless*."
+    "DESCRIPTION": "Whenever you play a card, gain !M! Block. NL *limitless*."
   },
   "${modID}:HollowPurple": {
     "NAME": "Hollow Purple",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Return the exhausted *Lapse:* *Blue* and *Reversal:* *Red* to your hand. NL Exhaust. NL *Limitless*."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Return the exhausted *Lapse:* *Blue* and *Reversal:* *Red* to your hand. NL Exhaust. NL *limitless*."
   },
   "${modID}:SixEyes": {
     "NAME": "Six Eyes",
@@ -143,20 +143,20 @@
   },
   "${modID}:UnlimitedVoid": {
     "NAME": "Unlimited Void",
-    "DESCRIPTION": "At the start of your turn, deal !${modID}:DAMAGE! damage to ALL enemies. Reduce all attack damage taken by !M!. If damage is reduced to 0, gain [E]. NL *Limitless*.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, deal !${modID}:DAMAGE! damage to ALL enemies. Reduce all attack damage taken by !M!. If damage is reduced to 0, gain [E]. NL *Limitless*."
+    "DESCRIPTION": "At the start of your turn, deal !${modID}:DAMAGE! damage to ALL enemies. Reduce all attack damage taken by !M!. If damage is reduced to 0, gain [E]. NL *limitless*.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, deal !${modID}:DAMAGE! damage to ALL enemies. Reduce all attack damage taken by !M!. If damage is reduced to 0, gain [E]. NL *limitless*."
   },
   "${modID}:CurtainLimitless": {
     "NAME": "Curtain: Limitless",
-    "DESCRIPTION": "Gain !B! Block. NL If *Six* *Eyes* is active, draw 1 card. NL *Limitless*."
+    "DESCRIPTION": "Gain !B! Block. NL If *six_eyes* is active, draw 1 card. NL *limitless*."
   },
   "${modID}:KatanaStrike": {
     "NAME": "Katana Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Gain 1 #yFocus."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! *focus*."
   },
   "${modID}:RikaProtectiveEmbrace": {
     "NAME": "Rika: Protective Embrace",
-    "DESCRIPTION": "Gain !B! Block. NL If you have an active Power, gain 1 #yBlur. NL *Shikigami*."
+    "DESCRIPTION": "Gain !B! Block. NL If you have an active Power, gain 1 *blur*. NL *shikigami*."
   },
   "${modID}:ImmeasurableCursedEnergy": {
     "NAME": "Immeasurable Cursed Energy",
@@ -164,18 +164,18 @@
   },
   "${modID}:RikaSoulGrasp": {
     "NAME": "Rika: Soul Grasp",
-    "DESCRIPTION": "Deal !D! damage. NL Your next card played this turn is played twice. NL *Shikigami*."
+    "DESCRIPTION": "Deal !D! damage. NL Your next card played this turn is played twice. NL *shikigami*."
   },
   "${modID}:QueenOfCurses": {
     "NAME": "The Queen of Curses",
-    "DESCRIPTION": "Your *Shikigami* cards deal 50% more damage and provide 50% more Block. NL *Shikigami*."
+    "DESCRIPTION": "Your *shikigami* cards deal 50% more damage and provide 50% more Block. NL *shikigami*."
   },
   "${modID}:AuthenticMutualLove": {
     "NAME": "Authentic Mutual Love",
-    "DESCRIPTION": "At the start of your turn, gain !M! #yFocus and add a random card from another character's pool to your hand. It costs 0 this turn."
+    "DESCRIPTION": "At the start of your turn, gain !M! *focus* and add a random card from another character's pool to your hand. It costs 0 this turn."
   },
   "${modID}:PureLoveBeam": {
     "NAME": "Pure Love Beam",
-    "DESCRIPTION": "Deal !D! damage X times. NL Damage increases with #yFocus. NL *Shikigami*."
+    "DESCRIPTION": "Deal !D! damage X times. NL Damage increases with *focus*. NL *shikigami*."
   }
 }

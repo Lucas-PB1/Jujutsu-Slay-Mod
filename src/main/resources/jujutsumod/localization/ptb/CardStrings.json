@@ -109,7 +109,7 @@
   },
   "${modID}:TigerFuneral": {
     "NAME": "Funeral do Tigre",
-    "DESCRIPTION": "Sempre que você jogar uma carta de *Dez* *Sombras*, ganha !M! de Força até o final do turno."
+    "DESCRIPTION": "Sempre que você jogar uma carta de *dez_sombras*, ganha !M! de Força até o final do turno."
   },
   "${modID}:Agito": {
     "NAME": "Besta Mesclada: Agito",
@@ -117,37 +117,65 @@
   },
   "${modID}:TenShadowsTechnique": {
     "NAME": "Técnica das Dez Sombras",
-    "DESCRIPTION": "Ganha !M! de Força e !M! de Destreza. NL Sempre que jogar uma carta de *Dez* *Sombras* única, conte-a. NL Quando as 10 sombras únicas forem invocadas, todas as cartas de *Dez* *Sombras* são jogadas duas vezes."
+    "DESCRIPTION": "Ganha !M! de Força e !M! de Destreza. NL Sempre que jogar uma carta de *dez_sombras* única, conte-a. NL Quando as 10 sombras únicas forem invocadas, todas as cartas de *dez_sombras* são jogadas duas vezes."
   },
   "${modID}:LapseBlue": {
     "NAME": "Lapso: Azul",
-    "DESCRIPTION": "Causa !D! de dano. NL Compre !M! carta. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *Ilimitado*.",
-    "UPGRADE_DESCRIPTION": "Causa !D! de dano. NL Compre !M! cartas. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *Ilimitado*."
+    "DESCRIPTION": "Causa !D! de dano. NL Compre !M! carta. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *ilimitado*.",
+    "UPGRADE_DESCRIPTION": "Causa !D! de dano. NL Compre !M! cartas. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *ilimitado*."
   },
   "${modID}:ReversalRed": {
     "NAME": "Reversão: Vermelho",
-    "DESCRIPTION": "Causa !D! de dano. NL Se o inimigo estiver atacando, aplique !M! de Fraqueza e Vulnerável. NL Se *Lapso:* *Azul* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *Ilimitado*."
+    "DESCRIPTION": "Causa !D! de dano. NL Se o inimigo estiver atacando, aplique !M! de Fraqueza e Vulnerável. NL Se *Lapso:* *Azul* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *ilimitado*."
   },
   "${modID}:InfinityBarrier": {
     "NAME": "Barreira do Infinito",
-    "DESCRIPTION": "Sempre que jogar uma carta, ganha !M! de Bloqueio. NL *Ilimitado*."
+    "DESCRIPTION": "Sempre que jogar uma carta, ganha !M! de Bloqueio. NL *ilimitado*."
   },
   "${modID}:HollowPurple": {
     "NAME": "Vazio Roxo",
-    "DESCRIPTION": "Causa !D! de dano a TODOS os inimigos. NL Retorne o *Lapso:* *Azul* e a *Reversão:* *Vermelho* exauridos para sua mão. NL Exaurir. NL *Ilimitado*."
+    "DESCRIPTION": "Causa !D! de dano a TODOS os inimigos. NL Retorne o *Lapso:* *Azul* e a *Reversão:* *Vermelho* exauridos para sua mão. NL Exaurir. NL *ilimitado*."
   },
   "${modID}:SixEyes": {
     "NAME": "Seis Olhos",
-    "DESCRIPTION": "No início do seu turno, execute Vidência !M! e ganha [E]. NL *Ilimitado*.",
-    "UPGRADE_DESCRIPTION": "No início do seu turno, execute Vidência !M! e ganha [E] [E]. Suas cartas de *Ilimitado* custam 1 de energia a menos. NL *Ilimitado*."
+    "DESCRIPTION": "No início do seu turno, execute Vidência !M! e ganha [E]. NL *ilimitado*.",
+    "UPGRADE_DESCRIPTION": "No início do seu turno, execute Vidência !M! e ganha [E] [E]. Suas cartas de *ilimitado* custam 1 de energia a menos. NL *ilimitado*."
   },
   "${modID}:UnlimitedVoid": {
     "NAME": "Vazio Ilimitado",
-    "DESCRIPTION": "No início do seu turno, causa !${modID}:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*.",
-    "UPGRADE_DESCRIPTION": "No início do seu turno, causa !${modID}:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*."
+    "DESCRIPTION": "No início do seu turno, causa !${modID}:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *ilimitado*.",
+    "UPGRADE_DESCRIPTION": "No início do seu turno, causa !${modID}:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *ilimitado*."
   },
   "${modID}:CurtainLimitless": {
     "NAME": "Cortina: Ilimitado",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio. NL Se *Seis* *Olhos* estiver ativo, compre 1 carta. NL *Ilimitado*."
+    "DESCRIPTION": "Ganhe !B! de Bloqueio. NL Se *seis_olhos* estiver ativo, compre 1 carta. NL *ilimitado*."
+  },
+  "${modID}:KatanaStrike": {
+    "NAME": "Ataque de Katana",
+    "DESCRIPTION": "Causa !D! de dano. NL Ganha !M! de *foco*."
+  },
+  "${modID}:RikaProtectiveEmbrace": {
+    "NAME": "Rika: Abraço Protetor",
+    "DESCRIPTION": "Ganha !B! de Bloqueio. NL Se você tiver um Poder ativo, ganha 1 de *evasão*. NL *shikigami*."
+  },
+  "${modID}:ImmeasurableCursedEnergy": {
+    "NAME": "Energia Amaldiçoada Imensurável",
+    "DESCRIPTION": "No início do seu turno, ganha [E]."
+  },
+  "${modID}:RikaSoulGrasp": {
+    "NAME": "Rika: Agarrão de Alma",
+    "DESCRIPTION": "Causa !D! de dano. NL Sua próxima carta jogada este turno é jogada duas vezes. NL *shikigami*."
+  },
+  "${modID}:QueenOfCurses": {
+    "NAME": "A Rainha das Maldições",
+    "DESCRIPTION": "Suas cartas de *shikigami* causam 50% mais dano e fornecem 50% mais Bloqueio. NL *shikigami*."
+  },
+  "${modID}:AuthenticMutualLove": {
+    "NAME": "Amor Mútuo Autêntico",
+    "DESCRIPTION": "No início do seu turno, ganha !M! de *foco* e adicione uma carta aleatória de outra classe à sua mão. Ela custa 0 este turno."
+  },
+  "${modID}:PureLoveBeam": {
+    "NAME": "Raio de Puro Amor",
+    "DESCRIPTION": "Causa !D! de dano X vezes. NL O dano aumenta com o seu *foco*. NL *shikigami*."
   }
 }

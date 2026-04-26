@@ -106,5 +106,12 @@
       "foco"
     ],
     "DESCRIPTION": "Increases the damage of techniques that scale with concentration, like Pure Love Beam."
+  },
+  {
+    "PROPER_NAME": "Blur",
+    "NAMES": [
+      "blur"
+    ],
+    "DESCRIPTION": "Block is not removed at the start of your next turn."
   }
 ]

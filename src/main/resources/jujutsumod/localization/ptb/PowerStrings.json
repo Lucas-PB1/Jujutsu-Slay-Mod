@@ -78,7 +78,7 @@
       "No início do seu turno, execute Vidência #b",
       " e ganha #b",
       " de energia.",
-      " Suas cartas de *Ilimitado* custam 1 de energia a menos."
+      " Suas cartas de *ilimitado* custam 1 de energia a menos."
     ]
   },
   "${modID}:UnlimitedVoidPower": {
@@ -87,6 +87,25 @@
       "No início do seu turno, causa #b",
       " de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em #b",
       ". Se o dano for reduzido a 0, ganha [E]."
+    ]
+  },
+  "${modID}:AuthenticMutualLovePower": {
+    "NAME": "Amor Mútuo Autêntico",
+    "DESCRIPTIONS": [
+      "No início do seu turno, ganha #b",
+      " de *foco* e adiciona uma carta aleatória de outra classe à sua mão que custa 0 este turno."
+    ]
+  },
+  "${modID}:ImmeasurableCursedEnergyPower": {
+    "NAME": "Energia Amaldiçoada Imensurável",
+    "DESCRIPTIONS": [
+      "No início de cada turno, ganha [E]."
+    ]
+  },
+  "${modID}:QueenOfCursesPower": {
+    "NAME": "A Rainha das Maldições",
+    "DESCRIPTIONS": [
+      "Suas cartas de *shikigami* causam 50% mais dano e fornecem 50% mais Bloqueio."
     ]
   }
 }

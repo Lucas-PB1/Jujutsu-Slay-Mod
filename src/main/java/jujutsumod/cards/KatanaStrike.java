@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import jujutsumod.character.Itadori;
 import jujutsumod.util.CardStats;
 
@@ -23,13 +22,14 @@ public class KatanaStrike extends BaseCard {
     public KatanaStrike() {
         super(ID, info);
         setDamage(9, 3);
+        setMagic(1, 1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         
-        // Gain 1 Focus
-        addToBot(new ApplyPowerAction(p, p, new com.megacrit.cardcrawl.powers.FocusPower(p, 1), 1));
+        // Gain Focus based on magicNumber
+        addToBot(new ApplyPowerAction(p, p, new com.megacrit.cardcrawl.powers.FocusPower(p, magicNumber), magicNumber));
     }
 }

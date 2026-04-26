@@ -76,5 +76,21 @@
       "six_eyes"
     ],
     "DESCRIPTION": "Uma técnica ocular rara. No início do seu turno, execute Vidência e ganha Energia adicional."
+  },
+  {
+    "PROPER_NAME": "Foco",
+    "NAMES": [
+      "foco",
+      "focus"
+    ],
+    "DESCRIPTION": "Aumenta o dano de técnicas que escalam com concentração, como o Raio de Puro Amor."
+  },
+  {
+    "PROPER_NAME": "Evasão",
+    "NAMES": [
+      "evasão",
+      "blur"
+    ],
+    "DESCRIPTION": "O Bloqueio não é removido no início do seu próximo turno."
   }
 ]
