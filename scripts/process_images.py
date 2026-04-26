@@ -67,8 +67,20 @@ def resize_and_center(img, size, scale=1.0, anchor="center"):
         img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
 
     new_img = Image.new("RGBA", size, (255, 255, 255, 0))
-    paste_x = (size[0] - img.width) // 2
-    paste_y = (size[1] - img.height) // 2
+    
+    if anchor == "bottom":
+        paste_x = (size[0] - img.width) // 2
+        paste_y = size[1] - img.height
+    elif anchor == "bottom-left":
+        paste_x = 0
+        paste_y = size[1] - img.height
+    elif anchor == "bottom-left-offset":
+        paste_x = int(size[0] * 0.1)
+        paste_y = size[1] - img.height
+    else: # center
+        paste_x = (size[0] - img.width) // 2
+        paste_y = (size[1] - img.height) // 2
+        
     new_img.paste(img, (paste_x, paste_y), img if img.mode == 'RGBA' else None)
     return new_img
 
@@ -166,7 +178,7 @@ def process_single_image(file_path, img_type, keep_bg=False):
             anchor_type = "center"
             current_scale = 0.7
         else:
-            anchor_type = "center"
+            anchor_type = "bottom" if img_type == "character" else "center"
             current_scale = 1.0
         
         img_resized = resize_and_center(img, size, current_scale, anchor=anchor_type)
