@@ -92,7 +92,11 @@
   },
   "${modID}:RabbitEscape": {
     "NAME": "Rabbit Escape",
-    "DESCRIPTION": "Gain !B! Block X times. NL Add X 0-cost *Rabbit Escape* to your hand."
+    "DESCRIPTION": "Exhaust any number of cards in your hand. For each card exhausted, add a *Rabbit* to your hand."
+  },
+  "${modID}:Rabbit": {
+    "NAME": "Rabbit",
+    "DESCRIPTION": "Gain !B! Block. NL Gain 1 Dexterity until end of turn. NL Exhaust."
   },
   "${modID}:RoundDeer": {
     "NAME": "Round Deer",

@@ -200,6 +200,7 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.TigerFuneral());
         BaseMod.addCard(new jujutsumod.cards.Agito());
         BaseMod.addCard(new jujutsumod.cards.TenShadowsTechnique());
+        BaseMod.addCard(new jujutsumod.cards.Rabbit());
     }
 
     @Override

@@ -12,13 +12,9 @@ import static jujutsumod.BasicMod.makeID;
 public class DivergentFistPower extends BasePower {
     public static final String POWER_ID = makeID("DivergentFistPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    private final AbstractCreature source;
-    private final int damageAmount;
-
     public DivergentFistPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, PowerType.DEBUFF, false, owner, amount);
         this.source = source;
-        this.damageAmount = amount;
         updateDescription();
     }
 
@@ -26,13 +22,13 @@ public class DivergentFistPower extends BasePower {
     public void atEndOfTurn(boolean isPlayer) {
         if (!isPlayer) {
             flash();
-            addToBot(new DamageAction(owner, new DamageInfo(source, damageAmount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new DamageAction(owner, new DamageInfo(source, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             addToBot(new RemoveSpecificPowerAction(owner, source, this));
         }
     }
 
     @Override
     public void updateDescription() {
-        description = powerStrings.DESCRIPTIONS[0] + damageAmount + powerStrings.DESCRIPTIONS[1];
+        description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
     }
 }

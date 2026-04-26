@@ -24,8 +24,8 @@ public class Mahoraga extends BaseCard {
 
     public Mahoraga() {
         super(ID, info);
-        setDamage(20, 10);
-        setMagic(5, 2);
+        setDamage(14, 6);
+        setMagic(2, 1);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);
     }

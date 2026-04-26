@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import jujutsumod.character.Itadori;
 import jujutsumod.patches.CustomTags;
@@ -34,6 +35,9 @@ public class Toad extends BaseCard {
         addToBot(new GainBlockAction(p, p, block));
         if (isTenShadowsActive() && m != null) {
             addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber));
+            if (!m.hasPower("Artifact")) {
+                addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber), magicNumber));
+            }
         }
     }
 

@@ -130,13 +130,15 @@ public class Itadori extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         
         if (jujutsumod.BasicMod.DEBUG_MODE) {
-            retVal.add(jujutsumod.cards.CursedFlow.ID);
-            retVal.add(jujutsumod.cards.SlaughterDemon.ID);
-            retVal.add(jujutsumod.cards.DivineFlame.ID);
-            retVal.add(jujutsumod.cards.BlackFlash.ID);
+            retVal.add(jujutsumod.cards.Agito.ID);
+            retVal.add(jujutsumod.cards.Agito.ID);
+            retVal.add(jujutsumod.cards.Agito.ID);
+            retVal.add(jujutsumod.cards.Mahoraga.ID);
+            retVal.add(jujutsumod.cards.Mahoraga.ID);
+            retVal.add(jujutsumod.cards.Mahoraga.ID);
+            retVal.add(jujutsumod.cards.RabbitEscape.ID);
             retVal.add(jujutsumod.cards.Nue.ID);
             retVal.add(jujutsumod.cards.Strike.ID);
-            retVal.add(jujutsumod.cards.Defend.ID);
             retVal.add(jujutsumod.cards.DivergentFist.ID);
             return retVal;
         }

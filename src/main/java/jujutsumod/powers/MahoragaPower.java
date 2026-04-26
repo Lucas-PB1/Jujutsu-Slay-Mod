@@ -24,17 +24,17 @@ public class MahoragaPower extends BasePower {
         if (damageAmount > 0 && info.type == DamageInfo.DamageType.NORMAL) {
             flash();
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c instanceof Mahoraga) {
+                if (c.hasTag(jujutsumod.patches.CustomTags.TEN_SHADOWS)) {
                     c.baseDamage += amount;
                     c.applyPowers();
                     c.flash();
                 }
             }
             for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-                if (c instanceof Mahoraga) { c.baseDamage += amount; }
+                if (c.hasTag(jujutsumod.patches.CustomTags.TEN_SHADOWS)) { c.baseDamage += amount; }
             }
             for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-                if (c instanceof Mahoraga) { c.baseDamage += amount; }
+                if (c.hasTag(jujutsumod.patches.CustomTags.TEN_SHADOWS)) { c.baseDamage += amount; }
             }
         }
         return damageAmount;

@@ -23,6 +23,7 @@ public class PiercingOx extends BaseCard {
 
     public PiercingOx() {
         super(ID, info);
+        setCostUpgrade(1);
         setExhaust(true);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);

@@ -26,15 +26,19 @@ public class AgitoPower extends BasePower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             flash();
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(owner, 10, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-            addToBot(new GainBlockAction(owner, owner, 6));
-            addToBot(new HealAction(owner, owner, 2));
-            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, 1), 1));
+            addToBot(new DamageRandomEnemyAction(new DamageInfo(owner, 10 * amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+            addToBot(new GainBlockAction(owner, owner, 6 * amount));
+            addToBot(new HealAction(owner, owner, 2 * amount));
+            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount), amount));
         }
     }
 
     @Override
     public void updateDescription() {
-        description = powerStrings.DESCRIPTIONS[0];
+        description = powerStrings.DESCRIPTIONS[0] + (10 * amount) + 
+                     powerStrings.DESCRIPTIONS[1] + (6 * amount) + 
+                     powerStrings.DESCRIPTIONS[2] + amount + 
+                     powerStrings.DESCRIPTIONS[3] + (2 * amount) + 
+                     powerStrings.DESCRIPTIONS[4];
     }
 }
