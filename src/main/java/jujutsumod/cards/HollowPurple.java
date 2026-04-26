@@ -21,15 +21,14 @@ public class HollowPurple extends BaseCard {
 
     public HollowPurple() {
         super(ID, info);
-        setDamage(60, 20);
+        setDamage(40, 20);
+        setExhaust(true);
         tags.add(CustomTags.LIMITLESS);
-        this.exhaust = true;
-        this.isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SMASH));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         addToBot(new ReturnBlueAndRedAction());
     }
 }
