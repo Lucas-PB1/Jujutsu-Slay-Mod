@@ -190,7 +190,7 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.MalevolentShrine());
         BaseMod.addCard(new jujutsumod.cards.DivineDog());
         BaseMod.addCard(new jujutsumod.cards.Nue());
-        BaseMod.addCard(new jujutsumod.cards.Toad());
+        BaseMod.addCard(new jujutsumod.cards.Gama());
         BaseMod.addCard(new jujutsumod.cards.Mahoraga());
         BaseMod.addCard(new jujutsumod.cards.GreatSerpent());
         BaseMod.addCard(new jujutsumod.cards.MaxElephant());

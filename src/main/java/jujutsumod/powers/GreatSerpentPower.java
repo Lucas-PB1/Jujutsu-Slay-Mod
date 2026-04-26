@@ -16,6 +16,7 @@ import static jujutsumod.BasicMod.makeID;
 public class GreatSerpentPower extends BasePower {
     public static final String POWER_ID = makeID("GreatSerpentPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    private boolean isTenShadowsAttack = false;
 
     public GreatSerpentPower(AbstractCreature owner) {
         super(POWER_ID, PowerType.BUFF, false, owner, 1);
@@ -23,19 +24,24 @@ public class GreatSerpentPower extends BasePower {
     }
 
     @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.hasTag(CustomTags.TEN_SHADOWS) && card.type == AbstractCard.CardType.ATTACK) {
+            isTenShadowsAttack = true;
+        }
+    }
+
+    @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
-            AbstractCard c = com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.cardsPlayedThisTurn.get(com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
-            if (c.hasTag(CustomTags.TEN_SHADOWS)) {
-                this.flash();
-                addToTop(new ApplyPowerAction(target, owner, new PoisonPower(target, owner, damageAmount), damageAmount));
-            }
+        if (isTenShadowsAttack && damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
+            this.flash();
+            addToTop(new ApplyPowerAction(target, owner, new PoisonPower(target, owner, damageAmount), damageAmount));
         }
     }
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(CustomTags.TEN_SHADOWS) && card.type == AbstractCard.CardType.ATTACK) {
+        if (isTenShadowsAttack) {
+            isTenShadowsAttack = false;
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }

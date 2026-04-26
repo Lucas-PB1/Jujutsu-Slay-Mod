@@ -119,7 +119,7 @@ public class Itadori extends CustomPlayer {
                 CORPSE,
                 getLoadout(),
                 20.0F, -20.0F, 200.0F, 250.0F,
-                new EnergyManager(ENERGY_PER_TURN));
+                new EnergyManager(jujutsumod.BasicMod.DEBUG_MODE ? 30 : ENERGY_PER_TURN));
 
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
@@ -130,15 +130,13 @@ public class Itadori extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         
         if (jujutsumod.BasicMod.DEBUG_MODE) {
-            retVal.add(jujutsumod.cards.DivergentFist.ID);
-            retVal.add(jujutsumod.cards.DivergentFist.ID);
-            retVal.add(jujutsumod.cards.CursedEnergyInfusion.ID);
-            retVal.add(jujutsumod.cards.CursedEnergyInfusion.ID);
             retVal.add(jujutsumod.cards.Strike.ID);
-            retVal.add(jujutsumod.cards.Strike.ID);
-            retVal.add(jujutsumod.cards.Strike.ID);
-            retVal.add(jujutsumod.cards.DivineDog.ID);
-            retVal.add(jujutsumod.cards.Agito.ID);
+            retVal.add(jujutsumod.cards.Cleave.ID);
+            retVal.add(jujutsumod.cards.Spiderweb.ID);
+            retVal.add(jujutsumod.cards.DivineFlame.ID);
+            retVal.add(jujutsumod.cards.Nue.ID);
+            retVal.add(jujutsumod.cards.Gama.ID);
+            retVal.add(jujutsumod.cards.GreatSerpent.ID);
             return retVal;
         }
 

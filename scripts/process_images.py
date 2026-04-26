@@ -45,33 +45,31 @@ def resize_and_center(img, size, scale=1.0, anchor="center"):
     img_aspect = img.width / img.height
     target_aspect = work_size[0] / work_size[1]
 
-    if img_aspect > target_aspect:
-        new_width = work_size[0]
-        new_height = int(work_size[0] / img_aspect)
+    if scale > 0.8: # Assume we want to FILL the area
+        if img_aspect > target_aspect:
+            # Crop width
+            new_width = int(img.height * target_aspect)
+            offset = (img.width - new_width) / 2
+            img = img.crop((offset, 0, offset + new_width, img.height))
+        else:
+            # Crop height
+            new_height = int(img.width / target_aspect)
+            offset = (img.height - new_height) / 2
+            img = img.crop((0, offset, img.width, offset + new_height))
+        img = img.resize(work_size, Image.Resampling.LANCZOS)
     else:
-        new_height = work_size[1]
-        new_width = int(work_size[1] * img_aspect)
+        if img_aspect > target_aspect:
+            new_width = work_size[0]
+            new_height = int(work_size[0] / img_aspect)
+        else:
+            new_height = work_size[1]
+            new_width = int(work_size[1] * img_aspect)
+        img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
 
-    img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
     new_img = Image.new("RGBA", size, (255, 255, 255, 0))
-    
-    if anchor == "top-left":
-        paste_x, paste_y = 36, 8
-    elif anchor == "bottom-left":
-        paste_x = 0
-        paste_y = size[1] - new_height
-    elif anchor == "bottom-left-offset":
-        # Recuo específico para Corpse (profundidade)
-        paste_x = int(size[0] * 0.1) 
-        paste_y = size[1] - new_height - 50 
-    elif anchor == "bottom-center":
-        paste_x = (size[0] - new_width)
-        paste_y = size[1] - new_height
-    else: # center
-        paste_x = (size[0] - new_width)
-        paste_y = (size[1] - new_height)
-        
-    new_img.paste(img, (paste_x, paste_y), img)
+    paste_x = (size[0] - img.width) // 2
+    paste_y = (size[1] - img.height) // 2
+    new_img.paste(img, (paste_x, paste_y), img if img.mode == 'RGBA' else None)
     return new_img
 
 def process_single_image(file_path, img_type, keep_bg=False):
@@ -145,7 +143,7 @@ def process_single_image(file_path, img_type, keep_bg=False):
         s_img.save(path.parent / f"{path.stem}.png")
 
     elif img_type in ["relic", "power"]:
-        scale = 0.5
+        scale = 0.9
         l_img = resize_and_center(img, CONFIG[img_type]["large"], scale)
         s_img = resize_and_center(img, CONFIG[img_type]["standard"], scale)
         l_img.save(path.parent / f"{path.stem}_large.png")
