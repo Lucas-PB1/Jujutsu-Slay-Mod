@@ -5,32 +5,27 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import jujutsumod.character.Itadori;
 import jujutsumod.patches.CustomTags;
-import jujutsumod.powers.AgitoPower;
+import jujutsumod.powers.InfinityPower;
 import jujutsumod.util.CardStats;
 
-public class Agito extends BaseCard {
-    public static final String ID = makeID("Agito");
+public class InfinityBarrier extends BaseCard {
+    public static final String ID = makeID("InfinityBarrier");
     private static final CardStats info = new CardStats(
             Itadori.Meta.CARD_COLOR,
             CardType.POWER,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
-            3
+            2
     );
 
-    public Agito() {
+    public InfinityBarrier() {
         super(ID, info);
-        setMagic(8, 1); // 8 base, 9 upgraded
-        tags.add(CustomTags.TEN_SHADOWS);
+        setMagic(2, 1);
+        tags.add(CustomTags.LIMITLESS);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int dmg = magicNumber;
-        int blk = upgraded ? 7 : 6;
-        int str = upgraded ? 2 : 1;
-        int hl = upgraded ? 3 : 2;
-        
-        addToBot(new ApplyPowerAction(p, p, new AgitoPower(p, dmg, blk, str, hl), dmg));
+        addToBot(new ApplyPowerAction(p, p, new InfinityPower(p, magicNumber), magicNumber));
     }
 }

@@ -50,5 +50,21 @@
       "shikigami"
     ],
     "DESCRIPTION": "Criaturas divinas invocadas das sombras. Jogar uma carta de Shikigami frequentemente ativa efeitos adicionais se outra carta de Dez Sombras foi jogada este turno."
+  },
+  {
+    "PROPER_NAME": "Ilimitado",
+    "NAMES": [
+      "ilimitado",
+      "limitless"
+    ],
+    "DESCRIPTION": "A técnica inata de Satoru Gojo. Foca em manipulação espacial, eficiência extrema e o vazio."
+  },
+  {
+    "PROPER_NAME": "Infinito",
+    "NAMES": [
+      "infinito",
+      "infinity"
+    ],
+    "DESCRIPTION": "Um estado de intangibilidade. Ganha Bloqueio sempre que jogar uma carta."
   }
 ]

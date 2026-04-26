@@ -117,5 +117,35 @@
   "${modID}:TenShadowsTechnique": {
     "NAME": "Ten Shadows Technique",
     "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. NL Whenever you play a unique *Ten* *Shadows* card, count it. NL Once 10 unique shadows are invoked, all *Ten* *Shadows* cards are played twice."
+  },
+  "${modID}:LapseBlue": {
+    "NAME": "Lapse: Blue",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL If *Reversal:* *Red* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *Limitless*."
+  },
+  "${modID}:ReversalRed": {
+    "NAME": "Reversal: Red",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is attacking, apply !M! Weak and !M! Vulnerable. NL If *Lapse:* *Blue* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *Limitless*."
+  },
+  "${modID}:InfinityBarrier": {
+    "NAME": "Infinity Barrier",
+    "DESCRIPTION": "Whenever you play a card, gain !M! Block. NL *Limitless*."
+  },
+  "${modID}:HollowPurple": {
+    "NAME": "Hollow Purple",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Return the exhausted *Lapse:* *Blue* and *Reversal:* *Red* to your hand. NL Exhaust. NL *Limitless*."
+  },
+  "${modID}:SixEyes": {
+    "NAME": "Six Eyes",
+    "DESCRIPTION": "At the start of your turn, Scry !M! and gain [E]. NL *Limitless*.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, Scry !M! and gain [E] [E]. Your *Limitless* cards cost 1 energy less. NL *Limitless*."
+  },
+  "${modID}:UnlimitedVoid": {
+    "NAME": "Unlimited Void",
+    "DESCRIPTION": "At the start of your turn, deal 5 damage to ALL enemies. Reduce all attack damage taken by 3. If damage is reduced to 0, gain [E]. NL *Limitless*.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, deal 10 damage to ALL enemies. Reduce all attack damage taken by 5. If damage is reduced to 0, gain [E]. NL *Limitless*."
+  },
+  "${modID}:CurtainLimitless": {
+    "NAME": "Curtain: Limitless",
+    "DESCRIPTION": "Gain !B! Block. NL If #ySix #yEyes is active, draw 1 card. NL *Limitless*."
   }
 }

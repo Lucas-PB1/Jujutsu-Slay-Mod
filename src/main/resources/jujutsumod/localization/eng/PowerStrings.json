@@ -64,5 +64,29 @@
       "Whenever you play a #yTen #yShadows card, gain ",
       " Strength until end of turn."
     ]
+  },
+  "${modID}:InfinityPower": {
+    "NAME": "Infinity",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, gain #b",
+      " Block."
+    ]
+  },
+  "${modID}:SixEyesPower": {
+    "NAME": "Six Eyes",
+    "DESCRIPTIONS": [
+      "At the start of your turn, Scry #b",
+      " and gain #b",
+      " energy.",
+      " Your *Limitless* cards cost 1 energy less."
+    ]
+  },
+  "${modID}:UnlimitedVoidPower": {
+    "NAME": "Unlimited Void",
+    "DESCRIPTIONS": [
+      "At the start of your turn, deal #b",
+      " damage to ALL enemies. Reduce all attack damage taken by #b",
+      ". If damage is reduced to 0, gain [E]."
+    ]
   }
 }

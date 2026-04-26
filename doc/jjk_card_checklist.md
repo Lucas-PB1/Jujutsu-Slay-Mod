@@ -7,7 +7,7 @@
 - [x] **Defend** (Starter)
 - [x] **Divergent Fist** (Starter)
 - [x] **Black Flash** (Rare)
-- [x] **Cursed Energy Infusion** (Uncommon)
+- [x] **Cursed Energy Infusion** (Rare)
 - [x] **Slaughter Demon** (Common)
 - [x] **Cursed Flow** (Common)
 - [x] **Martial Arts Mastery** (Common)
@@ -18,6 +18,27 @@
 ---
 
 ## 2. Character-Specific Systems
+
+### Ryomen Sukuna: Shrine
+- [x] **Dismantle** (Attack - Common)
+- [x] **Cleave** (Attack - Common)
+- [x] **Spiderweb** (Attack - Uncommon)
+- [x] **Divine Flame (Fuuga)** (Attack - Rare)
+- [x] **Malevolent Shrine** (Power - Rare)
+
+### The Ten Shadows (Shikigami)
+- [x] **Ten Shadows Technique** (Power - Rare) [Mastery Ritual]
+- [x] **Divine Dog: Black/White** (Common)
+- [x] **Nue** (Common)
+- [x] **Toad (Gama)** (Uncommon)
+- [x] **Great Serpent** (Common)
+- [x] **Max Elephant** (Uncommon)
+- [x] **Rabbit Escape** (Common)
+- [x] **Round Deer** (Uncommon)
+- [x] **Piercing Ox** (Uncommon)
+- [x] **Tiger Funeral** (Power - Rare)
+- [x] **Mahoraga** (Rare)
+- [x] **Merged Beast Agito** (Rare)
 
 ### Hiromi Higuruma: The Courtroom
 - [ ] **Domain: Deadly Sentencing** (Power - Rare)
@@ -44,13 +65,6 @@
 - [ ] **Hollow Purple** (Attack - Rare)
 - [ ] **Unlimited Void** (Power - Rare)
 - [ ] **Six Eyes Perception** (Power - Rare)
-
-### Ryomen Sukuna: Shrine
-- [x] **Dismantle** (Attack - Common)
-- [x] **Cleave** (Attack - Uncommon)
-- [x] **Spiderweb** (Attack - Rare)
-- [x] **Divine Flame (Fuuga)** (Attack - Rare)
-- [x] **Malevolent Shrine** (Power - Rare)
 
 ### Kento Nanami: Ratio
 - [ ] **7:3 Ratio Strike** (Attack - Uncommon)
@@ -85,53 +99,17 @@
 - [ ] **Boogie Woogie Swap** (Skill - Uncommon)
 - [ ] **Clap Feint** (Skill - Common)
 
-### The Disasters (Jogo/Mahito/Dagon)
-- [ ] **Ember Insects** (Attack - Common)
-- [ ] **Disaster Volcano** (Skill - Uncommon)
-- [ ] **Maximum: Meteor** (Attack - Rare)
-- [ ] **Soul Reshaping** (Skill - Rare)
-- [ ] **Soul Multiplicity** (Skill - Uncommon)
-- [ ] **Polymorphic Soul Isomer** (Skill/Power - Uncommon)
-- [ ] **Instant Spirit Body** (Power - Rare)
-- [ ] **Disaster Tides** (Skill - Uncommon)
-- [ ] **Death Swarm** (Attack - Rare)
-
-### Specialized Techniques
-- [ ] **Solo Forbidden Area** (Utahime) (Skill - Uncommon)
-- [ ] **Bird Strike** (Mei Mei) (Attack - Rare)
-- [ ] **Batto Sword Drawing** (Miwa) (Attack - Uncommon)
-- [ ] **Simple Domain: Interception** (Miwa) (Skill - Common)
-- [ ] **Barrier Mastery: Pure** (Tengen) (Power - Rare)
-- [ ] **24 FPS Movement** (Naoya) (Power - Rare)
-- [ ] **Mythical Beast Amber** (Kashimo) (Power - Rare)
-- [ ] **Electrical Charge** (Kashimo) (Power - Uncommon)
-- [ ] **Jackpot: Immortal** (Hakari) (Power - Rare)
-- [ ] **Pachinko: Shutter Doors** (Hakari) (Attack - Common)
-- [ ] **Comedian Reality** (Takaba) (Power - Rare)
-- [ ] **Jacob's Ladder** (Hana Kurusu) (Attack - Rare)
-- [ ] **Spatial Transference** (Ui Ui) (Skill - Uncommon)
-- [ ] **Black Rope Disruption** (Miguel) (Skill - Uncommon)
-- [ ] **Frost Calm** (Uraume) (Skill - Uncommon)
-- [ ] **Ice Fall** (Uraume) (Attack - Uncommon)
-- [ ] **Construction: Liquid Metal** (Yorozu) (Skill - Uncommon)
-- [ ] **Construction: Insect Armor** (Yorozu) (Power - Rare)
-- [ ] **Disaster Plants: Cursed Buds** (Hanami) (Skill - Uncommon)
-- [ ] **Disaster Plants: Wooden Spikes** (Hanami) (Attack - Common)
-
 ---
 
 ## 3. Domain Expansions (Checklist)
 - [ ] **Unlimited Void** (Gojo)
-- [ ] **Malevolent Shrine** (Sukuna)
+- [x] **Malevolent Shrine** (Sukuna)
 - [ ] **Benevolent Shrine** (Itadori)
 - [ ] **Self-Embodiment of Perfection** (Mahito)
-- [ ] **Chimera Shadow Garden** (Megumi)
+- [x] **Chimera Shadow Garden** (Megumi) [Implemented as Ten Shadows Technique]
 - [ ] **Deadly Sentencing** (Higuruma)
 - [ ] **Idle Death Gamble** (Hakari)
 - [ ] **Authentic Mutual Love** (Yuta)
-- [ ] **Womb Profusion** (Kenjaku)
-- [ ] **Time Cell Moon Palace** (Naoya)
-- [ ] **Threefold Affliction** (Yorozu)
 
 ---
 
@@ -143,38 +121,9 @@
 
 ---
 
-## 5. The Ten Shadows (Shikigami)
-- [ ] **Divine Dog: Black/White** (Common)
-- [ ] **Nue** (Uncommon)
-- [ ] **Toad** (Common)
-- [ ] **Great Serpent** (Common)
-- [ ] **Max Elephant** (Uncommon)
-- [ ] **Rabbit Escape** (Common)
-- [ ] **Round Deer** (Uncommon)
-- [ ] **Piercing Ox** (Uncommon)
-- [ ] **Tiger Funeral** (Uncommon)
-- [ ] **Mahoraga** (Rare)
-- [ ] **Merged Beast Agito** (Rare)
-
----
-
-## 6. Heavenly Restriction (Physical Mastery)
+## 5. Heavenly Restriction (Physical Mastery)
 - [ ] **Zero-Step** (Skill)
 - [ ] **Air Jump** (Skill)
 - [ ] **Soul-Cut Strike** (Attack)
 - [ ] **Instinctive Counter** (Skill)
 - [ ] **Invisibility to Barriers** (Power)
-
----
-
-## 7. Jujutsu Kaisen: Modulo
-- [ ] **Honoyagi Ignition** (Tsurugi)
-- [ ] **Rika Merge** (Tsurugi)
-- [ ] **Cursed Claws** (Yuka)
-- [ ] **Savage Jaw Strike** (Yuka)
-- [ ] **Simurian Chaos** (Maru)
-- [ ] **Simurian Harmony** (Maru)
-- [ ] **Light Pillar Strike** (Dabura)
-- [ ] **Killing Intent Blast** (Dabura)
-- [ ] **Immortal Guardian Form** (Itadori)
-- [ ] **Immortal Guardian Form** (Itadori)

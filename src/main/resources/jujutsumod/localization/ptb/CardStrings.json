@@ -117,5 +117,35 @@
   "${modID}:TenShadowsTechnique": {
     "NAME": "Técnica das Dez Sombras",
     "DESCRIPTION": "Ganha !M! de Força e !M! de Destreza. NL Sempre que jogar uma carta de *Dez* *Sombras* única, conte-a. NL Quando as 10 sombras únicas forem invocadas, todas as cartas de *Dez* *Sombras* são jogadas duas vezes."
+  },
+  "${modID}:LapseBlue": {
+    "NAME": "Lapso: Azul",
+    "DESCRIPTION": "Causa !D! de dano. Compre 1 carta. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaure ambas e cria um *Vazio* *Roxo*. NL *Ilimitado*."
+  },
+  "${modID}:ReversalRed": {
+    "NAME": "Reversão: Vermelho",
+    "DESCRIPTION": "Causa !D! de dano. NL Se o inimigo estiver atacando, aplique !M! de Fraqueza e Vulnerável. NL Se *Lapso:* *Azul* foi jogado este turno, Exaure ambas e cria um *Vazio* *Roxo*. NL *Ilimitado*."
+  },
+  "${modID}:InfinityBarrier": {
+    "NAME": "Barreira do Infinito",
+    "DESCRIPTION": "Sempre que jogar uma carta, ganha !M! de Bloqueio. NL *Ilimitado*."
+  },
+  "${modID}:HollowPurple": {
+    "NAME": "Vazio Roxo",
+    "DESCRIPTION": "Causa !D! de dano a TODOS os inimigos. NL Retorne o *Lapso:* *Azul* e a *Reversão:* *Vermelho* exauridos para sua mão. NL Exaurir. NL *Ilimitado*."
+  },
+  "${modID}:SixEyes": {
+    "NAME": "Seis Olhos",
+    "DESCRIPTION": "No início do seu turno, execute Vidência !M! e ganha [E]. NL *Ilimitado*.",
+    "UPGRADE_DESCRIPTION": "No início do seu turno, execute Vidência !M! e ganha [E] [E]. Suas cartas de *Ilimitado* custam 1 de energia a menos. NL *Ilimitado*."
+  },
+  "${modID}:UnlimitedVoid": {
+    "NAME": "Vazio Ilimitado",
+    "DESCRIPTION": "No início do seu turno, causa 5 de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em 3. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*.",
+    "UPGRADE_DESCRIPTION": "No início do seu turno, causa 10 de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em 5. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*."
+  },
+  "${modID}:CurtainLimitless": {
+    "NAME": "Cortina: Ilimitado",
+    "DESCRIPTION": "Ganhe !B! de Bloqueio. NL Se #ySeis #yOlhos estiver ativo, compre 1 carta. NL *Ilimitado*."
   }
 }

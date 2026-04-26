@@ -64,5 +64,29 @@
       "Sempre que jogar uma carta de #yDez #ySombras, ganha ",
       " de Força até o final do turno."
     ]
+  },
+  "${modID}:InfinityPower": {
+    "NAME": "Infinito",
+    "DESCRIPTIONS": [
+      "Sempre que jogar uma carta, ganha #b",
+      " de Bloqueio."
+    ]
+  },
+  "${modID}:SixEyesPower": {
+    "NAME": "Seis Olhos",
+    "DESCRIPTIONS": [
+      "No início do seu turno, execute Vidência #b",
+      " e ganha #b",
+      " de energia.",
+      " Suas cartas de *Ilimitado* custam 1 de energia a menos."
+    ]
+  },
+  "${modID}:UnlimitedVoidPower": {
+    "NAME": "Vazio Ilimitado",
+    "DESCRIPTIONS": [
+      "No início do seu turno, causa #b",
+      " de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em #b",
+      ". Se o dano for reduzido a 0, ganha [E]."
+    ]
   }
 }

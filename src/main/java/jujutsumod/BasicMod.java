@@ -201,6 +201,15 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.Agito());
         BaseMod.addCard(new jujutsumod.cards.TenShadowsTechnique());
         BaseMod.addCard(new jujutsumod.cards.Rabbit());
+        
+        // Gojo Limitless
+        BaseMod.addCard(new jujutsumod.cards.LapseBlue());
+        BaseMod.addCard(new jujutsumod.cards.ReversalRed());
+        BaseMod.addCard(new jujutsumod.cards.InfinityBarrier());
+        BaseMod.addCard(new jujutsumod.cards.HollowPurple());
+        BaseMod.addCard(new jujutsumod.cards.SixEyes());
+        BaseMod.addCard(new jujutsumod.cards.UnlimitedVoid());
+        BaseMod.addCard(new jujutsumod.cards.CurtainLimitless());
     }
 
     @Override

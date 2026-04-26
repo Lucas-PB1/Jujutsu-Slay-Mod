@@ -72,5 +72,21 @@
       "spark_of_black"
     ],
     "DESCRIPTION": "The flash of cursed energy. Gain [E] for every 2 Attacks played this turn."
+  },
+  {
+    "PROPER_NAME": "Limitless",
+    "NAMES": [
+      "limitless",
+      "ilimitado"
+    ],
+    "DESCRIPTION": "Satoru Gojo's innate technique. Focuses on spatial manipulation, extreme efficiency, and the void."
+  },
+  {
+    "PROPER_NAME": "Infinity",
+    "NAMES": [
+      "infinity",
+      "infinito"
+    ],
+    "DESCRIPTION": "A state of untouchability. Grants Block whenever a card is played."
   }
 ]
