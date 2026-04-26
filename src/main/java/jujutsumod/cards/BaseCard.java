@@ -459,7 +459,7 @@ public abstract class BaseCard extends CustomCard {
     @Override
     public void upgrade()
     {
-        if (!upgraded)
+        if (!upgraded || jujutsumod.BasicMod.DEBUG_MODE)
         {
             this.upgradeName();
 

@@ -88,5 +88,26 @@
       " damage to ALL enemies. Reduce all attack damage taken by #b",
       ". If damage is reduced to 0, gain [E]."
     ]
+  },
+  "${modID}:ImmeasurableCursedEnergyPower": {
+    "NAME": "Immeasurable Cursed Energy",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b",
+      " energy."
+    ]
+  },
+  "${modID}:QueenOfCursesPower": {
+    "NAME": "The Queen of Curses",
+    "DESCRIPTIONS": [
+      "Your #yShikigami cards deal #b",
+      "% more damage and provide #b50% more Block."
+    ]
+  },
+  "${modID}:AuthenticMutualLovePower": {
+    "NAME": "Authentic Mutual Love",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b",
+      " #yFocus and add a random card from another character's pool to your hand. It costs 0 this turn."
+    ]
   }
 }

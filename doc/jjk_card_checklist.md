@@ -59,12 +59,13 @@
 - [ ] **Technique Charge: Simple Domain** (Skill - Uncommon)
 
 ### Satoru Gojo: Limitless
-- [ ] **Infinity Barrier** (Power - Rare)
-- [ ] **Lapse: Blue** (Attack - Uncommon)
-- [ ] **Reversal: Red** (Attack - Uncommon)
-- [ ] **Hollow Purple** (Attack - Rare)
-- [ ] **Unlimited Void** (Power - Rare)
-- [ ] **Six Eyes Perception** (Power - Rare)
+- [x] **Infinity Barrier** (Power - Rare)
+- [x] **Lapse: Blue** (Attack - Uncommon)
+- [x] **Reversal: Red** (Attack - Uncommon)
+- [x] **Hollow Purple** (Attack - Rare)
+- [x] **Unlimited Void** (Power - Rare)
+- [x] **Six Eyes Perception** (Power - Rare)
+- [x] **Curtain: Limitless** (Skill - Common)
 
 ### Kento Nanami: Ratio
 - [ ] **7:3 Ratio Strike** (Attack - Uncommon)
@@ -90,10 +91,14 @@
 - [ ] **Triceratops Core** (Power - Rare)
 - [ ] **Unblockable Drumming Beat** (Attack - Uncommon)
 
-### Yuta Okkotsu: Copy
-- [ ] **Copy Technique** (Skill - Rare)
-- [ ] **Rika: Full Manifestation** (Power - Rare)
-- [ ] **Pure Love Beam** (Attack - Rare)
+### Yuta Okkotsu: The Cursed Child & Rika
+- [x] **Katana Strike** (Attack - Common) [Focus Gain]
+- [x] **Rika: Protective Embrace** (Skill - Common) [SHIKIGAMI]
+- [x] **Immeasurable Cursed Energy** (Power - Uncommon)
+- [x] **Rika: Soul Grasp** (Attack - Uncommon) [SHIKIGAMI] [Repeat Next]
+- [x] **The Queen of Curses** (Power - Rare) [SHIKIGAMI]
+- [x] **Authentic Mutual Love** (Power - Rare)
+- [x] **Pure Love Beam** (Attack - Rare) [SHIKIGAMI] [X-Cost, Focus Scale]
 
 ### Aoi Todo: Boogie Woogie
 - [ ] **Boogie Woogie Swap** (Skill - Uncommon)
@@ -102,7 +107,7 @@
 ---
 
 ## 3. Domain Expansions (Checklist)
-- [ ] **Unlimited Void** (Gojo)
+- [x] **Unlimited Void** (Gojo)
 - [x] **Malevolent Shrine** (Sukuna)
 - [ ] **Benevolent Shrine** (Itadori)
 - [ ] **Self-Embodiment of Perfection** (Mahito)

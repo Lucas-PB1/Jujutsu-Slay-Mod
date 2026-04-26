@@ -16,4 +16,14 @@ public class DebugPatches {
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
         }
     }
+
+    @SpirePatch(clz = com.megacrit.cardcrawl.cards.AbstractCard.class, method = "canUpgrade")
+    public static class InfiniteUpgradePatch {
+        public static boolean Postfix(boolean __result, com.megacrit.cardcrawl.cards.AbstractCard __instance) {
+            if (BasicMod.DEBUG_MODE) {
+                return true;
+            }
+            return __result;
+        }
+    }
 }

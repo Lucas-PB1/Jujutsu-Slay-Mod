@@ -98,5 +98,13 @@
       "seis_olhos"
     ],
     "DESCRIPTION": "A rare ocular technique. At the start of your turn, Scry and gain additional Energy."
+  },
+  {
+    "PROPER_NAME": "Focus",
+    "NAMES": [
+      "focus",
+      "foco"
+    ],
+    "DESCRIPTION": "Increases the damage of techniques that scale with concentration, like Pure Love Beam."
   }
 ]

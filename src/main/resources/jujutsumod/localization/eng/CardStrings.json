@@ -149,5 +149,33 @@
   "${modID}:CurtainLimitless": {
     "NAME": "Curtain: Limitless",
     "DESCRIPTION": "Gain !B! Block. NL If *Six* *Eyes* is active, draw 1 card. NL *Limitless*."
+  },
+  "${modID}:KatanaStrike": {
+    "NAME": "Katana Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Gain 1 #yFocus."
+  },
+  "${modID}:RikaProtectiveEmbrace": {
+    "NAME": "Rika: Protective Embrace",
+    "DESCRIPTION": "Gain !B! Block. NL If you have an active Power, gain 1 #yBlur. NL *Shikigami*."
+  },
+  "${modID}:ImmeasurableCursedEnergy": {
+    "NAME": "Immeasurable Cursed Energy",
+    "DESCRIPTION": "At the start of your turn, gain [E]."
+  },
+  "${modID}:RikaSoulGrasp": {
+    "NAME": "Rika: Soul Grasp",
+    "DESCRIPTION": "Deal !D! damage. NL Your next card played this turn is played twice. NL *Shikigami*."
+  },
+  "${modID}:QueenOfCurses": {
+    "NAME": "The Queen of Curses",
+    "DESCRIPTION": "Your *Shikigami* cards deal 50% more damage and provide 50% more Block. NL *Shikigami*."
+  },
+  "${modID}:AuthenticMutualLove": {
+    "NAME": "Authentic Mutual Love",
+    "DESCRIPTION": "At the start of your turn, gain !M! #yFocus and add a random card from another character's pool to your hand. It costs 0 this turn."
+  },
+  "${modID}:PureLoveBeam": {
+    "NAME": "Pure Love Beam",
+    "DESCRIPTION": "Deal !D! damage X times. NL Damage increases with #yFocus. NL *Shikigami*."
   }
 }

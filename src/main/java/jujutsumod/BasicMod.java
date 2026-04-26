@@ -255,6 +255,15 @@ public class BasicMod implements
         BaseMod.addCard(new jujutsumod.cards.SixEyes());
         BaseMod.addCard(new jujutsumod.cards.UnlimitedVoid());
         BaseMod.addCard(new jujutsumod.cards.CurtainLimitless());
+
+        // Yuta Okkotsu
+        BaseMod.addCard(new jujutsumod.cards.KatanaStrike());
+        BaseMod.addCard(new jujutsumod.cards.RikaProtectiveEmbrace());
+        BaseMod.addCard(new jujutsumod.cards.ImmeasurableCursedEnergy());
+        BaseMod.addCard(new jujutsumod.cards.RikaSoulGrasp());
+        BaseMod.addCard(new jujutsumod.cards.QueenOfCurses());
+        BaseMod.addCard(new jujutsumod.cards.AuthenticMutualLove());
+        BaseMod.addCard(new jujutsumod.cards.PureLoveBeam());
     }
 
     @Override
