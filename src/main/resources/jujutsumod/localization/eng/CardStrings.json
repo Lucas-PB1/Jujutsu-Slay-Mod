@@ -92,7 +92,8 @@
   },
   "${modID}:RabbitEscape": {
     "NAME": "Rabbit Escape",
-    "DESCRIPTION": "Exhaust any number of cards in your hand. For each card exhausted, add a *Rabbit* to your hand."
+    "DESCRIPTION": "Exhaust any number of cards in your hand. For each card exhausted, add a *Rabbit* to your hand.",
+    "UPGRADE_DESCRIPTION": "Exhaust any number of cards in your hand. For each card exhausted, add a *Rabbit+* to your hand."
   },
   "${modID}:Rabbit": {
     "NAME": "Rabbit",
@@ -104,7 +105,7 @@
   },
   "${modID}:PiercingOx": {
     "NAME": "Piercing Ox",
-    "DESCRIPTION": "Deal !D! damage for each *Ten* *Shadows* or *Shikigami* card played this combat. NL Exhaust."
+    "DESCRIPTION": "Deal !M! damage for each *Ten* *Shadows* or *Shikigami* card played this combat. NL Exhaust."
   },
   "${modID}:TigerFuneral": {
     "NAME": "Tiger Funeral",
@@ -112,7 +113,7 @@
   },
   "${modID}:Agito": {
     "NAME": "Merged Beast Agito",
-    "DESCRIPTION": "At the end of your turn, deal !M! damage to a random enemy, gain !jujutsumod:BLOCK! Block, !jujutsumod:STR! Strength and heal !jujutsumod:HEAL! HP."
+    "DESCRIPTION": "At the end of your turn, deal !M! damage to a random enemy, gain !${modID}:BLOCK! Block, !${modID}:STR! Strength and heal !${modID}:HEAL! HP."
   },
   "${modID}:TenShadowsTechnique": {
     "NAME": "Ten Shadows Technique",
@@ -120,7 +121,8 @@
   },
   "${modID}:LapseBlue": {
     "NAME": "Lapse: Blue",
-    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL If *Reversal:* *Red* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *Limitless*."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card. NL If *Reversal:* *Red* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *Limitless*.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL If *Reversal:* *Red* was played this turn, Exhaust both and create a *Hollow* *Purple*. NL *Limitless*."
   },
   "${modID}:ReversalRed": {
     "NAME": "Reversal: Red",
@@ -141,11 +143,11 @@
   },
   "${modID}:UnlimitedVoid": {
     "NAME": "Unlimited Void",
-    "DESCRIPTION": "At the start of your turn, deal !jujutsumod:DAMAGE! damage to ALL enemies. Reduce all attack damage taken by !M!. If damage is reduced to 0, gain [E]. NL *Limitless*.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, deal !jujutsumod:DAMAGE! damage to ALL enemies. Reduce all attack damage taken by !M!. If damage is reduced to 0, gain [E]. NL *Limitless*."
+    "DESCRIPTION": "At the start of your turn, deal !${modID}:DAMAGE! damage to ALL enemies. Reduce all attack damage taken by !M!. If damage is reduced to 0, gain [E]. NL *Limitless*.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, deal !${modID}:DAMAGE! damage to ALL enemies. Reduce all attack damage taken by !M!. If damage is reduced to 0, gain [E]. NL *Limitless*."
   },
   "${modID}:CurtainLimitless": {
     "NAME": "Curtain: Limitless",
-    "DESCRIPTION": "Gain !B! Block. NL If #ySix #yEyes is active, draw 1 card. NL *Limitless*."
+    "DESCRIPTION": "Gain !B! Block. NL If *Six* *Eyes* is active, draw 1 card. NL *Limitless*."
   }
 }

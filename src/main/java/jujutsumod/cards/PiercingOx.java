@@ -22,6 +22,7 @@ public class PiercingOx extends BaseCard {
 
     public PiercingOx() {
         super(ID, info);
+        setDamage(0);
         setMagic(2, 1);
         setCostUpgrade(1);
         setExhaust(true);

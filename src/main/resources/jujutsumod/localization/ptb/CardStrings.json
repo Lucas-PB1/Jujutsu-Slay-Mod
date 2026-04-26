@@ -92,7 +92,8 @@
   },
   "${modID}:RabbitEscape": {
     "NAME": "Evasão de Coelhos",
-    "DESCRIPTION": "Exaura qualquer número de cartas em sua mão. Para cada carta exaurida, adicione um *Coelho* à sua mão."
+    "DESCRIPTION": "Exaura qualquer número de cartas em sua mão. Para cada carta exaurida, adicione um *Coelho* à sua mão.",
+    "UPGRADE_DESCRIPTION": "Exaura qualquer número de cartas em sua mão. Para cada carta exaurida, adicione um *Coelho+* à sua mão."
   },
   "${modID}:Rabbit": {
     "NAME": "Coelho",
@@ -104,7 +105,7 @@
   },
   "${modID}:PiercingOx": {
     "NAME": "Touro de Perfuração",
-    "DESCRIPTION": "Causa !D! de dano para cada carta de *Dez* *Sombras* ou *Shikigami* jogada este combate. NL Exaurir."
+    "DESCRIPTION": "Causa !M! de dano para cada carta de *Dez* *Sombras* ou *Shikigami* jogada este combate. NL Exaurir."
   },
   "${modID}:TigerFuneral": {
     "NAME": "Funeral do Tigre",
@@ -112,7 +113,7 @@
   },
   "${modID}:Agito": {
     "NAME": "Besta Mesclada: Agito",
-    "DESCRIPTION": "No final do seu turno, causa !M! de dano a um inimigo aleatório, ganha !jujutsumod:BLOCK! de Bloqueio, !jujutsumod:STR! de Força e cura !jujutsumod:HEAL! de PV."
+    "DESCRIPTION": "No final do seu turno, causa !M! de dano a um inimigo aleatório, ganha !${modID}:BLOCK! de Bloqueio, !${modID}:STR! de Força e cura !${modID}:HEAL! de PV."
   },
   "${modID}:TenShadowsTechnique": {
     "NAME": "Técnica das Dez Sombras",
@@ -120,7 +121,8 @@
   },
   "${modID}:LapseBlue": {
     "NAME": "Lapso: Azul",
-    "DESCRIPTION": "Causa !D! de dano. NL Compre 1 carta. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *Ilimitado*."
+    "DESCRIPTION": "Causa !D! de dano. NL Compre !M! carta. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *Ilimitado*.",
+    "UPGRADE_DESCRIPTION": "Causa !D! de dano. NL Compre !M! cartas. NL Se *Reversão:* *Vermelho* foi jogado este turno, Exaura ambas e crie um *Vazio* *Roxo*. NL *Ilimitado*."
   },
   "${modID}:ReversalRed": {
     "NAME": "Reversão: Vermelho",
@@ -141,11 +143,11 @@
   },
   "${modID}:UnlimitedVoid": {
     "NAME": "Vazio Ilimitado",
-    "DESCRIPTION": "No início do seu turno, causa !jujutsumod:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*.",
-    "UPGRADE_DESCRIPTION": "No início do seu turno, causa !jujutsumod:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*."
+    "DESCRIPTION": "No início do seu turno, causa !${modID}:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*.",
+    "UPGRADE_DESCRIPTION": "No início do seu turno, causa !${modID}:DAMAGE! de dano a TODOS os inimigos. Reduz todo dano de ataque recebido em !M!. Se o dano for reduzido a 0, ganha [E]. NL *Ilimitado*."
   },
   "${modID}:CurtainLimitless": {
     "NAME": "Cortina: Ilimitado",
-    "DESCRIPTION": "Ganhe !B! de Bloqueio. NL Se #ySeis #yOlhos estiver ativo, compre 1 carta. NL *Ilimitado*."
+    "DESCRIPTION": "Ganhe !B! de Bloqueio. NL Se *Seis* *Olhos* estiver ativo, compre 1 carta. NL *Ilimitado*."
   }
 }

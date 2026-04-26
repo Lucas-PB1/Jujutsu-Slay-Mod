@@ -369,29 +369,29 @@ public abstract class BaseCard extends CustomCard {
         this.costUpgrade = costUpgrade;
         this.upgradeCost = true;
     }
-    protected final void setExhaust(boolean exhaust) { this.setExhaust(exhaust, exhaust); }
-    protected final void setEthereal(boolean ethereal) { this.setEthereal(ethereal, ethereal); }
-    protected final void setInnate(boolean innate) {this.setInnate(innate, innate); }
-    protected final void setSelfRetain(boolean retain) {this.setSelfRetain(retain, retain); }
-    protected final void setExhaust(boolean baseExhaust, boolean upgExhaust)
+    public final void setExhaust(boolean exhaust) { this.setExhaust(exhaust, exhaust); }
+    public final void setEthereal(boolean ethereal) { this.setEthereal(ethereal, ethereal); }
+    public final void setInnate(boolean innate) {this.setInnate(innate, innate); }
+    public final void setSelfRetain(boolean retain) {this.setSelfRetain(retain, retain); }
+    public final void setExhaust(boolean baseExhaust, boolean upgExhaust)
     {
         this.baseExhaust = baseExhaust;
         this.upgExhaust = upgExhaust;
         this.exhaust = baseExhaust;
     }
-    protected final void setEthereal(boolean baseEthereal, boolean upgEthereal)
+    public final void setEthereal(boolean baseEthereal, boolean upgEthereal)
     {
         this.baseEthereal = baseEthereal;
         this.upgEthereal = upgEthereal;
         this.isEthereal = baseEthereal;
     }
-    protected void setInnate(boolean baseInnate, boolean upgInnate)
+    public void setInnate(boolean baseInnate, boolean upgInnate)
     {
         this.baseInnate = baseInnate;
         this.upgInnate = upgInnate;
         this.isInnate = baseInnate;
     }
-    protected void setSelfRetain(boolean baseRetain, boolean upgRetain)
+    public void setSelfRetain(boolean baseRetain, boolean upgRetain)
     {
         this.baseRetain = baseRetain;
         this.upgRetain = upgRetain;

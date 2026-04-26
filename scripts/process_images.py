@@ -143,7 +143,7 @@ def process_single_image(file_path, img_type, keep_bg=False):
         s_img.save(path.parent / f"{path.stem}.png")
 
     elif img_type in ["relic", "power"]:
-        scale = 0.9
+        scale = 0.5
         l_img = resize_and_center(img, CONFIG[img_type]["large"], scale)
         s_img = resize_and_center(img, CONFIG[img_type]["standard"], scale)
         l_img.save(path.parent / f"{path.stem}_large.png")

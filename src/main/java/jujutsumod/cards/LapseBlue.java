@@ -26,13 +26,14 @@ public class LapseBlue extends BaseCard {
     public LapseBlue() {
         super(ID, info);
         setDamage(8, 3);
+        setMagic(1, 1);
         tags.add(CustomTags.LIMITLESS);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(new DrawCardAction(1));
+        addToBot(new DrawCardAction(magicNumber));
 
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if (c.cardID.equals(ReversalRed.ID)) {

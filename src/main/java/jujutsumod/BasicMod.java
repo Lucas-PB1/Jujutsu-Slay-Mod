@@ -40,13 +40,14 @@ public class BasicMod implements
         AddAudioSubscriber,
         PostInitializeSubscriber,
         EditCardsSubscriber,
-        EditRelicsSubscriber {
+        EditRelicsSubscriber,
+        PostUpdateSubscriber {
     public static ModInfo info;
     public static String modID;
     static { loadModInfo(); }
     private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID);
-    public static boolean DEBUG_MODE = false;
+    public static boolean DEBUG_MODE = true;
 
     public static String makeID(String id) {
         return modID + ":" + id;
@@ -61,6 +62,50 @@ public class BasicMod implements
     public BasicMod() {
         BaseMod.subscribe(this);
         logger.info("{} subscribed to BaseMod.", modID);
+    }
+
+    @Override
+    public void receivePostUpdate() {
+        if (DEBUG_MODE && com.megacrit.cardcrawl.dungeons.AbstractDungeon.player != null && com.megacrit.cardcrawl.dungeons.AbstractDungeon.currMapNode != null) {
+            if (com.badlogic.gdx.Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.G)) {
+                // Add Gojo + Agito + Rabbit cards to hand and master deck
+                jujutsumod.cards.BaseCard[] cardsToTest = {
+                    new jujutsumod.cards.Agito(),
+                    new jujutsumod.cards.LapseBlue(),
+                    new jujutsumod.cards.ReversalRed(),
+                    new jujutsumod.cards.InfinityBarrier(),
+                    new jujutsumod.cards.HollowPurple(),
+                    new jujutsumod.cards.SixEyes(),
+                    new jujutsumod.cards.UnlimitedVoid(),
+                    new jujutsumod.cards.CurtainLimitless(),
+                    new jujutsumod.cards.RabbitEscape(),
+                    new jujutsumod.cards.Rabbit()
+                };
+
+                for (com.megacrit.cardcrawl.cards.AbstractCard c : cardsToTest) {
+                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.masterDeck.addToBottom(c.makeStatEquivalentCopy());
+                }
+            }
+            if (com.badlogic.gdx.Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.U)) {
+                // Upgrade all cards in master deck
+                for (com.megacrit.cardcrawl.cards.AbstractCard c : com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.masterDeck.group) {
+                    if (c.canUpgrade()) {
+                        c.upgrade();
+                    }
+                }
+                // Upgrade all cards in hand
+                for (com.megacrit.cardcrawl.cards.AbstractCard c : com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.hand.group) {
+                    if (c.canUpgrade()) {
+                        c.upgrade();
+                    }
+                }
+            }
+            if (com.badlogic.gdx.Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.H)) {
+                com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.heal(com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.maxHealth);
+                com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.gainEnergy(99);
+            }
+        }
     }
 
     @Override
