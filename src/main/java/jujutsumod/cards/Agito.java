@@ -20,6 +20,7 @@ public class Agito extends BaseCard {
 
     public Agito() {
         super(ID, info);
+        setMagic(1, 1);
         setCostUpgrade(2);
         tags.add(CustomTags.TEN_SHADOWS);
         tags.add(CustomTags.SHIKIGAMI);
@@ -27,6 +28,6 @@ public class Agito extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new AgitoPower(p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new AgitoPower(p, magicNumber), magicNumber));
     }
 }

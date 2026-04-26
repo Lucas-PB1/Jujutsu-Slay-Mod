@@ -30,7 +30,7 @@ public abstract class BaseCard extends CustomCard {
 
     protected boolean upgradesDescription;
 
-    protected int baseCost;
+    public int baseCost;
 
     protected boolean upgradeCost;
     protected int costUpgrade;

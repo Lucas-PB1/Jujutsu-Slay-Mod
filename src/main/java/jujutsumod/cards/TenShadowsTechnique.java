@@ -14,16 +14,17 @@ public class TenShadowsTechnique extends BaseCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            1
+            2
     );
 
     public TenShadowsTechnique() {
         super(ID, info);
-        setCostUpgrade(0);
+        setMagic(1, 1);
+        setCostUpgrade(1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new TenShadowsTechniquePower(p, 2), 2));
+        addToBot(new ApplyPowerAction(p, p, new TenShadowsTechniquePower(p, magicNumber), magicNumber));
     }
 }

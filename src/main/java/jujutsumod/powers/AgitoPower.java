@@ -26,19 +26,29 @@ public class AgitoPower extends BasePower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             flash();
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(owner, 10 * amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-            addToBot(new GainBlockAction(owner, owner, 6 * amount));
-            addToBot(new HealAction(owner, owner, 2 * amount));
-            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount), amount));
+            int damageAmt = 7 + amount;
+            int blockAmt = 5 + amount;
+            int strengthAmt = amount;
+            int healAmt = 1 + amount;
+
+            addToBot(new DamageRandomEnemyAction(new DamageInfo(owner, damageAmt, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+            addToBot(new GainBlockAction(owner, owner, blockAmt));
+            addToBot(new HealAction(owner, owner, healAmt));
+            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, strengthAmt), strengthAmt));
         }
     }
 
     @Override
     public void updateDescription() {
-        description = powerStrings.DESCRIPTIONS[0] + (10 * amount) + 
-                     powerStrings.DESCRIPTIONS[1] + (6 * amount) + 
-                     powerStrings.DESCRIPTIONS[2] + amount + 
-                     powerStrings.DESCRIPTIONS[3] + (2 * amount) + 
+        int damageAmt = 7 + amount;
+        int blockAmt = 5 + amount;
+        int strengthAmt = amount;
+        int healAmt = 1 + amount;
+
+        description = powerStrings.DESCRIPTIONS[0] + damageAmt + 
+                     powerStrings.DESCRIPTIONS[1] + blockAmt + 
+                     powerStrings.DESCRIPTIONS[2] + strengthAmt + 
+                     powerStrings.DESCRIPTIONS[3] + healAmt + 
                      powerStrings.DESCRIPTIONS[4];
     }
 }

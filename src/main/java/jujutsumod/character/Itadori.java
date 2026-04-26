@@ -137,6 +137,7 @@ public class Itadori extends CustomPlayer {
             retVal.add(jujutsumod.cards.Nue.ID);
             retVal.add(jujutsumod.cards.Gama.ID);
             retVal.add(jujutsumod.cards.GreatSerpent.ID);
+            retVal.add(jujutsumod.cards.PiercingOx.ID);
             return retVal;
         }
 

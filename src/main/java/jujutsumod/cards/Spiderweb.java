@@ -40,7 +40,7 @@ public class Spiderweb extends BaseCard {
     public void applyPowers() {
         super.applyPowers();
         int count = jujutsumod.util.CombatUtils.countCardPlayedThisCombat(Cleave.ID);
-        this.setCostForTurn(this.cost - count);
+        this.setCostForTurn(this.baseCost - count);
     }
 
     @Override

@@ -104,21 +104,18 @@
   },
   "${modID}:PiercingOx": {
     "NAME": "Piercing Ox",
-    "DESCRIPTION": "Deal damage equal to the total cards played this combat. NL *Shikigami*: If a *Ten Shadows* card was played this turn, deal double damage. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      " (Total: !D!)"
-    ]
+    "DESCRIPTION": "Deal !D! damage for each *Ten* *Shadows* or *Shikigami* card played this combat. NL Exhaust."
   },
   "${modID}:TigerFuneral": {
     "NAME": "Tiger Funeral",
-    "DESCRIPTION": "Discard 1 card. NL Deal !D! damage. NL Gain !M! Strength. NL *Shikigami*: If a *Ten Shadows* card was played this turn, gain double Strength."
+    "DESCRIPTION": "Whenever you play a *Ten* *Shadows* card, gain !M! Strength until end of turn."
   },
   "${modID}:Agito": {
     "NAME": "Merged Beast Agito",
-    "DESCRIPTION": "At the end of your turn, deal 10 damage to a random enemy, gain 6 Block, 1 Strength, and heal 2 HP."
+    "DESCRIPTION": "At the end of your turn, deal 8 damage to a random enemy, gain 6 Block, 1 Strength, and heal 2 HP. NL (Everything increases by 1 when Upgraded)."
   },
   "${modID}:TenShadowsTechnique": {
     "NAME": "Ten Shadows Technique",
-    "DESCRIPTION": "Whenever you play a *Ten Shadows* card, increase its damage and block by !M! for this combat. NL *Shikigami* effects always trigger."
+    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. NL Whenever you play a unique *Ten* *Shadows* card, count it. NL Once 10 unique shadows are invoked, all *Ten* *Shadows* cards are played twice."
   }
 }

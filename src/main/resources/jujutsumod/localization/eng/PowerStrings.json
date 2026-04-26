@@ -37,10 +37,11 @@
     ]
   },
   "${modID}:TenShadowsTechniquePower": {
-    "NAME": "Ten Shadows Mastery",
+    "NAME": "Ten Shadows Technique",
     "DESCRIPTIONS": [
-      "Whenever you play a #yTen #yShadows card, increase its damage and block by ",
-      " for this combat. NL #yShikigami effects always trigger."
+      "Invocations: ",
+      "/10. Once all 10 unique #yTen #yShadows are invoked, they will all be played twice.",
+      "The Technique is Mastered. All #yTen #yShadows cards are played twice."
     ]
   },
   "${modID}:GamaPower": {
@@ -55,6 +56,13 @@
     "NAME": "Serpent's Venom",
     "DESCRIPTIONS": [
       "Your next #yTen #yShadows Attack applies #yPoison equal to the damage dealt."
+    ]
+  },
+  "${modID}:TigerFuneralPower": {
+    "NAME": "Tiger Funeral",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yTen #yShadows card, gain ",
+      " Strength until end of turn."
     ]
   }
 }

@@ -89,4 +89,24 @@ public class CombatUtils {
         }
         return count;
     }
+
+    public static int countTagsPlayedThisCombat(AbstractCard.CardTags tag) {
+        int count = 0;
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+            if (c.hasTag(tag)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int countTenShadowsOrShikigamiPlayedThisCombat() {
+        int count = 0;
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+            if (c.hasTag(CustomTags.TEN_SHADOWS) || c.hasTag(CustomTags.SHIKIGAMI)) {
+                count++;
+            }
+        }
+        return count;
+    }
 }

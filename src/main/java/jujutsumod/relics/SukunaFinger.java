@@ -28,7 +28,13 @@ public class SukunaFinger extends BaseRelic {
         if (c.type == AbstractCard.CardType.ATTACK && AbstractDungeon.cardRandomRng.random(99) < 10) {
             flash();
             AbstractCard copy = c.makeStatEquivalentCopy();
-            copy.setCostForTurn(0);
+            copy.cost = 0;
+            copy.costForTurn = 0;
+            copy.isCostModified = true;
+            if (copy instanceof jujutsumod.cards.BaseCard) {
+                ((jujutsumod.cards.BaseCard) copy).baseCost = 0;
+            }
+            copy.exhaust = true;
             addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(copy));
         }
     }
