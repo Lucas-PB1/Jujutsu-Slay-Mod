@@ -23,7 +23,7 @@ import static jujutsumod.util.TextureLoader.getCardTextureString;
 
 
 public abstract class BaseCard extends CustomCard {
-    final private static Map<String, DynamicVariable> customVars = new HashMap<>();
+    private static final Map<String, DynamicVariable> customVars = new HashMap<>();
 
     public static String makeID(String name) { return BasicMod.makeID(name); }
     protected CardStrings cardStrings;
@@ -52,7 +52,7 @@ public abstract class BaseCard extends CustomCard {
     protected boolean baseRetain = false;
     protected boolean upgRetain = false;
 
-    final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
+    protected final Map<String, LocalVarInfo> cardVariables = new HashMap<>();
 
     public BaseCard(String ID, CardStats info) {
         this(ID, info, getCardTextureString(removePrefix(ID), info.cardType));
@@ -133,8 +133,6 @@ public abstract class BaseCard extends CustomCard {
         }
         initializeDescription();
     }
-
-
 
     protected final void setCustomVar(String key, int base) {
         this.setCustomVar(key, base, 0);
@@ -566,27 +564,13 @@ public abstract class BaseCard extends CustomCard {
         }
     }
 
-    boolean inCalc = false;
+    private boolean inCalc = false;
+
     @Override
     public void applyPowers() {
         if (!inCalc) {
             inCalc = true;
-            for (LocalVarInfo var : cardVariables.values()) {
-                var.value = var.calculation.apply(this, null, var.base);
-            }
-            if (isMultiDamage) {
-                ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
-                AbstractMonster m;
-                for (LocalVarInfo var : cardVariables.values()) {
-                    if (var.aoeValue == null || var.aoeValue.length != monsters.size())
-                        var.aoeValue = new int[monsters.size()];
-
-                    for (int i = 0; i < monsters.size(); ++i) {
-                        m = monsters.get(i);
-                        var.aoeValue[i] = var.calculation.apply(this, m, var.base);
-                    }
-                }
-            }
+            updateCustomVariables(null);
             inCalc = false;
         }
 
@@ -597,25 +581,34 @@ public abstract class BaseCard extends CustomCard {
     public void calculateCardDamage(AbstractMonster m) {
         if (!inCalc) {
             inCalc = true;
-            for (LocalVarInfo var : cardVariables.values()) {
-                var.value = var.calculation.apply(this, m, var.base);
-            }
-            if (isMultiDamage) {
-                ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
-                for (LocalVarInfo var : cardVariables.values()) {
-                    if (var.aoeValue == null || var.aoeValue.length != monsters.size())
-                        var.aoeValue = new int[monsters.size()];
-
-                    for (int i = 0; i < monsters.size(); ++i) {
-                        m = monsters.get(i);
-                        var.aoeValue[i] = var.calculation.apply(this, m, var.base);
-                    }
-                }
-            }
+            updateCustomVariables(m);
             inCalc = false;
         }
 
         super.calculateCardDamage(m);
+    }
+
+    private void updateCustomVariables(AbstractMonster target) {
+        for (LocalVarInfo var : cardVariables.values()) {
+            var.value = var.calculation.apply(this, target, var.base);
+        }
+
+        if (isMultiDamage) {
+            updateCustomVariablesForAllEnemies();
+        }
+    }
+
+    private void updateCustomVariablesForAllEnemies() {
+        ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
+        for (LocalVarInfo var : cardVariables.values()) {
+            if (var.aoeValue == null || var.aoeValue.length != monsters.size()) {
+                var.aoeValue = new int[monsters.size()];
+            }
+
+            for (int i = 0; i < monsters.size(); ++i) {
+                var.aoeValue[i] = var.calculation.apply(this, monsters.get(i), var.base);
+            }
+        }
     }
 
     @Override

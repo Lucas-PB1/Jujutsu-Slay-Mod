@@ -1,8 +1,21 @@
 package jujutsumod;
 
 import basemod.BaseMod;
-import basemod.interfaces.*;
+import basemod.interfaces.AddAudioSubscriber;
+import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
+import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.PostUpdateSubscriber;
 import jujutsumod.character.Itadori;
+import jujutsumod.registry.CardRegistry;
+import jujutsumod.registry.LocalizationRegistry;
+import jujutsumod.registry.MonsterRegistry;
+import jujutsumod.registry.PotionRegistry;
+import jujutsumod.registry.RelicRegistry;
+import jujutsumod.util.DebugTools;
 import jujutsumod.util.GeneralUtils;
 import jujutsumod.util.KeywordInfo;
 import jujutsumod.util.Sounds;
@@ -12,27 +25,21 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.google.gson.Gson;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.localization.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 
 @SpireInitializer
 public class BasicMod implements
@@ -68,159 +75,37 @@ public class BasicMod implements
 
     @Override
     public void receivePostUpdate() {
-        if (DEBUG_MODE && com.megacrit.cardcrawl.dungeons.AbstractDungeon.player != null && com.megacrit.cardcrawl.dungeons.AbstractDungeon.currMapNode != null) {
-            if (com.badlogic.gdx.Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.G)) {
-                // Add Gojo + Agito + Rabbit cards to hand and master deck
-                jujutsumod.cards.BaseCard[] cardsToTest = {
-                    new jujutsumod.cards.Agito(),
-                    new jujutsumod.cards.LapseBlue(),
-                    new jujutsumod.cards.ReversalRed(),
-                    new jujutsumod.cards.InfinityBarrier(),
-                    new jujutsumod.cards.HollowPurple(),
-                    new jujutsumod.cards.SixEyes(),
-                    new jujutsumod.cards.UnlimitedVoid(),
-                    new jujutsumod.cards.CurtainLimitless(),
-                    new jujutsumod.cards.RabbitEscape(),
-                    new jujutsumod.cards.Rabbit()
-                };
-
-                for (com.megacrit.cardcrawl.cards.AbstractCard c : cardsToTest) {
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.masterDeck.addToBottom(c.makeStatEquivalentCopy());
-                }
-            }
-            if (com.badlogic.gdx.Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.U)) {
-                // Upgrade all cards in master deck
-                for (com.megacrit.cardcrawl.cards.AbstractCard c : com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.masterDeck.group) {
-                    if (c.canUpgrade()) {
-                        c.upgrade();
-                    }
-                }
-                // Upgrade all cards in hand
-                for (com.megacrit.cardcrawl.cards.AbstractCard c : com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.hand.group) {
-                    if (c.canUpgrade()) {
-                        c.upgrade();
-                    }
-                }
-            }
-            if (com.badlogic.gdx.Gdx.input.isKeyJustPressed(com.badlogic.gdx.Input.Keys.H)) {
-                com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.heal(com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.maxHealth);
-                com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.gainEnergy(99);
-            }
+        if (DEBUG_MODE) {
+            DebugTools.update();
         }
     }
 
     @Override
     public void receiveEditRelics() {
-        BaseMod.addRelicToCustomPool(new jujutsumod.relics.SukunaFinger(), Itadori.Meta.CARD_COLOR);
-        
-        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.RedSkull(), Itadori.Meta.CARD_COLOR);
-        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.PaperFrog(), Itadori.Meta.CARD_COLOR);
-        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.SelfFormingClay(), Itadori.Meta.CARD_COLOR);
-        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.CharonsAshes(), Itadori.Meta.CARD_COLOR);
-        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.ChampionsBelt(), Itadori.Meta.CARD_COLOR);
-        BaseMod.addRelicToCustomPool(new com.megacrit.cardcrawl.relics.MagicFlower(), Itadori.Meta.CARD_COLOR);
+        RelicRegistry.registerRelics();
     }
 
     @Override
     public void receivePostInitialize() {
-        BaseMod.addPotion(com.megacrit.cardcrawl.potions.BloodPotion.class, com.badlogic.gdx.graphics.Color.RED.cpy(), com.badlogic.gdx.graphics.Color.FIREBRICK.cpy(), null, com.megacrit.cardcrawl.potions.BloodPotion.POTION_ID, Itadori.Meta.YOUR_CHARACTER);
-        BaseMod.addPotion(com.megacrit.cardcrawl.potions.Elixir.class, com.badlogic.gdx.graphics.Color.GRAY.cpy(), com.badlogic.gdx.graphics.Color.WHITE.cpy(), null, com.megacrit.cardcrawl.potions.Elixir.POTION_ID, Itadori.Meta.YOUR_CHARACTER);
-        BaseMod.addPotion(com.megacrit.cardcrawl.potions.HeartOfIron.class, com.badlogic.gdx.graphics.Color.GOLD.cpy(), com.badlogic.gdx.graphics.Color.ORANGE.cpy(), null, com.megacrit.cardcrawl.potions.HeartOfIron.POTION_ID, Itadori.Meta.YOUR_CHARACTER);
+        PotionRegistry.registerPotions();
 
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
 
-        for (AbstractCard card : CardLibrary.getAllCards()) {
-            if (card.color == Itadori.Meta.CARD_COLOR) {
-                UnlockTracker.unlockCard(card.cardID);
-            }
-        }
-
-        // Register Monsters
-        BaseMod.addMonster(jujutsumod.monsters.Koguy.ID, () -> new jujutsumod.monsters.Koguy(0.0F, 0.0F));
-        
-        // Add to Exordium (Act 1) as a weak monster encounter
-        // Note: You can also use BaseMod.addEncounter if you want a multi-monster encounter
-        BaseMod.addMonsterEncounter(com.megacrit.cardcrawl.dungeons.Exordium.ID, new com.megacrit.cardcrawl.monsters.MonsterInfo(jujutsumod.monsters.Koguy.ID, 2.0F));
+        CardRegistry.unlockCharacterCards();
+        MonsterRegistry.registerMonsters();
     }
 
-    private static String getLangString()
-    {
-        return Settings.language.name().toLowerCase();
-    }
-    private static final String defaultLanguage = "eng";
-
-    public static final Map<String, KeywordInfo> keywords = new HashMap<>();
+    public static final Map<String, KeywordInfo> keywords = LocalizationRegistry.KEYWORDS;
 
     @Override
     public void receiveEditStrings() {
-        loadLocalization(defaultLanguage);
-        if (!defaultLanguage.equals(getLangString())) {
-            try {
-                loadLocalization(getLangString());
-            }
-            catch (GdxRuntimeException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    private void loadLocalization(String lang) {
-        BaseMod.loadCustomStringsFile(CardStrings.class,
-                localizationPath(lang, "CardStrings.json"));
-        BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                localizationPath(lang, "CharacterStrings.json"));
-        BaseMod.loadCustomStringsFile(EventStrings.class,
-                localizationPath(lang, "EventStrings.json"));
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                localizationPath(lang, "OrbStrings.json"));
-        BaseMod.loadCustomStringsFile(PotionStrings.class,
-                localizationPath(lang, "PotionStrings.json"));
-        BaseMod.loadCustomStringsFile(PowerStrings.class,
-                localizationPath(lang, "PowerStrings.json"));
-        BaseMod.loadCustomStringsFile(RelicStrings.class,
-                localizationPath(lang, "RelicStrings.json"));
-        BaseMod.loadCustomStringsFile(UIStrings.class,
-                localizationPath(lang, "UIStrings.json"));
-        BaseMod.loadCustomStringsFile(MonsterStrings.class,
-                localizationPath(lang, "MonsterStrings.json"));
+        LocalizationRegistry.loadStrings();
     }
 
     @Override
-    public void receiveEditKeywords()
-    {
-        Gson gson = new Gson();
-        String json = Gdx.files.internal(localizationPath(defaultLanguage, "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
-        KeywordInfo[] keywords = gson.fromJson(json, KeywordInfo[].class);
-        for (KeywordInfo keyword : keywords) {
-            keyword.prep();
-            registerKeyword(keyword);
-        }
-
-        if (!defaultLanguage.equals(getLangString())) {
-            try
-            {
-                json = Gdx.files.internal(localizationPath(getLangString(), "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
-                keywords = gson.fromJson(json, KeywordInfo[].class);
-                for (KeywordInfo keyword : keywords) {
-                    keyword.prep();
-                    registerKeyword(keyword);
-                }
-            }
-            catch (Exception e)
-            {
-                logger.warn("{} does not support {} keywords.", modID, getLangString());
-            }
-        }
-    }
-
-    private void registerKeyword(KeywordInfo info) {
-        BaseMod.addKeyword(modID.toLowerCase(), info.PROPER_NAME, info.NAMES, info.DESCRIPTION, info.COLOR);
-        if (!info.ID.isEmpty())
-        {
-            keywords.put(info.ID, info);
-        }
+    public void receiveEditKeywords() {
+        LocalizationRegistry.loadKeywords();
     }
 
     @Override
@@ -230,51 +115,7 @@ public class BasicMod implements
 
     @Override
     public void receiveEditCards() {
-        BaseMod.addCard(new jujutsumod.cards.Strike());
-        BaseMod.addCard(new jujutsumod.cards.Defend());
-        BaseMod.addCard(new jujutsumod.cards.DivergentFist());
-        BaseMod.addCard(new jujutsumod.cards.BlackFlash());
-        BaseMod.addCard(new jujutsumod.cards.CursedEnergyInfusion());
-        BaseMod.addCard(new jujutsumod.cards.SlaughterDemon());
-        BaseMod.addCard(new jujutsumod.cards.CursedFlow());
-        BaseMod.addCard(new jujutsumod.cards.MartialArtsMastery());
-        BaseMod.addCard(new jujutsumod.cards.CursedEnergyReinforcement());
-        BaseMod.addCard(new jujutsumod.cards.Dismantle());
-        BaseMod.addCard(new jujutsumod.cards.Cleave());
-        BaseMod.addCard(new jujutsumod.cards.Spiderweb());
-        BaseMod.addCard(new jujutsumod.cards.DivineFlame());
-        BaseMod.addCard(new jujutsumod.cards.MalevolentShrine());
-        BaseMod.addCard(new jujutsumod.cards.DivineDog());
-        BaseMod.addCard(new jujutsumod.cards.Nue());
-        BaseMod.addCard(new jujutsumod.cards.Gama());
-        BaseMod.addCard(new jujutsumod.cards.Mahoraga());
-        BaseMod.addCard(new jujutsumod.cards.GreatSerpent());
-        BaseMod.addCard(new jujutsumod.cards.MaxElephant());
-        BaseMod.addCard(new jujutsumod.cards.RabbitEscape());
-        BaseMod.addCard(new jujutsumod.cards.RoundDeer());
-        BaseMod.addCard(new jujutsumod.cards.PiercingOx());
-        BaseMod.addCard(new jujutsumod.cards.TigerFuneral());
-        BaseMod.addCard(new jujutsumod.cards.Agito());
-        BaseMod.addCard(new jujutsumod.cards.TenShadowsTechnique());
-        BaseMod.addCard(new jujutsumod.cards.Rabbit());
-        
-        // Gojo Limitless
-        BaseMod.addCard(new jujutsumod.cards.LapseBlue());
-        BaseMod.addCard(new jujutsumod.cards.ReversalRed());
-        BaseMod.addCard(new jujutsumod.cards.InfinityBarrier());
-        BaseMod.addCard(new jujutsumod.cards.HollowPurple());
-        BaseMod.addCard(new jujutsumod.cards.SixEyes());
-        BaseMod.addCard(new jujutsumod.cards.UnlimitedVoid());
-        BaseMod.addCard(new jujutsumod.cards.CurtainLimitless());
-
-        // Yuta Okkotsu
-        BaseMod.addCard(new jujutsumod.cards.KatanaStrike());
-        BaseMod.addCard(new jujutsumod.cards.RikaProtectiveEmbrace());
-        BaseMod.addCard(new jujutsumod.cards.ImmeasurableCursedEnergy());
-        BaseMod.addCard(new jujutsumod.cards.RikaSoulGrasp());
-        BaseMod.addCard(new jujutsumod.cards.QueenOfCurses());
-        BaseMod.addCard(new jujutsumod.cards.AuthenticMutualLove());
-        BaseMod.addCard(new jujutsumod.cards.PureLoveBeam());
+        CardRegistry.registerCards();
     }
 
     @Override
